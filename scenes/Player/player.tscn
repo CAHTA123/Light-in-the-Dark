@@ -9,7 +9,6 @@
 script = ExtResource("2_d1fyn")
 
 [node name="Skin" parent="Skin" index="0"]
-scale = Vector2(0.065, 0.065)
 texture = ExtResource("3_dsbpb")
 
 [node name="Move" type="Node2D" parent="." index="2"]
