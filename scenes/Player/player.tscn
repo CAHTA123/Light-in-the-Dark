@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://wcix67e82g86"]
+
+[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
+[ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
+[ext_resource type="Script" path="res://scenes/Player/Move.gd" id="2_nw2w3"]
+[ext_resource type="Texture2D" uid="uid://blb7vt6dlwx5q" path="res://sprites/Islands/Island 5.png" id="3_dsbpb"]
+
+[node name="Player" instance=ExtResource("1_edq0g")]
+script = ExtResource("2_d1fyn")
+
+[node name="Skin" parent="Skin" index="0"]
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("3_dsbpb")
+
+[node name="Move" type="Node2D" parent="." index="2"]
+script = ExtResource("2_nw2w3")

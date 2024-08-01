@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqhegexofc3wb"]
+
+[ext_resource type="Texture2D" uid="uid://cld7i3ydiibht" path="res://sprites/Islands/Island 1.png" id="1_ru554"]
+
+[node name="Islands" type="Node2D"]
+
+[node name="Sprite" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Island1" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("1_ru554")

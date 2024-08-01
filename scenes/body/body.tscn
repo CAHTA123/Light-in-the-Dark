@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cip765xbasefc"]
+
+[node name="Body" type="CharacterBody2D"]
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+[node name="Skin" type="Node2D" parent="."]
+
+[node name="Skin" type="Sprite2D" parent="Skin"]

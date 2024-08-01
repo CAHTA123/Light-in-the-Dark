@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=3 format=3 uid="uid://ck1jdw71slkbf"]
+
+[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
+[ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Player/player.tscn" id="2_kc6yd"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(1046, 480)
+
+[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
+position = Vector2(1046, 368)
