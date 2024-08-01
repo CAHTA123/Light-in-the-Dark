@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3xpt28c1c45v"
+path="res://.godot/imported/sword-sound-effects-all-sounds-mp3cut_ItfeRU9.mp3-b6d968ee575bb3ab283c40b9177347a4.mp3str"
+
+[deps]
+
+source_file="res://sounds/sword attack/sword-sound-effects-all-sounds-mp3cut_ItfeRU9.mp3"
+dest_files=["res://.godot/imported/sword-sound-effects-all-sounds-mp3cut_ItfeRU9.mp3-b6d968ee575bb3ab283c40b9177347a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdyg8l7w1xrdj"
+path="res://.godot/imported/swing  (11).mp3-98e1620c54ef2138a1becc3ace0851be.mp3str"
+
+[deps]
+
+source_file="res://sounds/Sword/swing  (11).mp3"
+dest_files=["res://.godot/imported/swing  (11).mp3-98e1620c54ef2138a1becc3ace0851be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
