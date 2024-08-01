@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iap6am74uith"
+path="res://.godot/imported/Остров выживания.mp3-fba1a833dd2fe64737a8d72f29f82dbc.mp3str"
+
+[deps]
+
+source_file="res://sounds/menu/Остров выживания.mp3"
+dest_files=["res://.godot/imported/Остров выживания.mp3-fba1a833dd2fe64737a8d72f29f82dbc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
