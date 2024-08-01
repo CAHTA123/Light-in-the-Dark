@@ -4,7 +4,6 @@ extends Node2D
 @onready var body = $"../Skin"
 @onready var skin = $"../Skin/Skin"
 
-
 var down = load("res://sprites/Player/1.png")
 var down_d = load("res://sprites/Player/2.png")
 var horiz = load("res://sprites/Player/3.png")

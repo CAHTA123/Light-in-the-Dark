@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://cip765xbasefc"]
+[gd_scene load_steps=3 format=3 uid="uid://cip765xbasefc"]
+
+[ext_resource type="Script" path="res://scenes/body/take_damage.gd" id="1_sdm8l"]
+[ext_resource type="Script" path="res://scenes/body/destroy.gd" id="2_lxpvs"]
 
 [node name="Body" type="CharacterBody2D"]
 
@@ -7,3 +10,9 @@
 [node name="Skin" type="Node2D" parent="."]
 
 [node name="Skin" type="Sprite2D" parent="Skin"]
+
+[node name="take_damage" type="Node2D" parent="."]
+script = ExtResource("1_sdm8l")
+
+[node name="destroy" type="Node2D" parent="."]
+script = ExtResource("2_lxpvs")

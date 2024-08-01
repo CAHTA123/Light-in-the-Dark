@@ -1,15 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=6 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
 [ext_resource type="Script" path="res://scenes/Player/Move.gd" id="2_nw2w3"]
-[ext_resource type="Texture2D" uid="uid://blb7vt6dlwx5q" path="res://sprites/Islands/Island 5.png" id="3_dsbpb"]
+[ext_resource type="Texture2D" uid="uid://cdogjyetgdo3n" path="res://sprites/Player/1.png" id="3_6rdhi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw8pn"]
+radius = 59.0
+height = 220.0
 
 [node name="Player" instance=ExtResource("1_edq0g")]
 script = ExtResource("2_d1fyn")
 
+[node name="Shape" parent="." index="0"]
+shape = SubResource("CapsuleShape2D_hw8pn")
+
 [node name="Skin" parent="Skin" index="0"]
-texture = ExtResource("3_dsbpb")
+texture = ExtResource("3_6rdhi")
 
 [node name="Move" type="Node2D" parent="." index="2"]
 script = ExtResource("2_nw2w3")
