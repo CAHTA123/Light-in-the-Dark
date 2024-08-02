@@ -16,7 +16,6 @@ func _process(delta):
 func take():
 	body.hp -= body.take_damage
 	var HP = (body.hp / body.max_hp) * 100
-	print(body.hp)
 	body.hp_bar.value = HP
 	if body.hp <= 0:
 		body.destroy = true
