@@ -11,6 +11,7 @@ var up = load("res://sprites/Player/4.png")
 
 var current_state = St.l 
 enum St {l, r, t, d, ld, rd, lt, rt}
+var velocity 
 
 func _ready():
 	b.s = b.speed
@@ -25,11 +26,9 @@ func _process(delta):
 func move():
 	var mouse_pos = get_global_mouse_position()
 	var direction = (mouse_pos - body.global_position).normalized()
-	var velocity = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized() * b.s
+	velocity = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized() * b.s
 	b.velocity = velocity
-	var collision = b.move_and_collide(velocity)
-	if collision:
-		print("1")
+
 func update_state():
 	var angle_to_mouse = (get_global_mouse_position() - body.global_position).angle()
 	var angle = fmod(rad_to_deg(angle_to_mouse), 360) 
