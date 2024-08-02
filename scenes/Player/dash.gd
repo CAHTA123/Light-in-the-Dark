@@ -5,8 +5,7 @@ extends Node2D
 func _process(delta):
 	if Input.is_action_pressed("dash"):
 		push()
-		
-	
+
 func push():
 	body.s = 0
 	body.velocity = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized() * 1000 

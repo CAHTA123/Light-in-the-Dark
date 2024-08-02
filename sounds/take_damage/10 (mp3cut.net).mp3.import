@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcovcoomx1hho"
+path="res://.godot/imported/10 (mp3cut.net).mp3-8bc0951345259c79213aff1184179e7e.mp3str"
+
+[deps]
+
+source_file="res://sounds/take_damage/10 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/10 (mp3cut.net).mp3-8bc0951345259c79213aff1184179e7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

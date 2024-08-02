@@ -37,10 +37,10 @@ script = ExtResource("3_unp11")
 script = ExtResource("2_lxpvs")
 
 [node name="hp_bar" parent="." instance=ExtResource("4_wsmua")]
-offset_left = -124.0
-offset_top = 161.0
-offset_right = -124.0
-offset_bottom = 161.0
+offset_left = -69.0
+offset_top = 86.0
+offset_right = -69.0
+offset_bottom = 86.0
 
 [node name="legs" type="Node2D" parent="."]
 
