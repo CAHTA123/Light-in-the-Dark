@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://0vh3jhnjpwnn"]
+
+[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_djqal"]
+[ext_resource type="Script" path="res://scenes/Res/res.gd" id="2_etf6s"]
+[ext_resource type="Texture2D" uid="uid://cdogjyetgdo3n" path="res://sprites/Player/1.png" id="3_mht50"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1erm"]
+radius = 55.5428
+
+[node name="Res" instance=ExtResource("1_djqal")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_etf6s")
+
+[node name="Shape" parent="." index="0"]
+shape = SubResource("CircleShape2D_w1erm")
+
+[node name="Skin" parent="Skin" index="0"]
+self_modulate = Color(0.482353, 1, 0.454902, 1)
+texture = ExtResource("3_mht50")

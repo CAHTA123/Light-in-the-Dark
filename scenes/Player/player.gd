@@ -1,7 +1,6 @@
-extends CharacterBody2D
+extends "res://scenes/body/body.gd"
 
-var speed = 1000
-var s
+var s = 0
 
 enum States {IDLE, MOVE, DASH, ATTACK, BLOCK}
 

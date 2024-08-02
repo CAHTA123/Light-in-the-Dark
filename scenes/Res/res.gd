@@ -1,2 +1,2 @@
-extends "res://scripts/body/body.gd"
+extends "res://scenes/body/body.gd"
 

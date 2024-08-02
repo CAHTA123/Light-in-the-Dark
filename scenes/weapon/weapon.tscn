@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://f82w3f5coymx"]
+
+[node name="Weapon" type="Node2D"]
+
+[node name="shape" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="shape"]
+
+[node name="Skin" type="Sprite2D" parent="."]

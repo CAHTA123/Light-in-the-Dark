@@ -1,22 +1,55 @@
-[gd_scene load_steps=6 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=10 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
 [ext_resource type="Script" path="res://scenes/Player/Move.gd" id="2_nw2w3"]
 [ext_resource type="Texture2D" uid="uid://cdogjyetgdo3n" path="res://sprites/Player/1.png" id="3_6rdhi"]
+[ext_resource type="Texture2D" uid="uid://5uxuyx6h2mb0" path="res://sprites/weapon/sword/sword 1.png" id="5_ybhmr"]
+[ext_resource type="Script" path="res://scenes/Player/dash.gd" id="6_6ri0j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw8pn"]
 radius = 59.0
 height = 220.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w3p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_why5w"]
+size = Vector2(80, 13)
+
 [node name="Player" instance=ExtResource("1_edq0g")]
+position = Vector2(857, 551)
 script = ExtResource("2_d1fyn")
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource("CapsuleShape2D_hw8pn")
 
 [node name="Skin" parent="Skin" index="0"]
+position = Vector2(0, 1)
 texture = ExtResource("3_6rdhi")
+offset = Vector2(-5.5, 0)
+
+[node name="shape" parent="Skin/Weapon" index="0"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" parent="Skin/Weapon/shape" index="0"]
+shape = SubResource("CapsuleShape2D_5w3p6")
+debug_color = Color(0.569505, 0.555099, 0.0923314, 0.42)
+
+[node name="Skin" parent="Skin/Weapon" index="1"]
+texture = ExtResource("5_ybhmr")
 
 [node name="Move" type="Node2D" parent="." index="2"]
 script = ExtResource("2_nw2w3")
+
+[node name="legs" parent="." index="7"]
+position = Vector2(0, 96.635)
+
+[node name="Shape" parent="legs/Area2D" index="0"]
+position = Vector2(-1, 11.865)
+shape = SubResource("RectangleShape2D_why5w")
+
+[node name="Camera2D" type="Camera2D" parent="." index="8"]
+
+[node name="dash" type="Node2D" parent="." index="9"]
+script = ExtResource("6_6ri0j")

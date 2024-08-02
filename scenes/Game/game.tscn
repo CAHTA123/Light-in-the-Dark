@@ -1,12 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=5 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Player/player.tscn" id="2_kc6yd"]
+[ext_resource type="PackedScene" uid="uid://0vh3jhnjpwnn" path="res://scenes/Res/res.tscn" id="3_m2plk"]
+[ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Enemy/enemy.tscn" id="4_m7kfr"]
 
 [node name="Game" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -25000.0
+offset_top = -25000.0
+offset_right = 25000.0
+offset_bottom = 25000.0
+color = Color(0.0582, 0.043, 0.1, 1)
+
 [node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
-position = Vector2(1046, 480)
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(1046, 368)
+position = Vector2(3, -91)
+
+[node name="Res" parent="." instance=ExtResource("3_m2plk")]
+position = Vector2(-889, -140)
+
+[node name="Enemy" parent="." instance=ExtResource("4_m7kfr")]
+position = Vector2(1060, -355)

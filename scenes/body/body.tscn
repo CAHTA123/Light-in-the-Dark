@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cip765xbasefc"]
+[gd_scene load_steps=6 format=3 uid="uid://cip765xbasefc"]
 
 [ext_resource type="Script" path="res://scenes/body/take_damage.gd" id="1_sdm8l"]
+[ext_resource type="Script" path="res://scenes/body/Weapon.gd" id="1_xreqf"]
 [ext_resource type="Script" path="res://scenes/body/destroy.gd" id="2_lxpvs"]
+[ext_resource type="Script" path="res://scenes/body/take_push.gd" id="3_unp11"]
+[ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/hp_bar/hp_bar.tscn" id="4_wsmua"]
 
 [node name="Body" type="CharacterBody2D"]
 
@@ -10,9 +13,39 @@
 [node name="Skin" type="Node2D" parent="."]
 
 [node name="Skin" type="Sprite2D" parent="Skin"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Weapon" type="Node2D" parent="Skin"]
+position = Vector2(-50, 0)
+rotation = 4.71239
+script = ExtResource("1_xreqf")
+
+[node name="shape" type="Area2D" parent="Skin/Weapon"]
+
+[node name="Shape" type="CollisionShape2D" parent="Skin/Weapon/shape"]
+
+[node name="Skin" type="Sprite2D" parent="Skin/Weapon"]
+scale = Vector2(0.3, 0.3)
 
 [node name="take_damage" type="Node2D" parent="."]
 script = ExtResource("1_sdm8l")
 
+[node name="take_push" type="Node2D" parent="."]
+script = ExtResource("3_unp11")
+
 [node name="destroy" type="Node2D" parent="."]
 script = ExtResource("2_lxpvs")
+
+[node name="hp_bar" parent="." instance=ExtResource("4_wsmua")]
+offset_left = -124.0
+offset_top = 161.0
+offset_right = -124.0
+offset_bottom = 161.0
+
+[node name="legs" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="legs"]
+
+[node name="Shape" type="CollisionShape2D" parent="legs/Area2D"]
+
+[connection signal="body_entered" from="Skin/Weapon/shape" to="Skin/Weapon" method="_on_shape_body_entered"]

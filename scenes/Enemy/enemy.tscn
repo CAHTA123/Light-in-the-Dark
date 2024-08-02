@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdtvya2u1xsii"]
+
+[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_r510p"]
+[ext_resource type="Script" path="res://scenes/Enemy/enemy.gd" id="2_m367u"]
+[ext_resource type="Texture2D" uid="uid://cdogjyetgdo3n" path="res://sprites/Player/1.png" id="2_mvii6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_47q1k"]
+radius = 56.9386
+
+[node name="Enemy" instance=ExtResource("1_r510p")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_m367u")
+
+[node name="Shape" parent="." index="0"]
+shape = SubResource("CircleShape2D_47q1k")
+debug_color = Color(0.868136, 0.300206, 0.48499, 0.42)
+
+[node name="Skin" parent="Skin" index="0"]
+self_modulate = Color(1, 0.21, 0.21, 1)
+texture = ExtResource("2_mvii6")
