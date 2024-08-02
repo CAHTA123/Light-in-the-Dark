@@ -8,16 +8,17 @@
 [node name="Game" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -25000.0
-offset_top = -25000.0
-offset_right = 25000.0
-offset_bottom = 25000.0
+offset_left = -24880.0
+offset_top = -25042.0
+offset_right = 25120.0
+offset_bottom = 24958.0
 color = Color(0.0582, 0.043, 0.1, 1)
 
 [node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(65, -12)
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(1036, -902)
+position = Vector2(-355, -338)
 
 [node name="Res" parent="." instance=ExtResource("3_m2plk")]
 position = Vector2(-889, -140)
