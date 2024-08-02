@@ -3,7 +3,7 @@ extends Node2D
 @onready var body = $".."
 
 func _process(delta):
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("dash") and body.move:
 		push()
 
 func push():

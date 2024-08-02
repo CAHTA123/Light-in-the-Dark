@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqhegexofc3wb"]
+[gd_scene load_steps=3 format=3 uid="uid://bqhegexofc3wb"]
 
 [ext_resource type="Texture2D" uid="uid://cld7i3ydiibht" path="res://sprites/Islands/Island 1.png" id="1_ru554"]
 [ext_resource type="Script" path="res://scenes/Islands/shape.gd" id="2_x77p0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ev3q0"]
-radius = 1750.0
 
 [node name="Islands" type="Node2D"]
 
@@ -19,9 +16,9 @@ position = Vector2(42, -102)
 script = ExtResource("2_x77p0")
 
 [node name="Area2D" type="Area2D" parent="shape"]
-scale = Vector2(1, 0.75)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="shape/Area2D"]
-shape = SubResource("CircleShape2D_ev3q0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shape/Area2D"]
+polygon = PackedVector2Array(1475, -538, 932, -1053, -262, -1234, -1207, -928, -1665, -227, -1410, 616, -590, 1131, 360, 1136, 1271, 808, 1661, 113)
 
+[connection signal="area_entered" from="shape/Area2D" to="shape" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="shape/Area2D" to="shape" method="_on_area_2d_area_exited"]

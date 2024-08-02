@@ -16,7 +16,7 @@ func _ready():
 	b.s = b.speed
 
 func _process(delta):
-	if b.s != 0:
+	if b.s != 0 and b.move:
 		move()
 	update_state()
 	apply_state()
