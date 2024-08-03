@@ -5,3 +5,4 @@ var move = true
 
 enum States {IDLE, MOVE, DASH, ATTACK, BLOCK}
 var current_state : States
+
