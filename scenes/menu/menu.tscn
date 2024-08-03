@@ -7,8 +7,8 @@
 [node name="Menu" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1957.0
-offset_bottom = 1129.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.3, 0.6, 0.33, 1)
 
 [node name="Start" type="Node2D" parent="."]
@@ -16,24 +16,36 @@ position = Vector2(654, 207)
 script = ExtResource("1_g7dap")
 
 [node name="Start" type="Button" parent="Start"]
-offset_right = 663.0
-offset_bottom = 186.0
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 642.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 100
+text = "Play"
 
 [node name="Settings" type="Node2D" parent="."]
 position = Vector2(663, 504)
 script = ExtResource("2_gabwj")
 
 [node name="Settings" type="Button" parent="Settings"]
-offset_right = 663.0
-offset_bottom = 186.0
+offset_left = -26.0
+offset_top = -21.0
+offset_right = 637.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 100
+text = "Settings"
 
 [node name="Exit" type="Node2D" parent="."]
 position = Vector2(669, 813)
 script = ExtResource("3_c7lv7")
 
 [node name="Exit" type="Button" parent="Exit"]
-offset_right = 663.0
-offset_bottom = 186.0
+offset_left = -29.0
+offset_top = -12.0
+offset_right = 634.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 100
+text = "Exit"
 
 [connection signal="pressed" from="Start/Start" to="Start" method="_on_start_pressed"]
 [connection signal="pressed" from="Settings/Settings" to="Settings" method="_on_settings_pressed"]

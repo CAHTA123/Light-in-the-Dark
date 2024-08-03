@@ -7,10 +7,10 @@ var can = 0
 func _ready():
 	body.hp = body.max_hp
 	body.hp_bar = $"../hp_bar"
+
 func _process(delta):
 	if body.take_damage > can:
 		can = body.take_damage
-		
 		take()
 
 func take():
