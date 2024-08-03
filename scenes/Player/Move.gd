@@ -17,10 +17,10 @@ func _ready():
 	b.s = b.speed
 
 func _process(delta):
-	if b.s != 0 and b.move:
+	if b.move:
 		move()
-	update_state()
-	apply_state()
+		update_state()
+		apply_state()
 	b.move_and_slide()
 
 func move():

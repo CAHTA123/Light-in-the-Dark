@@ -7,9 +7,10 @@ func _process(delta):
 		push()
 	
 func push():
-	body.s = 0
-	body.velocity = body.center.direction_to(body.global_position).normalized() * -1000
-	body.take_push = 0  
-	await get_tree().create_timer(0.1).timeout 
+	body.take_push = 0 
+	body.current_state = body.States.DASH
 	body.velocity = Vector2.ZERO
-	body.s = body.speed
+	body.velocity = body.center.direction_to(body.global_position).normalized() * -1000
+	await get_tree().create_timer(body.take_push_time).timeout 
+	body.velocity = Vector2.ZERO
+	body.current_state = body.States.IDLE
