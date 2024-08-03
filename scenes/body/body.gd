@@ -9,6 +9,6 @@ var take_damage = 0
 var take_push = 0
 var destroy = false
 var center = null
-var item_drop = null
+var item_drop = "res://sprites/items/polarbombpotion.png"
 
 var take_push_time: float = 0.4

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwk3cd4it1853"]
+
+[ext_resource type="Texture2D" uid="uid://dc6gvvj7w608t" path="res://sprites/items/polarbombpotion.png" id="1_jciww"]
+
+[node name="item" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jciww")
