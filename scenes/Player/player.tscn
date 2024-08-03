@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=12 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
@@ -79,36 +79,8 @@ tracks/4/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_n2n1p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skin/Weapon/shape:monitoring")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Skin/Weapon/shape:monitorable")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3gier"]
 _data = {
-"RESET": SubResource("Animation_n2n1p"),
 "attack": SubResource("Animation_2aw3s")
 }
 
@@ -129,10 +101,6 @@ offset = Vector2(-5.5, 0)
 [node name="Weapon" parent="Skin" index="1"]
 position = Vector2(-61, 56)
 rotation = -2.24973
-
-[node name="shape" parent="Skin/Weapon" index="0"]
-monitoring = true
-monitorable = true
 
 [node name="Move" type="Node2D" parent="." index="2"]
 script = ExtResource("2_nw2w3")
