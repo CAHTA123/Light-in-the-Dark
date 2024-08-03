@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var body = $".."
-var isBlocking = false
+var isBlocking
 var can = 0
 
 func _ready():
@@ -13,13 +13,13 @@ func _process(delta):
 		can = body.take_damage
 		take()
 	if Input.is_action_pressed("block"): 
-		print(isBlocking)
 		isBlocking = true
 	else:
 		isBlocking = false
 
 func take():
-	body.hp -= body.take_damage
+	if isBlocking:
+		body.hp -= body.take_damage
 	var HP = (body.hp / body.max_hp) * 100
 	body.hp_bar.value = HP
 	if body.hp <= 0:
@@ -28,7 +28,6 @@ func take():
 	can = body.take_damage
 
 func _on_Blocker_body_entered(body):
-	if isBlocking:
-		if body.is_in_group("enemy"):
-			body.apply_damage(0)
+	if isBlocking and body.has_method("take_damage") and body.is_in_group("enemy"):
+		body.take_damage(0)
 
