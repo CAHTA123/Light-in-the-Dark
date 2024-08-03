@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=7 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Player/player.tscn" id="2_kc6yd"]
 [ext_resource type="PackedScene" uid="uid://0vh3jhnjpwnn" path="res://scenes/Res/res.tscn" id="3_m2plk"]
 [ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Enemy/enemy.tscn" id="4_m7kfr"]
+[ext_resource type="Script" path="res://scenes/Spawner/spawner.gd" id="5_3nxl5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27xhv"]
+radius = 1700.0
 
 [node name="Game" type="Node2D"]
 
@@ -15,7 +19,6 @@ offset_bottom = 24958.0
 color = Color(0.0582, 0.043, 0.1, 1)
 
 [node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
-position = Vector2(65, -12)
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 position = Vector2(-355, -338)
@@ -25,3 +28,12 @@ position = Vector2(-889, -140)
 
 [node name="Enemy" parent="." instance=ExtResource("4_m7kfr")]
 position = Vector2(1060, -355)
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("5_3nxl5")
+
+[node name="Area2D" type="Area2D" parent="Spawner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner/Area2D"]
+position = Vector2(0, -100)
+shape = SubResource("CircleShape2D_27xhv")
