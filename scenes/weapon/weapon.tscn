@@ -1,9 +1,21 @@
-[gd_scene format=3 uid="uid://f82w3f5coymx"]
+[gd_scene load_steps=4 format=3 uid="uid://f82w3f5coymx"]
+
+[ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="1_fk6nh"]
+[ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="1_we1dq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
+radius = 40.0
+height = 350.0
 
 [node name="Weapon" type="Node2D"]
+script = ExtResource("1_we1dq")
 
 [node name="shape" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="shape"]
+shape = SubResource("CapsuleShape2D_ooqpy")
 
-[node name="Skin" type="Sprite2D" parent="."]
+[node name="Skin" type="Sprite2D" parent="shape"]
+texture = ExtResource("1_fk6nh")
+
+[connection signal="body_entered" from="shape" to="." method="_on_shape_body_entered"]

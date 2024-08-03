@@ -8,8 +8,6 @@
 radius = 56.9386
 
 [node name="Enemy" instance=ExtResource("1_r510p")]
-collision_layer = 4
-collision_mask = 2
 script = ExtResource("2_m367u")
 
 [node name="Shape" parent="." index="0"]
