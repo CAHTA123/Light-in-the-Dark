@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
 [ext_resource type="Script" path="res://scenes/Player/Move.gd" id="2_nw2w3"]
 [ext_resource type="Texture2D" uid="uid://cdogjyetgdo3n" path="res://sprites/Player/1.png" id="3_6rdhi"]
-[ext_resource type="Texture2D" uid="uid://5uxuyx6h2mb0" path="res://sprites/weapon/sword/sword 1.png" id="5_ybhmr"]
+[ext_resource type="Texture2D" uid="uid://b8m0af11c7o3" path="res://sprites/weapon/sword/S3.png" id="4_tbud6"]
 [ext_resource type="Script" path="res://scenes/Player/dash.gd" id="6_6ri0j"]
 [ext_resource type="Script" path="res://scenes/Player/State.gd" id="7_ys55f"]
 
@@ -38,7 +38,7 @@ shape = SubResource("CapsuleShape2D_5w3p6")
 debug_color = Color(0.569505, 0.555099, 0.0923314, 0.42)
 
 [node name="Skin" parent="Skin/Weapon" index="1"]
-texture = ExtResource("5_ybhmr")
+texture = ExtResource("4_tbud6")
 
 [node name="Move" type="Node2D" parent="." index="2"]
 script = ExtResource("2_nw2w3")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3d653hhes080"
-path="res://.godot/imported/The sword3.webp-39a59a8cb0d99343ab552ef78190de42.ctex"
+uid="uid://bm7c5rnkpukrc"
+path="res://.godot/imported/S1.png-78c3c0c0bcb82e25456e4a253b2f66a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapon/The sword/The sword3.webp"
-dest_files=["res://.godot/imported/The sword3.webp-39a59a8cb0d99343ab552ef78190de42.ctex"]
+source_file="res://sprites/weapon/sword/S1.png"
+dest_files=["res://.godot/imported/S1.png-78c3c0c0bcb82e25456e4a253b2f66a4.ctex"]
 
 [params]
 
