@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnfjh0jrr2i3y"
-path="res://.godot/imported/axe3.png-bce7511016c1af32c04282318b9c4899.ctex"
+uid="uid://cy576ebf4f4rc"
+path="res://.godot/imported/P3.png-c04c1129d3923535604dd9980f992417.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapon/axe/axe3.png"
-dest_files=["res://.godot/imported/axe3.png-bce7511016c1af32c04282318b9c4899.ctex"]
+source_file="res://sprites/weapon/pickaxe/P3.png"
+dest_files=["res://.godot/imported/P3.png-c04c1129d3923535604dd9980f992417.ctex"]
 
 [params]
 

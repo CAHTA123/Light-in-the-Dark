@@ -13,9 +13,9 @@ func _process(delta):
 		can = body.take_damage
 		take()
 	if Input.is_action_pressed("block"): 
-		isBlocking = true
-	else:
 		isBlocking = false
+	else:
+		isBlocking = true
 
 func take():
 	if isBlocking:

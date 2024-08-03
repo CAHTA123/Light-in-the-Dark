@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwye055gbmmin"
-path="res://.godot/imported/axe5.png-659e5e7e60bbce4fcd999adac561f3c5.ctex"
+uid="uid://c5rke8kemoal4"
+path="res://.godot/imported/A3.png-0be65eacb0bcdc764a75b12dbe820273.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapon/axe/axe5.png"
-dest_files=["res://.godot/imported/axe5.png-659e5e7e60bbce4fcd999adac561f3c5.ctex"]
+source_file="res://sprites/weapon/axe/A3.png"
+dest_files=["res://.godot/imported/A3.png-0be65eacb0bcdc764a75b12dbe820273.ctex"]
 
 [params]
 
