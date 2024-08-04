@@ -10,8 +10,8 @@
 [ext_resource type="Script" path="res://scenes/Player/AnimPlayer.gd" id="8_l8gcv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0gver"]
-radius = 31.0
-height = 92.0
+radius = 36.0
+height = 176.84
 
 [node name="Player" instance=ExtResource("1_edq0g")]
 collision_layer = 2
@@ -19,19 +19,27 @@ collision_mask = 2
 script = ExtResource("2_d1fyn")
 
 [node name="Shape" parent="." index="0"]
+position = Vector2(0, -90)
 shape = SubResource("CapsuleShape2D_0gver")
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
 [node name="Skin" parent="Skin" index="0"]
-position = Vector2(0, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_172ki")
-offset = Vector2(-5.5, 0)
+offset = Vector2(0, -910)
 
 [node name="Weapon" parent="Skin" index="1"]
-position = Vector2(-55, -31)
+visible = true
+position = Vector2(-10, -56)
 rotation = -0.837758
+scale = Vector2(0.35, 0.35)
+
+[node name="Shape" parent="Skin/Weapon/shape" index="0"]
+position = Vector2(0, -175)
+
+[node name="Skin" parent="Skin/Weapon/shape" index="1"]
+offset = Vector2(0, -175)
 
 [node name="Animation" type="AnimationPlayer" parent="." index="4"]
 
