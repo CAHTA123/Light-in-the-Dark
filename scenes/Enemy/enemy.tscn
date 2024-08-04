@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_r510p"]
 [ext_resource type="Script" path="res://scenes/Enemy/enemy.gd" id="2_m367u"]
-[ext_resource type="Texture2D" uid="uid://cdogjyetgdo3n" path="res://sprites/Player/1.png" id="2_mvii6"]
+[ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="3_q58cx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47q1k"]
 radius = 56.9386
@@ -16,4 +16,5 @@ debug_color = Color(0.868136, 0.300206, 0.48499, 0.42)
 
 [node name="Skin" parent="Skin" index="0"]
 self_modulate = Color(1, 0.21, 0.21, 1)
-texture = ExtResource("2_mvii6")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_q58cx")
