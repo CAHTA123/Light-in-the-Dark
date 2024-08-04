@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27xhv"]
-radius = 1700.0
+radius = 1851.39
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
 height = 350.0
 
@@ -41,7 +41,7 @@ script = ExtResource("5_3nxl5")
 [node name="Area2D" type="Area2D" parent="Spawner"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner/Area2D"]
-position = Vector2(0, -100)
+position = Vector2(2, -5)
 shape = SubResource("CircleShape2D_27xhv")
 
 [node name="Weapon" type="Node2D" parent="."]
@@ -53,7 +53,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Shape" type="CollisionShape2D" parent="Weapon/shape"]
-shape = SubResource("CapsuleShape2D_ooqpy")
+shape = SubResource("CapsuleShape2D_qcmir")
 
 [node name="Skin" type="Sprite2D" parent="Weapon/shape"]
 texture = ExtResource("7_6wc83")
