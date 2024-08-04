@@ -100,7 +100,6 @@ texture = ExtResource("3_6rdhi")
 offset = Vector2(-5.5, 0)
 
 [node name="Weapon" parent="Skin" index="1"]
-visible = true
 position = Vector2(-55, -31)
 rotation = -0.837758
 

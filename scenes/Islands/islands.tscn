@@ -18,5 +18,7 @@ position = Vector2(42, -102)
 position = Vector2(-42, 102)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shape/StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
 build_mode = 1
 polygon = PackedVector2Array(-434, -1436, -822, -1345, -1261, -1128, -1578, -811, -1794, -443, -1756, 224, -1350, 834, -886, 1094, -321, 1310, 219, 1297, 777, 1145, 1412, 923, 1838, 351, 1889, -322, 1725, -728, 1281, -1177, 689, -1417, -113, -1456, -304, -1453)
