@@ -8,8 +8,9 @@ func _process(delta):
 
 func push():
 	body.current_state = body.States.DASH
-	body.velocity = Vector2.ZERO
-	body.velocity = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized() * 1000 
+	
+	body.velocity = Vector2(Input.get_axis("A", "D"), Input.get_axis("W", "S")).normalized() * 1000
+	
 	await get_tree().create_timer(0.2).timeout 
 	body.s = body.speed
 	body.current_state = body.States.IDLE
