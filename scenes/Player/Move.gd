@@ -26,7 +26,7 @@ func _process(delta):
 func move():
 	var mouse_pos = get_global_mouse_position()
 	var direction = (mouse_pos - body.global_position).normalized()
-	velocity = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized() * b.s
+	velocity = Vector2(Input.get_axis("A", "D"), Input.get_axis("W", "S")).normalized() * b.s
 	b.velocity = velocity
 
 func update_state():

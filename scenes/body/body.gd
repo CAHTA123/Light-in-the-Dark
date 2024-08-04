@@ -10,5 +10,5 @@ var take_push = 0
 var destroy = false
 var center = null
 var item_drop = "res://sprites/items/polarbombpotion.png"
-var isBlocking
+var isBlocking = false
 var take_push_time: float = 0.4

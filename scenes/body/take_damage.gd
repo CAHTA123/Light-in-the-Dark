@@ -13,9 +13,10 @@ func _process(delta):
 		can = body.take_damage
 		take()
 
-
 func take():
 	if body.isBlocking:
+		pass
+	else:
 		body.hp -= body.take_damage
 	var HP = (body.hp / body.max_hp) * 100
 	body.hp_bar.value = HP
@@ -23,6 +24,3 @@ func take():
 		body.destroy = true
 	body.take_damage = 0
 	can = body.take_damage
-
-
-

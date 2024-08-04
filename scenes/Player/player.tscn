@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=13 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/Player/dash.gd" id="6_6ri0j"]
 [ext_resource type="Script" path="res://scenes/Player/shoot.gd" id="7_7v0gg"]
 [ext_resource type="Script" path="res://scenes/Player/State.gd" id="7_ys55f"]
+[ext_resource type="Script" path="res://scenes/Player/AnimPlayer.gd" id="8_l8gcv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw8pn"]
 radius = 59.0
@@ -99,8 +100,13 @@ texture = ExtResource("3_6rdhi")
 offset = Vector2(-5.5, 0)
 
 [node name="Weapon" parent="Skin" index="1"]
-position = Vector2(-61, 56)
-rotation = -2.24973
+visible = true
+position = Vector2(-55, -31)
+rotation = -0.837758
+
+[node name="shape" parent="Skin/Weapon" index="0"]
+monitoring = true
+monitorable = true
 
 [node name="Move" type="Node2D" parent="." index="2"]
 script = ExtResource("2_nw2w3")
@@ -123,9 +129,12 @@ script = ExtResource("7_ys55f")
 [node name="shoot" type="Node2D" parent="." index="11"]
 script = ExtResource("7_7v0gg")
 
-[node name="Anim" parent="." index="12"]
+[node name="Animations" parent="." index="12"]
+script = ExtResource("8_l8gcv")
+
+[node name="Anim" parent="." index="13"]
 libraries = {
 "": SubResource("AnimationLibrary_3gier")
 }
 
-[connection signal="animation_finished" from="Anim" to="shoot" method="_finished"]
+[connection signal="animation_finished" from="Anim" to="Animations" method="_on_anim_animation_finished"]
