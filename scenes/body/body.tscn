@@ -35,14 +35,7 @@ shape = SubResource("CapsuleShape2D_ooqpy")
 [node name="Skin" type="Sprite2D" parent="Skin/Weapon/shape"]
 texture = ExtResource("1_jnvjv")
 
-[node name="take_damage" type="Node2D" parent="."]
-script = ExtResource("1_sdm8l")
-
-[node name="take_push" type="Node2D" parent="."]
-script = ExtResource("3_unp11")
-
-[node name="destroy" type="Node2D" parent="."]
-script = ExtResource("2_lxpvs")
+[node name="Anim" type="AnimationPlayer" parent="."]
 
 [node name="hp_bar" parent="." instance=ExtResource("4_wsmua")]
 offset_left = -69.0
@@ -50,14 +43,15 @@ offset_top = 86.0
 offset_right = -69.0
 offset_bottom = 86.0
 
-[node name="legs" type="Node2D" parent="."]
+[node name="take_damage" type="Node2D" parent="."]
+script = ExtResource("1_sdm8l")
 
-[node name="Area2D" type="Area2D" parent="legs"]
+[node name="destroy" type="Node2D" parent="."]
+script = ExtResource("2_lxpvs")
 
-[node name="Shape" type="CollisionShape2D" parent="legs/Area2D"]
+[node name="take_push" type="Node2D" parent="."]
+script = ExtResource("3_unp11")
 
 [node name="Animations" type="Node2D" parent="."]
-
-[node name="Anim" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="Skin/Weapon/shape" to="Skin/Weapon" method="_on_shape_body_entered"]

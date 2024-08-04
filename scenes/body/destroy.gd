@@ -4,6 +4,7 @@ extends Node2D
 
 func _process(delta):
 	if body.destroy:
+		body.destroy = false
 		take()
 
 func take():
@@ -11,6 +12,4 @@ func take():
 		var i = load("res://scenes/item/item.tscn").instantiate()
 		i.global_position = body.global_position
 		get_parent().get_parent().add_child(i)
-		body.queue_free()
-	else:
-		body.queue_free()
+	body.queue_free()
