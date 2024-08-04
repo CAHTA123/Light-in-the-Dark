@@ -16,6 +16,5 @@ script = ExtResource("2_etf6s")
 shape = SubResource("CircleShape2D_w1erm")
 
 [node name="Skin" parent="Skin" index="0"]
-self_modulate = Color(0.482353, 1, 0.454902, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_0vnmq")

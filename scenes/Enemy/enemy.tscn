@@ -15,6 +15,5 @@ shape = SubResource("CircleShape2D_47q1k")
 debug_color = Color(0.868136, 0.300206, 0.48499, 0.42)
 
 [node name="Skin" parent="Skin" index="0"]
-self_modulate = Color(1, 0.21, 0.21, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_q58cx")
