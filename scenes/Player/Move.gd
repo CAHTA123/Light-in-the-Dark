@@ -15,7 +15,7 @@ func _process(delta):
 		body.current_state = body.States.IDLE
 
 func move():
-	body.velocity = Vector2(Input.get_axis("A", "D"), Input.get_axis("W", "S")).normalized() * body.s	
+	body.velocity = Vector2(Input.get_axis("A", "D"), Input.get_axis("W", "S")).normalized() * body.s
 	if body.velocity.x > 0: 
 		SkinPlayer.scale.x = -1
 	elif body.velocity.x < 0:

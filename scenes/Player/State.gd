@@ -8,7 +8,6 @@ func _ready():
 func _process(delta):
 	match (body.current_state):
 		body.States.IDLE:
-			
 			body.velocity = Vector2(0,0)
 			body.move = true
 		body.States.MOVE:
@@ -20,4 +19,3 @@ func _process(delta):
 			body.move = false
 		body.States.BLOCK:
 			body.move = false
-			
