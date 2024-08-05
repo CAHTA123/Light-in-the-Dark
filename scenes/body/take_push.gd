@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var body = $".."
+@onready var body = $"../../Body"
 
 func _process(delta):
 	if body.take_push > 0:

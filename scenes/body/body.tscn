@@ -55,9 +55,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skin/Skin:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
 
 [sub_resource type="Animation" id="Animation_oisxb"]
 resource_name = "take_damage"
+length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,10 +79,22 @@ tracks/0/path = NodePath("Skin/Skin:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.76, 0.1216, 0.16416, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 0.78, 0.78, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skin/Skin:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.09, 0.09), Vector2(0.1, 0.1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nqnlx"]
@@ -78,51 +104,59 @@ _data = {
 "take_damage": SubResource("Animation_oisxb")
 }
 
-[node name="Body" type="CharacterBody2D"]
+[node name="Body" type="Node2D"]
 
-[node name="Shape" type="CollisionShape2D" parent="."]
+[node name="Body" type="CharacterBody2D" parent="."]
 
-[node name="Skin" type="Node2D" parent="."]
+[node name="Shape" type="CollisionPolygon2D" parent="Body"]
 
-[node name="Skin" type="Sprite2D" parent="Skin"]
-scale = Vector2(0.5, 0.5)
+[node name="Skin" type="Node2D" parent="Body"]
 
-[node name="Weapon" type="Node2D" parent="Skin"]
+[node name="Skin" type="Sprite2D" parent="Body/Skin"]
+scale = Vector2(0.1, 0.1)
+offset = Vector2(0, -900)
+
+[node name="Weapon" type="Node2D" parent="Body/Skin/Skin"]
 visible = false
-scale = Vector2(0.5, 0.5)
+scale = Vector2(5, 5)
 script = ExtResource("1_swr57")
 
-[node name="shape" type="Area2D" parent="Skin/Weapon"]
+[node name="shape" type="Area2D" parent="Body/Skin/Skin/Weapon"]
 monitoring = false
 monitorable = false
 
-[node name="Shape" type="CollisionShape2D" parent="Skin/Weapon/shape"]
+[node name="Shape" type="CollisionShape2D" parent="Body/Skin/Skin/Weapon/shape"]
 shape = SubResource("CapsuleShape2D_ooqpy")
 
-[node name="Skin" type="Sprite2D" parent="Skin/Weapon/shape"]
+[node name="Skin" type="Sprite2D" parent="Body/Skin/Skin/Weapon/shape"]
 texture = ExtResource("1_jnvjv")
 
-[node name="Anim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_nqnlx")
-}
-autoplay = "IDLE"
+[node name="hp_bar" type="Node2D" parent="Body"]
 
-[node name="hp_bar" parent="." instance=ExtResource("4_wsmua")]
+[node name="hp_bar" parent="Body/hp_bar" instance=ExtResource("4_wsmua")]
 offset_left = -69.0
 offset_top = 86.0
 offset_right = -69.0
 offset_bottom = 86.0
 
-[node name="take_damage" type="Node2D" parent="."]
+[node name="Skills" type="Node2D" parent="."]
+
+[node name="take_damage" type="Node2D" parent="Skills"]
 script = ExtResource("1_sdm8l")
 
-[node name="destroy" type="Node2D" parent="."]
+[node name="destroy" type="Node2D" parent="Skills"]
 script = ExtResource("2_lxpvs")
 
-[node name="take_push" type="Node2D" parent="."]
+[node name="take_push" type="Node2D" parent="Skills"]
 script = ExtResource("3_unp11")
 
 [node name="Animations" type="Node2D" parent="."]
 
-[connection signal="body_entered" from="Skin/Weapon/shape" to="Skin/Weapon" method="_on_shape_body_entered"]
+[node name="Anim" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../../Body")
+libraries = {
+"": SubResource("AnimationLibrary_nqnlx")
+}
+autoplay = "IDLE"
+
+[connection signal="body_entered" from="Body/Skin/Skin/Weapon/shape" to="Body/Skin/Skin/Weapon" method="_on_shape_body_entered"]

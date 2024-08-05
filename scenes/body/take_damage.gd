@@ -1,10 +1,11 @@
 extends Node2D
 
-@onready var body = $".."
+@onready var body = $"../../Body"
+@onready var hp_bar = $"../../Body/hp_bar/hp_bar"
 
 func _ready():
 	body.hp = body.max_hp
-	body.hp_bar = $"../hp_bar"
+	body.hp_bar = hp_bar
 
 func _process(delta):
 	if body.take_damage > 0 and not body.isBlocking:
