@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var body = $".."
-@onready var weapon = $"../Skin/Weapon"
-@onready var skin = $"../Skin/Weapon/shape/Skin"
+@onready var body = $"../../Body"
+@onready var weapon = $"../../Body/Skin/Skin/Weapon"
+@onready var skin = $"../../Body/Skin/Skin/Weapon/shape/Skin"
 
 var attack_cooldown: float = 0.5
 var can_attack: bool = true

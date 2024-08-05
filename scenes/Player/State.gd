@@ -1,8 +1,6 @@
 extends Node2D
 
-@onready var body = $".."
-
-var cur
+@onready var body = $"../../Body"
 
 func _ready():
 	body.current_state = body.States.IDLE
