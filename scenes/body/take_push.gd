@@ -11,14 +11,13 @@ func _process(delta):
 		push(push_point, p)
 
 func push(push_point, p):
-	body.current_state = body.States.DASH
-	body.velocity = Vector2.ZERO
+	
 	
 	
 	body.velocity = push_point.direction_to(body.global_position).normalized() * -p
 	await get_tree().create_timer(body.take_push_time).timeout 
-	body.velocity = Vector2.ZERO
 	
 	
 	
-	body.current_state = body.States.IDLE
+	
+

@@ -8,11 +8,14 @@ func _ready():
 
 
 func _on_animation_animation_finished(anim_name):
-	$"../Skills/shoot".can_attack = true
-	body.move = true
-
+	if anim_name != "Idle":
+		
+		$"../Skills/shoot".can_attack = true
+		body.move = true
+		body.current_state = body.States.IDLE
 
 func _on_animation_animation_started(anim_name):
 	if anim_name == "dash":
-		body.move = false
-		body.velocity = Vector2(Input.get_axis("A", "D"), Input.get_axis("W", "S")).normalized() * 3000
+		pass
+		
+
