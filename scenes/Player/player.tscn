@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=18 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
@@ -100,11 +100,15 @@ tracks/0/keys = {
 "values": [0.0, -0.565487, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_uk14f"]
+resource_name = "dash"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_di781"]
 _data = {
 "RESET": SubResource("Animation_lyjay"),
 "attack": SubResource("Animation_2c4pv"),
 "block": SubResource("Animation_vg1vu"),
+"dash": SubResource("Animation_uk14f"),
 "farm": SubResource("Animation_tmwag")
 }
 
