@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var body = $"../../Body"
 @onready var hp_bar = $"../../Body/hp_bar/hp_bar"
+@onready var anim = $"../../Animations/Animation"
 
 func _ready():
 	body.hp = body.max_hp
@@ -14,6 +15,7 @@ func _process(delta):
 		take(d)
 
 func take(d):
+	anim.play("take_damage")
 	body.hp -= d
 	var HP = (body.hp / body.max_hp) * 100
 	body.hp_bar.value = HP

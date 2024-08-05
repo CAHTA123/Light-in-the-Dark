@@ -49,6 +49,8 @@ position = Vector2(88, -124)
 script = ExtResource("6_306d2")
 
 [node name="shape" type="Area2D" parent="Weapon"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Shape" type="CollisionShape2D" parent="Weapon/shape"]
 shape = SubResource("CapsuleShape2D_qcmir")
