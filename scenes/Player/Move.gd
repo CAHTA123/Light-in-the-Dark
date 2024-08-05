@@ -8,10 +8,10 @@ func _ready():
 
 func _process(delta):
 	body.move_and_slide()
-	if body.move and ["W", "A", "S", "D"].any(Input.is_action_pressed):
+	if ["W", "A", "S", "D"].any(Input.is_action_pressed) and (body.current_state == body.States.IDLE or body.current_state == body.States.MOVE):
 		body.current_state = body.States.MOVE
 		move()
-	elif body.move and body.current_state == body.States.MOVE: 
+	elif body.current_state == body.States.MOVE:
 		body.current_state = body.States.IDLE
 
 func move():

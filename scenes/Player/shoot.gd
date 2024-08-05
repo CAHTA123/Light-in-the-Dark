@@ -9,11 +9,11 @@ var attack_cooldown: float = 0.5
 var can_attack: bool = true
 
 func _process(delta):
-	if Input.is_action_just_pressed("block") and can_attack:
+	if Input.is_action_just_pressed("block") :
 		anim.play("block")
 		can_attack = false
 
-	elif Input.is_action_just_pressed("attack") and can_attack:
+	elif Input.is_action_just_pressed("attack"):
 		anim.play("attack")
 		can_attack = false
 

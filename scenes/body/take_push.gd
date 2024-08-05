@@ -11,13 +11,5 @@ func _process(delta):
 		push(push_point, p)
 
 func push(push_point, p):
-	
-	
-	
 	body.velocity = push_point.direction_to(body.global_position).normalized() * -p
 	await get_tree().create_timer(body.take_push_time).timeout 
-	
-	
-	
-	
-
