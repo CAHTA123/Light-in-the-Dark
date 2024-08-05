@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var body = $"../../Body"
+@onready var b = $"../.."
 
 func _process(delta):
 	if body.destroy:
@@ -12,4 +13,4 @@ func take():
 		var i = load("res://scenes/item/item.tscn").instantiate()
 		i.global_position = body.global_position
 		get_parent().get_parent().add_child(i)
-	body.queue_free()
+	b.queue_free()

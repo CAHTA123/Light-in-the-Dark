@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Light In The Dark"
-run/main_scene="res://scenes/Game/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [display]
