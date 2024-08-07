@@ -18,12 +18,16 @@ func _process(delta):
 				audio.stream = a
 				audio.play()
 		body.States.DASH:
+<<<<<<< HEAD
 			var a = load("res://sounds/player/dash.mp3")
 			if audio.stream != a:
 				audio.pitch_scale = 2.0
 				audio.stream = a
 				audio.play()
 			body.velocity = body.last_move * 3
+=======
+			body.velocity *= 1.05
+>>>>>>> 4f472aca9c7ace603bae62e940d7e9f78db777ce
 		body.States.ATTACK:
 			var a = load("res://sounds/Sword/swing  (2).mp3")
 			if audio.stream != a:
