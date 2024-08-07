@@ -10,9 +10,12 @@ func _ready():
 
 func _process(delta):
 	if body.take_damage > 0 and not body.isBlocking:
+		body.current_state = body.States.TAKEDAMAGE
 		var d = body.take_damage
 		body.take_damage = 0
 		take(d)
+	else:
+		body.take_damage = 0
 
 func take(d):
 	anim.play("take_damage")

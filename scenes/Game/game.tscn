@@ -1,19 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=9 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Player/player.tscn" id="2_kc6yd"]
 [ext_resource type="PackedScene" uid="uid://0vh3jhnjpwnn" path="res://scenes/Res/res.tscn" id="3_m2plk"]
 [ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Enemy/enemy.tscn" id="4_m7kfr"]
-[ext_resource type="Script" path="res://scenes/Spawner/spawner.gd" id="5_3nxl5"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="6_306d2"]
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_27xhv"]
-radius = 1851.39
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
 height = 350.0
+
+[sub_resource type="GDScript" id="GDScript_ptu1r"]
+script/source = "extends Label
+
+var gold = 0
+
+func _process(delta):
+	text = \": \" + str(gold)
+
+"
 
 [node name="Game" type="Node2D"]
 
@@ -26,23 +32,11 @@ color = Color(0.0582, 0.043, 0.1, 1)
 
 [node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
 
-[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(-355, -338)
-
 [node name="Res" parent="." instance=ExtResource("3_m2plk")]
 position = Vector2(-889, -140)
 
 [node name="Enemy" parent="." instance=ExtResource("4_m7kfr")]
 position = Vector2(1060, -355)
-
-[node name="Spawner" type="Node2D" parent="."]
-script = ExtResource("5_3nxl5")
-
-[node name="Area2D" type="Area2D" parent="Spawner"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner/Area2D"]
-position = Vector2(2, -5)
-shape = SubResource("CircleShape2D_27xhv")
 
 [node name="Weapon" type="Node2D" parent="."]
 position = Vector2(88, -124)
@@ -55,5 +49,18 @@ shape = SubResource("CapsuleShape2D_qcmir")
 
 [node name="Skin" type="Sprite2D" parent="Weapon/shape"]
 texture = ExtResource("7_6wc83")
+
+[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 1817.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 60
+text = ":"
+script = SubResource("GDScript_ptu1r")
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]

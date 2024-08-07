@@ -9,6 +9,7 @@ func _process(delta):
 	match (body.current_state):
 		body.States.IDLE:
 			body.velocity = Vector2(0,0)
+			body.isBlocking = false
 		body.States.MOVE:
 			pass
 		body.States.DASH:
@@ -16,4 +17,6 @@ func _process(delta):
 		body.States.ATTACK:
 			pass
 		body.States.BLOCK:
-			pass
+			body.isBlocking = true
+		body.States.TAKEDAMAGE:
+			body.isBlocking = true
