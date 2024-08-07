@@ -13,7 +13,7 @@ func _process(delta):
 		body.States.MOVE:
 			pass
 		body.States.DASH:
-			body.velocity *= 1.15
+			body.velocity *= 1.05
 		body.States.ATTACK:
 			pass
 		body.States.BLOCK:
