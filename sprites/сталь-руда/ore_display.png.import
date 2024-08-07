@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biabfv4fp1fyb"
-path="res://.godot/imported/i.png-36a5d454dbc6d82e3300337bfbbd856a.ctex"
+uid="uid://bqavktatsictn"
+path="res://.godot/imported/ore_display.png-b40d19d282af58eb93331b2d25c802af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapon/камень/i.png"
-dest_files=["res://.godot/imported/i.png-36a5d454dbc6d82e3300337bfbbd856a.ctex"]
+source_file="res://sprites/сталь-руда/ore_display.png"
+dest_files=["res://.godot/imported/ore_display.png-b40d19d282af58eb93331b2d25c802af.ctex"]
 
 [params]
 

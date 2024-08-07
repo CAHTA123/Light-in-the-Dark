@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cip765xbasefc"]
+[gd_scene load_steps=5 format=3 uid="uid://cip765xbasefc"]
 
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="1_jnvjv"]
-[ext_resource type="Script" path="res://scenes/body/take_damage.gd" id="1_sdm8l"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="1_swr57"]
-[ext_resource type="Script" path="res://scenes/body/destroy.gd" id="2_lxpvs"]
-[ext_resource type="Script" path="res://scenes/body/take_push.gd" id="3_unp11"]
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/hp_bar/hp_bar.tscn" id="4_wsmua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
@@ -46,16 +43,9 @@ offset_top = 86.0
 offset_right = -69.0
 offset_bottom = 86.0
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="Body"]
+
 [node name="Skills" type="Node2D" parent="."]
-
-[node name="take_damage" type="Node2D" parent="Skills"]
-script = ExtResource("1_sdm8l")
-
-[node name="destroy" type="Node2D" parent="Skills"]
-script = ExtResource("2_lxpvs")
-
-[node name="take_push" type="Node2D" parent="Skills"]
-script = ExtResource("3_unp11")
 
 [node name="Animations" type="Node2D" parent="."]
 

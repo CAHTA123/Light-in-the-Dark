@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=10 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Player/player.tscn" id="2_kc6yd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Enemy/enemy.tscn" id="4_m7kfr"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="6_306d2"]
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
+[ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -62,5 +63,10 @@ offset_bottom = 480.0
 theme_override_font_sizes/font_size = 60
 text = ":"
 script = SubResource("GDScript_ptu1r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_i1pqy")
+volume_db = -10.38
+autoplay = true
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdvvs7s0p25a1"
-path="res://.godot/imported/coin.webp-165ff194f01cc025e93fa18336908a9f.ctex"
+uid="uid://bx6svas3v18ne"
+path="res://.godot/imported/bbf049256b5fd3ed66aa01842ffb5574dffc241b.png-b38b250a54d4d19fc24bb2dcde6556ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapon/coin1/coin.webp"
-dest_files=["res://.godot/imported/coin.webp-165ff194f01cc025e93fa18336908a9f.ctex"]
+source_file="res://sprites/сталь-руда/bbf049256b5fd3ed66aa01842ffb5574dffc241b.png"
+dest_files=["res://.godot/imported/bbf049256b5fd3ed66aa01842ffb5574dffc241b.png-b38b250a54d4d19fc24bb2dcde6556ca.ctex"]
 
 [params]
 

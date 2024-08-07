@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6svas3v18ne"
-path="res://.godot/imported/bbf049256b5fd3ed66aa01842ffb5574dffc241b.png-bb4662e1286122fb6d75b37525e15443.ctex"
+uid="uid://biabfv4fp1fyb"
+path="res://.godot/imported/i.png-d171de44baa1b5b58c7b2537fe3c7328.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapon/сталь-руда/bbf049256b5fd3ed66aa01842ffb5574dffc241b.png"
-dest_files=["res://.godot/imported/bbf049256b5fd3ed66aa01842ffb5574dffc241b.png-bb4662e1286122fb6d75b37525e15443.ctex"]
+source_file="res://sprites/камень/i.png"
+dest_files=["res://.godot/imported/i.png-d171de44baa1b5b58c7b2537fe3c7328.ctex"]
 
 [params]
 

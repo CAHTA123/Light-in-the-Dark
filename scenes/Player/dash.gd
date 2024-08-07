@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var anim = $"../../Animations/Animation"
 @onready var body = $"../../Body"
+
 var can = true
 
 func _process(delta):
