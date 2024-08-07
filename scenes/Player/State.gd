@@ -18,3 +18,5 @@ func _process(delta):
 			pass
 		body.States.BLOCK:
 			body.isBlocking = true
+		body.States.TAKEDAMAGE:
+			body.isBlocking = true

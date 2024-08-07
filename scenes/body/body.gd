@@ -12,3 +12,6 @@ var center = null
 var item_drop = "res://sprites/items/polarbombpotion.png"
 var take_push_time: float = 0.4
 var isBlocking = false
+
+enum States {IDLE, MOVE, DASH, ATTACK, BLOCK , TAKEDAMAGE}
+var current_state : States
