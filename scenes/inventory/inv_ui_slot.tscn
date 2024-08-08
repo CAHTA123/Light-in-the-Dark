@@ -9,6 +9,7 @@ offset_right = 21.0
 offset_bottom = 21.0
 
 [node name="slot" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("1_tp2ok")
 centered = false
