@@ -1,8 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwsa8clffd5ax"]
+[gd_scene load_steps=4 format=3 uid="uid://b4li10bc26ldr"]
 
-[ext_resource type="Script" path="res://scenes/inventory/Inv_UI.gd" id="1_78dd2"]
 [ext_resource type="Texture2D" uid="uid://beboevpkabgv0" path="res://scenes/inventory/back_slots.png" id="2_e1xun"]
-[ext_resource type="PackedScene" uid="uid://dpv0orwb32da5" path="res://scenes/inventory/inv_ui_slot.tscn" id="3_c3x33"]
+[ext_resource type="PackedScene" uid="uid://bqjbdavtt57sm" path="res://scenes/inventory/inv_ui_slot.tscn" id="3_c3x33"]
+
+[sub_resource type="GDScript" id="GDScript_ge2r1"]
+script/source = "extends Control
+
+var is_open = false
+
+func _ready():
+	close()
+	
+func _process(delta):
+	if Input.is_action_just_pressed(\"inventory\"):
+		if is_open:
+			close()
+		else:
+			open()
+	
+func open():
+	visible = true
+	is_open = true
+	
+func close():
+	visible = false
+	is_open = false
+"
 
 [node name="Inv_UI" type="Control"]
 custom_minimum_size = Vector2(93, 46)
@@ -14,7 +37,7 @@ offset_right = -1827.0
 offset_bottom = -1034.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_78dd2")
+script = SubResource("GDScript_ge2r1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
