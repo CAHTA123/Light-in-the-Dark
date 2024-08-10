@@ -28,7 +28,7 @@ grow_vertical = 2
 pivot_offset = Vector2(250, 150)
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
-columns = 9
+columns = 6
 
 [node name="Slot" type="Panel" parent="GridContainer"]
 texture_filter = 1

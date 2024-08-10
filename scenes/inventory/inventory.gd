@@ -1,31 +1,18 @@
-extends Node2D
+extends Resource
 
-const SlotClass = preload("res://scenes/inventory/Slot.gd")
-@onready var inventory_slots = $GridContainer
-var holding_item: Node2D = null
+class_name Inv
 
-func _ready():
-	for inv_slot in inventory_slots.get_children():
-		inv_slot.gui_input.connect(_on_slot_gui_input, inv_slot)
+signal update
 
-func _on_slot_gui_input(event: InputEvent, slot: SlotClass):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if holding_item != null:
-				if !slot.item:  
-					slot.put_into_slot(holding_item)
-					holding_item = null
-				else: 
-					var temp_item = slot.item
-					slot.pick_from_slot()
-					temp_item.global_position = event.global_position
-					slot.put_into_slot(holding_item)
-					holding_item = temp_item
-			elif slot.item:
-				holding_item = slot.item
-				slot.pick_from_slot()
-				holding_item.global_position = get_global_mouse_position()
+@export var slots: Array[InvSlot]
 
-func _input(event: InputEvent):
-	if holding_item:
-		holding_item.global_position = get_global_mouse_position()
+func insert(item: InvItem):
+	var itemslots = slots.filter(func(slot): return slot.item == item)
+	if !itemslots.is_empty():
+		itemslots[0].amount += 1
+	else: 
+		var emptyslots = slots.filter(func(slot):return slot.item == null)
+		if !emptyslots.is_empty():
+			emptyslots[0].item = item
+			emptyslots[0].amount = 1
+	update.emit()
