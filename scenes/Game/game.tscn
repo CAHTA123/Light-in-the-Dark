@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=12 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Player/player.tscn" id="2_kc6yd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 [ext_resource type="PackedScene" uid="uid://d2u6is72055ja" path="res://scenes/inventory/apple.tscn" id="8_uu2hs"]
+[ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Enemy/zombi.tscn" id="9_6cljr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -54,6 +55,9 @@ texture = ExtResource("7_6wc83")
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 position = Vector2(-6313, -982)
+
+[node name="Node2D" parent="." instance=ExtResource("9_6cljr")]
+position = Vector2(-5278, -754)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

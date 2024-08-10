@@ -14,6 +14,10 @@ config/name="Light In The Dark"
 run/main_scene="res://scenes/Game/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+Global="*res://global.gd"
+
 [input]
 
 dash={
