@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="6_306d2"]
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
-[ext_resource type="PackedScene" uid="uid://d2u6is72055ja" path="res://scenes/inventory/apple.tscn" id="8_uu2hs"]
+[ext_resource type="PackedScene" path="res://scenes/inventory/apple.tscn" id="8_uu2hs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
