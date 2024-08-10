@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cip765xbasefc"]
+[gd_scene load_steps=6 format=3 uid="uid://cip765xbasefc"]
 
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="1_jnvjv"]
+[ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="1_mccwb"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="1_swr57"]
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/hp_bar/hp_bar.tscn" id="4_wsmua"]
 
@@ -18,6 +19,7 @@ height = 350.0
 
 [node name="Skin" type="Sprite2D" parent="Body/Skin"]
 scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_mccwb")
 offset = Vector2(0, -900)
 
 [node name="Weapon" type="Node2D" parent="Body/Skin/Skin"]
