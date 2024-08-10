@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cip765xbasefc"]
 
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="1_jnvjv"]
-[ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="1_mccwb"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="1_swr57"]
+[ext_resource type="PackedScene" uid="uid://dcxu0wbki45nh" path="res://scenes/inventory/iventory_ui.tscn" id="4_awpvc"]
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/hp_bar/hp_bar.tscn" id="4_wsmua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
@@ -19,7 +19,6 @@ height = 350.0
 
 [node name="Skin" type="Sprite2D" parent="Body/Skin"]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_mccwb")
 offset = Vector2(0, -900)
 
 [node name="Weapon" type="Node2D" parent="Body/Skin/Skin"]
@@ -46,6 +45,12 @@ offset_right = -69.0
 offset_bottom = 86.0
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="Body"]
+
+[node name="Iventory_UI" parent="Body" instance=ExtResource("4_awpvc")]
+offset_left = -124.0
+offset_top = -383.0
+offset_right = 402.0
+offset_bottom = 4.0
 
 [node name="Skills" type="Node2D" parent="."]
 
