@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=24 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Player/player.gd" id="2_d1fyn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="3_172ki"]
 [ext_resource type="Texture2D" uid="uid://crin3cuagksw0" path="res://sprites/weapon/shield/SH1.png" id="4_p0jpk"]
 [ext_resource type="Texture2D" uid="uid://c2xpalg04sx3e" path="res://sprites/weapon/axe/A1.png" id="5_6o2dv"]
+[ext_resource type="PackedScene" uid="uid://dcxu0wbki45nh" path="res://scenes/inventory/iventory_ui.tscn" id="6_02aj4"]
 [ext_resource type="Script" path="res://scenes/Player/dash.gd" id="6_6ri0j"]
 [ext_resource type="Script" path="res://scenes/body/take_damage.gd" id="6_xs5kv"]
 [ext_resource type="Script" path="res://scenes/Player/shoot.gd" id="7_7v0gg"]
@@ -309,6 +310,8 @@ current = true
 
 [node name="Audio" parent="Body" index="4"]
 pitch_scale = 0.7
+
+[node name="Iventory_UI" parent="Body" index="5" instance=ExtResource("6_02aj4")]
 
 [node name="take_damage" type="Node2D" parent="Skills" index="0"]
 script = ExtResource("6_xs5kv")
