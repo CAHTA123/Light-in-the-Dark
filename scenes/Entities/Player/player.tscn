@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=25 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/Entities/Skills/destroy.gd" id="7_sophc"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/State.gd" id="7_ys55f"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/attack.gd" id="11_6nq1w"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/AnimPlayer.gd" id="14_jpe8x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
@@ -92,33 +93,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_8ri1d"]
-resource_name = "dash"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Skin/Skin:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.5708]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Skin/Skin:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_h6j18"]
@@ -211,6 +185,110 @@ tracks/4/keys = {
 "update": 0,
 "values": [-0.698132]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Skin/Skin:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Skin/Skin:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Skin/Skin:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Skin/Skin:skew")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8ri1d"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skin/Skin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skin/Skin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a8fyj"]
+resource_name = "dash"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skin/Skin:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skin/Skin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.27451), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iajsc"]
 _data = {
@@ -218,7 +296,8 @@ _data = {
 "RESET": SubResource("Animation_oir84"),
 "attack": SubResource("Animation_jr5s7"),
 "block": SubResource("Animation_37kxt"),
-"dash": SubResource("Animation_8ri1d"),
+"dash": SubResource("Animation_a8fyj"),
+"destroy": SubResource("Animation_8ri1d"),
 "take_damage": SubResource("Animation_h6j18")
 }
 
@@ -227,7 +306,6 @@ collision_layer = 9
 script = ExtResource("2_s5x7p")
 
 [node name="Shape" parent="." index="0"]
-build_mode = 1
 polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
@@ -296,6 +374,9 @@ script = ExtResource("6_6ri0j")
 [node name="attack" type="Node2D" parent="Skills" index="5"]
 script = ExtResource("11_6nq1w")
 
+[node name="Anim" parent="." index="6"]
+script = ExtResource("14_jpe8x")
+
 [node name="Anim" type="AnimationPlayer" parent="Anim" index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_iajsc")
@@ -303,3 +384,4 @@ libraries = {
 autoplay = "Idel"
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
+[connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]

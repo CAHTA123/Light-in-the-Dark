@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var body = $"../Body"
-@onready var anim = $Animation
+@onready var body = $".."
+@onready var anim = $Anim
 
 func _on_animation_animation_finished(anim_name):
 	body.current_state = body.States.IDLE

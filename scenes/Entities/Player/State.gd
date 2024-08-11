@@ -3,10 +3,11 @@ extends Node2D
 @onready var body = $"../.."
 @onready var anim = $"../../Anim/Anim"
 @onready var audio = $"../../Audio"
+
 func _ready():
 	body.current_state = body.States.IDLE
 
-func _process(delta):	
+func _process(delta):
 	match (body.current_state):
 		body.States.IDLE:
 			audio.stream = null
@@ -26,12 +27,14 @@ func _process(delta):
 				audio.play()
 			body.velocity = body.last_move * 3
 		body.States.ATTACK:
+			body.velocity = Vector2(0,0)
 			var a = load("res://sounds/Sword/swing  (2).mp3")
 			if audio.stream != a:
 				audio.pitch_scale = 1
 				audio.stream = a
 				audio.play()
 		body.States.BLOCK:
+			body.velocity = Vector2(0,0)
 			body.isBlocking = true
 		body.States.TAKEDAMAGE:
 			if body.isBlocking == true:

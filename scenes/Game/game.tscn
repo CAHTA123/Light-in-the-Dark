@@ -78,7 +78,7 @@ shape = SubResource("CapsuleShape2D_qcmir")
 texture = ExtResource("7_6wc83")
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(-6313, -982)
+position = Vector2(-270, -156)
 collision_layer = 1
 
 [node name="Zombi" parent="." instance=ExtResource("9_6cljr")]
