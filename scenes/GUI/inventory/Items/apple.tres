@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/GUI/inventory/inventory_item.gd" id="1_ht85c"]
 [ext_resource type="Texture2D" uid="uid://bwude15xq63nd" path="res://sprites/предметы/apple-icon.png" id="2_mnmx1"]
 
-
 [resource]
 script = ExtResource("1_ht85c")
 name = "apple"

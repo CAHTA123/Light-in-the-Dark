@@ -27,13 +27,37 @@ func _process(delta):
 [node name="Game" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -24880.0
-offset_top = -25042.0
-offset_right = 25120.0
-offset_bottom = 24958.0
+offset_left = -30000.0
+offset_top = -30000.0
+offset_right = 30000.0
+offset_bottom = 30000.0
 color = Color(0.0582, 0.043, 0.1, 1)
 
 [node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
+
+[node name="Islands2" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(20000, 0)
+
+[node name="Islands3" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(-20000, 0)
+
+[node name="Islands4" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(-20000, 18000)
+
+[node name="Islands5" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(20000, 18000)
+
+[node name="Islands6" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(0, 18000)
+
+[node name="Islands7" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(0, -18000)
+
+[node name="Islands8" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(20000, -18000)
+
+[node name="Islands9" parent="." instance=ExtResource("1_mhpm1")]
+position = Vector2(-20000, -18000)
 
 [node name="Res" parent="." instance=ExtResource("3_m2plk")]
 position = Vector2(-889, -140)
@@ -55,6 +79,7 @@ texture = ExtResource("7_6wc83")
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 position = Vector2(-6313, -982)
+collision_layer = 1
 
 [node name="Zombi" parent="." instance=ExtResource("9_6cljr")]
 position = Vector2(-4923, -861)
