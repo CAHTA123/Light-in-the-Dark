@@ -21,7 +21,6 @@ var gold = 0
 
 func _process(delta):
 	text = \": \" + str(gold)
-
 "
 
 [node name="Game" type="Node2D"]
