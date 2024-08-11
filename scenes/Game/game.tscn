@@ -33,30 +33,32 @@ offset_right = 30000.0
 offset_bottom = 30000.0
 color = Color(0.0582, 0.043, 0.1, 1)
 
-[node name="Islands" parent="." instance=ExtResource("1_mhpm1")]
+[node name="islnd" type="Node2D" parent="."]
 
-[node name="Islands2" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands" parent="islnd" instance=ExtResource("1_mhpm1")]
+
+[node name="Islands2" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(20000, 0)
 
-[node name="Islands3" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands3" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(-20000, 0)
 
-[node name="Islands4" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands4" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(-20000, 18000)
 
-[node name="Islands5" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands5" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(20000, 18000)
 
-[node name="Islands6" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands6" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(0, 18000)
 
-[node name="Islands7" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands7" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(0, -18000)
 
-[node name="Islands8" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands8" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(20000, -18000)
 
-[node name="Islands9" parent="." instance=ExtResource("1_mhpm1")]
+[node name="Islands9" parent="islnd" instance=ExtResource("1_mhpm1")]
 position = Vector2(-20000, -18000)
 
 [node name="Res" parent="." instance=ExtResource("3_m2plk")]
