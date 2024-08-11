@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0vh3jhnjpwnn"]
+
+[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_djqal"]
+[ext_resource type="Script" path="res://scenes/Entities/Res/res.gd" id="2_etf6s"]
+
+[node name="Res" instance=ExtResource("1_djqal")]
+script = ExtResource("2_etf6s")
+
+[node name="Body_Skin#Skin" type="Node2D" parent="." index="1"]
+modulate = Color(0.79, 1, 0.804, 1)
+
+[node name="Skin" type="Sprite2D" parent="Body_Skin#Skin" index="0"]
+scale = Vector2(0.1, 0.1)
+offset = Vector2(0, -900)

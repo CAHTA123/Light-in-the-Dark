@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cip765xbasefc"]
+
+[ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="4_wsmua"]
+
+[node name="Body" type="CharacterBody2D"]
+
+[node name="Shape" type="CollisionPolygon2D" parent="."]
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Skin" type="Node2D" parent="."]
+
+[node name="Skin" type="Sprite2D" parent="Skin"]
+scale = Vector2(0.1, 0.1)
+offset = Vector2(0, -900)
+
+[node name="hp_bar" type="Node2D" parent="."]
+
+[node name="hp_bar" parent="hp_bar" instance=ExtResource("4_wsmua")]
+offset_left = -69.0
+offset_top = 86.0
+offset_right = -69.0
+offset_bottom = 86.0
+
+[node name="Skills" type="Node2D" parent="."]
+
+[node name="Anim" type="Node2D" parent="."]
