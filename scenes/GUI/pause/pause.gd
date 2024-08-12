@@ -4,15 +4,19 @@ var save_path = "res://savegame.save"
 func _ready():
 	$".".visible = false
 
+@onready var pause_game = $"."
 
 func _process(delta):
 	
 	if Input.is_action_just_pressed("Esc"):
 		$".".visible = true
+		get_tree().paused = true
+		visible = true 
 	
 func _on_resume_pressed():
-		
+		visible = false
 		get_tree().paused = false
+		
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://scenes/GUI/menu/menu.tscn")
