@@ -23,37 +23,73 @@ func _on_Area2D_body_exited(body):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elv4n"]
-size = Vector2(13919, 1516)
+size = Vector2(6000, 1000)
 
 [node name="Islands" type="Node2D"]
 
 [node name="Sprite" type="Node2D" parent="."]
 scale = Vector2(2, 2)
 
-[node name="Island1" type="Sprite2D" parent="Sprite"]
-position = Vector2(-3.5, 5)
+[node name="Island" type="Sprite2D" parent="Sprite"]
+position = Vector2(0, 350)
 texture = ExtResource("1_5n40e")
 
-[node name="shape" type="Node2D" parent="."]
-position = Vector2(42, -102)
+[node name="shape" type="Node2D" parent="Sprite/Island"]
+scale = Vector2(0.5, 0.5)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="shape"]
-position = Vector2(-42, 102)
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite/Island/shape"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shape/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/Island/shape/StaticBody2D"]
 light_mask = 2
 visibility_layer = 2
 build_mode = 1
 polygon = PackedVector2Array(-3123, -5864, -4483, -5264, -5543, -4524, -6563, -3484, -7283, -1864, -7123, 416, -6091, 2155, -5192, 3118, -3869, 3876, -2070, 4544, -1131, 4838, -212, 4615, -137, 4823, 135, 4834, 301, 4765, 690, 4829, 1059, 4653, 1267, 4647, 1555, 4685, 1822, 4642, 1919, 4428, 2143, 4487, 2501, 4316, 2832, 4279, 3077, 4167, 3104, 3985, 3754, 3989, 4664, 3659, 5139, 3349, 5639, 2774, 6267, 2377, 7006, 1108, 7331, -492, 7097, -825, 7380, -1529, 6497, -3544, 4537, -5204, 2502, -5990, 897, -6164, -1343, -6204)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(6811, -306)
+[node name="Bridge" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Node2D"]
+[node name="r" type="Node2D" parent="Bridge"]
+position = Vector2(10000, 0)
+
+[node name="Shape" type="Area2D" parent="Bridge/r"]
 monitoring = false
 monitorable = false
 script = SubResource("GDScript_8gpnr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(6941, 28)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/r/Shape"]
+position = Vector2(-20, -454)
+shape = SubResource("RectangleShape2D_elv4n")
+
+[node name="l" type="Node2D" parent="Bridge"]
+position = Vector2(-10000, 0)
+
+[node name="Shape" type="Area2D" parent="Bridge/l"]
+monitoring = false
+monitorable = false
+script = SubResource("GDScript_8gpnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/l/Shape"]
+shape = SubResource("RectangleShape2D_elv4n")
+
+[node name="u" type="Node2D" parent="Bridge"]
+position = Vector2(0, -8300)
+rotation = -1.5708
+
+[node name="Shape" type="Area2D" parent="Bridge/u"]
+monitoring = false
+monitorable = false
+script = SubResource("GDScript_8gpnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/u/Shape"]
+shape = SubResource("RectangleShape2D_elv4n")
+
+[node name="d" type="Node2D" parent="Bridge"]
+position = Vector2(0, 8300)
+rotation = -1.5708
+
+[node name="Shape" type="Area2D" parent="Bridge/d"]
+monitoring = false
+monitorable = false
+script = SubResource("GDScript_8gpnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/d/Shape"]
 shape = SubResource("RectangleShape2D_elv4n")
