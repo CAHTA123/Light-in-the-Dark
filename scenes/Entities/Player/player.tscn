@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=26 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scenes/Entities/Player/State.gd" id="7_ys55f"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/attack.gd" id="11_6nq1w"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/AnimPlayer.gd" id="14_jpe8x"]
+[ext_resource type="PackedScene" uid="uid://dcxu0wbki45nh" path="res://scenes/GUI/inventory/iventory_ui.tscn" id="15_uwt6t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
@@ -37,90 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.1, 0.1), Vector2(0.103, 0.099), Vector2(0.1, 0.1)]
-}
-
-[sub_resource type="Animation" id="Animation_jr5s7"]
-resource_name = "attack"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Skin/Skin/Weapon:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -2.61799]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Skin/Skin/Weapon:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_37kxt"]
-resource_name = "block"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Skin/Skin/Shield:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(3.5, 3.5), Vector2(4, 4), Vector2(3.5, 3.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Skin/Skin/Shield:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_h6j18"]
-resource_name = "take_damage"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Skin/Skin:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.488455, 0.472036, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Skin/Skin:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(0.09, 0.09), Vector2(0.1, 0.1)]
 }
 
 [sub_resource type="Animation" id="Animation_oir84"]
@@ -234,31 +151,60 @@ tracks/8/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_8ri1d"]
-resource_name = "destroy"
+[sub_resource type="Animation" id="Animation_jr5s7"]
+resource_name = "attack"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Skin/Skin:rotation")
+tracks/0/path = NodePath("../Skin/Skin/Weapon:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.5708]
+"values": [0.0, -2.61799]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Skin/Skin:modulate")
+tracks/1/path = NodePath("../Skin/Skin/Weapon:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_37kxt"]
+resource_name = "block"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skin/Skin/Shield:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Vector2(3.5, 3.5), Vector2(4, 4), Vector2(3.5, 3.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skin/Skin/Shield:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_a8fyj"]
@@ -288,6 +234,61 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.27451), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ri1d"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skin/Skin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skin/Skin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h6j18"]
+resource_name = "take_damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skin/Skin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.488455, 0.472036, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skin/Skin:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.09, 0.09), Vector2(0.1, 0.1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iajsc"]
@@ -382,6 +383,8 @@ libraries = {
 "": SubResource("AnimationLibrary_iajsc")
 }
 autoplay = "Idel"
+
+[node name="Iventory_UI" parent="." index="7" instance=ExtResource("15_uwt6t")]
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]

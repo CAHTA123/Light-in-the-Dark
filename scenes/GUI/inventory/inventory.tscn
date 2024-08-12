@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://scenes/GUI/inventory/inventory.gd" id="1_wb5xj"]
 [ext_resource type="Script" path="res://scenes/GUI/inventory/Slot.gd" id="2_1lpjt"]
 
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv5ra"]
 texture = ExtResource("1_tnrcl")
 
