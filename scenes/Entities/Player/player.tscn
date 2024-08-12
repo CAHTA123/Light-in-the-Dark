@@ -390,7 +390,6 @@ autoplay = "Idel"
 [node name="Pause" type="CanvasLayer" parent="." index="8"]
 
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
-visible = true
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]
