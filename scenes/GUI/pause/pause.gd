@@ -15,7 +15,7 @@ func _on_resume_pressed():
 		get_tree().paused = false
 
 func _on_quit_pressed():
-	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/GUI/menu/menu.tscn")
 func save_game():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	file.store_var(Global.gold)

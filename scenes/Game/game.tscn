@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 [ext_resource type="PackedScene" uid="uid://d2u6is72055ja" path="res://scenes/GUI/inventory/apple.tscn" id="8_uu2hs"]
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
+[ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -20,7 +21,7 @@ script/source = "extends Label
 var gold = 0
 
 func _process(delta):
-	text = \": \" + str(gold)
+	text = \"GOLD: \" + str(Global.gold)
 
 "
 
@@ -79,9 +80,6 @@ shape = SubResource("CapsuleShape2D_qcmir")
 [node name="Skin" type="Sprite2D" parent="Weapon/shape"]
 texture = ExtResource("7_6wc83")
 
-[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(-5902, -42)
-
 [node name="Zombi" parent="." instance=ExtResource("9_6cljr")]
 position = Vector2(-4923, -861)
 
@@ -93,7 +91,7 @@ offset_top = -1.0
 offset_right = 1817.0
 offset_bottom = 480.0
 theme_override_font_sizes/font_size = 60
-text = ":"
+text = "MONEY:"
 script = SubResource("GDScript_ptu1r")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -112,5 +110,19 @@ position = Vector2(-6246, -1845)
 
 [node name="Apple4" parent="." instance=ExtResource("8_uu2hs")]
 position = Vector2(-6071, -654)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Gold" parent="Collectables" instance=ExtResource("10_ctimv")]
+position = Vector2(-6530, -102)
+
+[node name="Gold2" parent="Collectables" instance=ExtResource("10_ctimv")]
+position = Vector2(-6467, -240)
+
+[node name="Gold3" parent="Collectables" instance=ExtResource("10_ctimv")]
+position = Vector2(-6635, -346)
+
+[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
+position = Vector2(-5902, -42)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]
