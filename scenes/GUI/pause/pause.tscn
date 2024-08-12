@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://scenes/GUI/pause/pause.gd" id="1_0i61f"]
 
 [node name="Pause" type="Control"]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,4 +80,6 @@ theme_override_font_sizes/font_size = 50
 text = " pause"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
