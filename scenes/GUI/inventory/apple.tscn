@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2u6is72055ja"]
 
-[ext_resource type="Script" path="res://scenes/inventory/apple.gd" id="1_8j6vn"]
+[ext_resource type="Script" path="res://scenes/GUI/inventory/apple.gd" id="1_8j6vn"]
 [ext_resource type="Texture2D" uid="uid://bwude15xq63nd" path="res://sprites/предметы/apple-icon.png" id="1_8rdye"]
-[ext_resource type="Resource" uid="uid://cdcp1epnmbvyt" path="res://scenes/inventory/playerInvent.tres" id="2_5cdy8"]
-[ext_resource type="Resource" uid="uid://b5xtq38mn61yb" path="res://scenes/inventory/Items/apple.tres" id="2_dtctb"]
+[ext_resource type="Resource" uid="uid://cdcp1epnmbvyt" path="res://scenes/GUI/inventory/playerInvent.tres" id="2_5cdy8"]
+[ext_resource type="Resource" uid="uid://b5xtq38mn61yb" path="res://scenes/GUI/inventory/Items/apple.tres" id="2_dtctb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1i5si"]
 radius = 5.0
