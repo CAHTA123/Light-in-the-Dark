@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b4cog5a3wluwj"]
+
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_rlr7o"]
+[ext_resource type="Texture2D" uid="uid://bwude15xq63nd" path="res://sprites/предметы/apple-icon.png" id="2_dodyy"]
+
+[resource]
+script = ExtResource("1_rlr7o")
+name = "Sword"
+texture = ExtResource("2_dodyy")
+damage = 10.0

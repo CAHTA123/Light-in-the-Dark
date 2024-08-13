@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo6sbhfc6e5y6"]
+
+[ext_resource type="PackedScene" uid="uid://fmc8pvkhhjm7" path="res://scenes/GUI/Inventory_test/item.tscn" id="1_mi1ao"]
+[ext_resource type="Resource" uid="uid://b4cog5a3wluwj" path="res://scenes/items/Sword.tres" id="2_hf5mx"]
+
+[node name="Sword" instance=ExtResource("1_mi1ao")]
+item = ExtResource("2_hf5mx")

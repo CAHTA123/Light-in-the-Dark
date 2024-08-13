@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=28 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -14,8 +14,9 @@
 [ext_resource type="Script" path="res://scenes/Entities/Player/State.gd" id="7_ys55f"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/attack.gd" id="11_6nq1w"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/AnimPlayer.gd" id="14_jpe8x"]
-[ext_resource type="PackedScene" uid="uid://dcxu0wbki45nh" path="res://scenes/GUI/inventory/iventory_ui.tscn" id="15_uwt6t"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/Check_inv.gd" id="14_rt58o"]
 [ext_resource type="PackedScene" uid="uid://covvb82eug10n" path="res://scenes/GUI/pause/pause.tscn" id="15_xpn3h"]
+[ext_resource type="PackedScene" uid="uid://6q6opwqntvin" path="res://scenes/GUI/Inventory_test/inventory.tscn" id="17_8pbyw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
@@ -376,6 +377,9 @@ script = ExtResource("6_6ri0j")
 [node name="attack" type="Node2D" parent="Skills" index="5"]
 script = ExtResource("11_6nq1w")
 
+[node name="Check_inv" type="Node2D" parent="Skills" index="6"]
+script = ExtResource("14_rt58o")
+
 [node name="Anim" parent="." index="6"]
 script = ExtResource("14_jpe8x")
 
@@ -385,7 +389,12 @@ libraries = {
 }
 autoplay = "Idel"
 
-[node name="Iventory_UI" parent="." index="7" instance=ExtResource("15_uwt6t")]
+[node name="Inventory" parent="." index="7" instance=ExtResource("17_8pbyw")]
+offset_left = 126.0
+offset_top = -447.0
+offset_right = 476.0
+offset_bottom = -97.0
+scale = Vector2(2, 2)
 
 [node name="Pause" type="CanvasLayer" parent="." index="8"]
 

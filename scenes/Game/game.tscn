@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="6_306d2"]
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
-[ext_resource type="PackedScene" uid="uid://d2u6is72055ja" path="res://scenes/GUI/inventory/apple.tscn" id="8_uu2hs"]
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
+[ext_resource type="PackedScene" uid="uid://bo6sbhfc6e5y6" path="res://scenes/items/sword.tscn" id="10_60dle"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
@@ -99,18 +99,6 @@ stream = ExtResource("7_i1pqy")
 volume_db = -10.38
 autoplay = true
 
-[node name="Apple" parent="." instance=ExtResource("8_uu2hs")]
-position = Vector2(-5816, -1095)
-
-[node name="Apple2" parent="." instance=ExtResource("8_uu2hs")]
-position = Vector2(-5841, -1568)
-
-[node name="Apple3" parent="." instance=ExtResource("8_uu2hs")]
-position = Vector2(-6246, -1845)
-
-[node name="Apple4" parent="." instance=ExtResource("8_uu2hs")]
-position = Vector2(-6071, -654)
-
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Gold" parent="Collectables" instance=ExtResource("10_ctimv")]
@@ -124,5 +112,14 @@ position = Vector2(-6635, -346)
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 position = Vector2(-5902, -42)
+
+[node name="Sword" parent="." instance=ExtResource("10_60dle")]
+position = Vector2(-6146, 596)
+
+[node name="Sword2" parent="." instance=ExtResource("10_60dle")]
+position = Vector2(-5657, 551)
+
+[node name="Sword3" parent="." instance=ExtResource("10_60dle")]
+position = Vector2(-5895, 587)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]
