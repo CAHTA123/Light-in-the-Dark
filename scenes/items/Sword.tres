@@ -7,4 +7,4 @@
 script = ExtResource("1_rlr7o")
 name = "Sword"
 texture = ExtResource("2_dodyy")
-damage = 10.0
+character = {}
