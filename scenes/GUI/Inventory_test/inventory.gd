@@ -24,3 +24,5 @@ func update_slots():
 func add_slots():
 	for i in range(slots.size()):
 		slots[i].update(body.inv.slots_tres[i])
+		
+
