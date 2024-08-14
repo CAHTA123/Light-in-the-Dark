@@ -9,7 +9,6 @@ extends Control
 var slots: Array
 var slots_wea
 var slots_tools: Array
-
 var slot_count = 0
 var slot_limit = 20
 var is_open
