@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://bkpe8dklitm8x"]
+
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_btywa"]
+[ext_resource type="Texture2D" uid="uid://b8m0af11c7o3" path="res://sprites/weapon/sword/S3.png" id="2_cn3i7"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Weapon_tres.gd" id="3_mxql1"]
+
+[sub_resource type="Resource" id="Resource_6d0pi"]
+script = ExtResource("1_btywa")
+weapon = false
+shield = false
+axe = false
+pickaxe = false
+name = "Sword"
+texture = ExtResource("2_cn3i7")
+character = {
+"damage": 10.0
+}
+
+[resource]
+script = ExtResource("3_mxql1")
+i = SubResource("Resource_6d0pi")

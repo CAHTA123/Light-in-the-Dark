@@ -41,6 +41,7 @@ offset_right = 150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 columns = 6
 
 [node name="SlotWeap" type="NinePatchRect" parent="."]
@@ -71,13 +72,18 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 columns = 2
 
 [node name="Sword" parent="SlotWeap/G" instance=ExtResource("3_ubkpb")]
 layout_mode = 2
+slot_inventory = false
+slot_weapon = true
 
 [node name="Shield" parent="SlotWeap/G" instance=ExtResource("3_ubkpb")]
 layout_mode = 2
+slot_inventory = false
+slot_shield = true
 
 [node name="T" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -95,6 +101,7 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 
 [node name="G" type="GridContainer" parent="T"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,11 +114,16 @@ offset_right = 258.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/h_separation = 150
 columns = 2
 
 [node name="Axe" parent="T/G" instance=ExtResource("3_ubkpb")]
 layout_mode = 2
+slot_inventory = false
+slot_axe = true
 
 [node name="Pickaxe" parent="T/G" instance=ExtResource("3_ubkpb")]
 layout_mode = 2
+slot_inventory = false
+slot_pickaxe = true

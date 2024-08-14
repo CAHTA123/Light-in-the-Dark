@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Axe" load_steps=5 format=3 uid="uid://bw256rv2php1n"]
+
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_tw186"]
+[ext_resource type="Texture2D" uid="uid://c2xpalg04sx3e" path="res://sprites/weapon/axe/A1.png" id="2_fvgpr"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Axe_tres.gd" id="3_5lu0y"]
+
+[sub_resource type="Resource" id="Resource_td330"]
+script = ExtResource("1_tw186")
+name = "Axe"
+texture = ExtResource("2_fvgpr")
+character = {}
+
+[resource]
+script = ExtResource("3_5lu0y")
+i = SubResource("Resource_td330")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=33 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -8,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="3_4q6bb"]
 [ext_resource type="Resource" uid="uid://cj07el5l1r8ix" path="res://scenes/GUI/Inventory_test/Inventory.tres" id="3_d2r3l"]
 [ext_resource type="Texture2D" uid="uid://crin3cuagksw0" path="res://sprites/weapon/shield/SH1.png" id="4_p0jpk"]
+[ext_resource type="Resource" uid="uid://bkpe8dklitm8x" path="res://scenes/GUI/Inventory_test/Slots_mega/Weapon.tres" id="4_trmtx"]
 [ext_resource type="Texture2D" uid="uid://c2xpalg04sx3e" path="res://sprites/weapon/axe/A1.png" id="5_6o2dv"]
+[ext_resource type="Resource" uid="uid://b5q3bibx6ldgx" path="res://scenes/GUI/Inventory_test/Slots_mega/Pickaxe.tres" id="5_xvaox"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/dash.gd" id="6_6ri0j"]
+[ext_resource type="Resource" uid="uid://bw256rv2php1n" path="res://scenes/GUI/Inventory_test/Slots_mega/Axe.tres" id="6_v732v"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/take_damage.gd" id="6_xs5kv"]
+[ext_resource type="Resource" uid="uid://m0cj0k3yjlo7" path="res://scenes/GUI/Inventory_test/Slots_mega/Shield.tres" id="7_ccnph"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/destroy.gd" id="7_sophc"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/State.gd" id="7_ys55f"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/attack.gd" id="11_6nq1w"]
@@ -309,6 +313,10 @@ _data = {
 collision_layer = 9
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
+weapon = ExtResource("4_trmtx")
+pickaxe = ExtResource("5_xvaox")
+axe = ExtResource("6_v732v")
+shield = ExtResource("7_ccnph")
 
 [node name="Shape" parent="." index="0"]
 polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
