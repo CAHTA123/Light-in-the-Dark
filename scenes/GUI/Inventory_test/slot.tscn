@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfo6kh11evkyq"]
 
-[ext_resource type="Texture2D" uid="uid://bl3fbhq0h68k8" path="res://sprites/Inventory_texture/inventory-slot.png" id="1_4ortn"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot.gd" id="1_xc0it"]
+[ext_resource type="Texture2D" uid="uid://b6io7jm5o4g43" path="res://sprites/Inventory/Slot_inv.png" id="2_cn6tw"]
 
 [node name="Slot" type="TextureRect"]
 custom_minimum_size = Vector2(64, 64)
@@ -23,7 +23,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("1_4ortn")
+texture = ExtResource("2_cn6tw")
 expand_mode = 1
 
 [node name="Item" type="Panel" parent="."]

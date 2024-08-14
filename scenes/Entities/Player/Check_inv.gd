@@ -11,10 +11,8 @@ func _process(delta):
 		new_slots()
 
 func new_slots():
-	print(2)
 	if body.weapon.i:
 		body.weapon_tex = body.weapon.i.texture
-		print(body.weapon.i.texture)
 		$"../../Skin/Skin/Weapon/shape/Skin".texture = body.weapon.i.texture
 		for key in body.weapon.i.character.keys():
 			if key in body:

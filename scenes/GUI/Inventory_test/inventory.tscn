@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://6q6opwqntvin"]
+[gd_scene load_steps=8 format=3 uid="uid://6q6opwqntvin"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/inventory.gd" id="1_65ymm"]
-[ext_resource type="Texture2D" uid="uid://bjk62fta3utdq" path="res://sprites/Inventory_texture/inventory-background.png" id="1_wttec"]
-[ext_resource type="PackedScene" uid="uid://bfo6kh11evkyq" path="res://scenes/GUI/Inventory_test/slot.tscn" id="3_ubkpb"]
+[ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="2_fygyl"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot.gd" id="3_fmukl"]
+[ext_resource type="Texture2D" uid="uid://dn3m4lty7w8b7" path="res://sprites/Inventory/Slot_sw.png" id="4_p878a"]
+[ext_resource type="Texture2D" uid="uid://cebrhqfrcngwq" path="res://sprites/Inventory/Slot_s.png" id="5_7twg4"]
+[ext_resource type="Texture2D" uid="uid://coeox1udqkcbi" path="res://sprites/Inventory/Slot_a.png" id="6_tms2t"]
+[ext_resource type="Texture2D" uid="uid://dob2e8fx7ceor" path="res://sprites/Inventory/Slot_p.png" id="7_vmnmq"]
 
 [node name="Inventory" type="Control"]
 custom_minimum_size = Vector2(512, 512)
@@ -25,7 +29,7 @@ custom_minimum_size = Vector2(512, 512)
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 350.0
-texture = ExtResource("1_wttec")
+texture = ExtResource("2_fygyl")
 
 [node name="G" type="GridContainer" parent="I"]
 custom_minimum_size = Vector2(300, 300)
@@ -75,15 +79,101 @@ grow_vertical = 2
 mouse_filter = 2
 columns = 2
 
-[node name="Sword" parent="SlotWeap/G" instance=ExtResource("3_ubkpb")]
+[node name="Sword" type="TextureRect" parent="SlotWeap/G"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+expand_mode = 1
+script = ExtResource("3_fmukl")
 slot_inventory = false
 slot_weapon = true
 
-[node name="Shield" parent="SlotWeap/G" instance=ExtResource("3_ubkpb")]
+[node name="Slot" type="Panel" parent="SlotWeap/G/Sword"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="item" type="TextureRect" parent="SlotWeap/G/Sword/Slot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("4_p878a")
+expand_mode = 1
+
+[node name="Item" type="Panel" parent="SlotWeap/G/Sword"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="amount" type="Label" parent="SlotWeap/G/Sword/Item"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Shield" type="TextureRect" parent="SlotWeap/G"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+expand_mode = 1
+script = ExtResource("3_fmukl")
 slot_inventory = false
 slot_shield = true
+
+[node name="Slot" type="Panel" parent="SlotWeap/G/Shield"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="item" type="TextureRect" parent="SlotWeap/G/Shield/Slot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("5_7twg4")
+expand_mode = 1
+
+[node name="Item" type="Panel" parent="SlotWeap/G/Shield"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="amount" type="Label" parent="SlotWeap/G/Shield/Item"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="T" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -118,12 +208,98 @@ mouse_filter = 2
 theme_override_constants/h_separation = 150
 columns = 2
 
-[node name="Axe" parent="T/G" instance=ExtResource("3_ubkpb")]
+[node name="Axe" type="TextureRect" parent="T/G"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+expand_mode = 1
+script = ExtResource("3_fmukl")
 slot_inventory = false
 slot_axe = true
 
-[node name="Pickaxe" parent="T/G" instance=ExtResource("3_ubkpb")]
+[node name="Slot" type="Panel" parent="T/G/Axe"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="item" type="TextureRect" parent="T/G/Axe/Slot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("6_tms2t")
+expand_mode = 1
+
+[node name="Item" type="Panel" parent="T/G/Axe"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="amount" type="Label" parent="T/G/Axe/Item"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Pickaxe" type="TextureRect" parent="T/G"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+expand_mode = 1
+script = ExtResource("3_fmukl")
 slot_inventory = false
 slot_pickaxe = true
+
+[node name="Slot" type="Panel" parent="T/G/Pickaxe"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="item" type="TextureRect" parent="T/G/Pickaxe/Slot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("7_vmnmq")
+expand_mode = 1
+
+[node name="Item" type="Panel" parent="T/G/Pickaxe"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="amount" type="Label" parent="T/G/Pickaxe/Item"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
