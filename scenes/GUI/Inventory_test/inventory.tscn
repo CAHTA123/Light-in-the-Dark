@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://6q6opwqntvin"]
+[gd_scene load_steps=4 format=3 uid="uid://6q6opwqntvin"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/inventory.gd" id="1_65ymm"]
 [ext_resource type="Texture2D" uid="uid://bjk62fta3utdq" path="res://sprites/Inventory_texture/inventory-background.png" id="1_wttec"]
 [ext_resource type="PackedScene" uid="uid://bfo6kh11evkyq" path="res://scenes/GUI/Inventory_test/slot.tscn" id="3_ubkpb"]
-[ext_resource type="Texture2D" uid="uid://bwude15xq63nd" path="res://sprites/предметы/apple-icon.png" id="5_klntj"]
 
 [node name="Inventory" type="Control"]
 custom_minimum_size = Vector2(512, 512)
@@ -44,11 +43,34 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 6
 
-[node name="Slot3" parent="." instance=ExtResource("3_ubkpb")]
+[node name="SlotWeap" type="NinePatchRect" parent="."]
 layout_mode = 1
-offset_left = 204.0
-offset_top = 538.0
-offset_right = 268.0
-offset_bottom = 602.0
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("5_klntj")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = 174.0
+offset_right = -1.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="GridContainer" type="GridContainer" parent="SlotWeap"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot3" parent="SlotWeap/GridContainer" instance=ExtResource("3_ubkpb")]
+layout_mode = 2

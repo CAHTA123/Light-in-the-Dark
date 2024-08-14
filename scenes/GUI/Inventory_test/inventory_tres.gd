@@ -8,7 +8,6 @@ signal update
 
 func ins(item: Item):
 	var itemslots = slots_tres.filter(func(slot): return slot.item == item)
-	print(itemslots)
 	if !itemslots.is_empty():
 		itemslots[0].amount += 1
 	else: 
@@ -17,4 +16,3 @@ func ins(item: Item):
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
 	update.emit()
-	emit_signal("update") 
