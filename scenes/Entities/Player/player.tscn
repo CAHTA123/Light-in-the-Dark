@@ -1,4 +1,5 @@
-[gd_scene load_steps=33 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=47 format=3 uid="uid://wcix67e82g86"]
+
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/Move.gd" id="2_nw2w3"]
@@ -23,12 +24,18 @@
 [ext_resource type="PackedScene" uid="uid://6q6opwqntvin" path="res://scenes/GUI/Inventory_test/inventory.tscn" id="17_8pbyw"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/Input.gd" id="19_3msca"]
 [ext_resource type="Texture2D" uid="uid://r471x3j37exk" path="res://sprites/кнопка/Remove-bg.ai_1723567872882.png" id="19_70pd0"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/Changing.gd" id="20_bn51s"]
 [ext_resource type="Texture2D" uid="uid://cxauw66xh5kfp" path="res://sprites/кнопка/Defense_Icon.png" id="20_frwxw"]
 [ext_resource type="Texture2D" uid="uid://bfya1rx1hiuqm" path="res://sprites/кнопка/accept_icon.png" id="20_y04de"]
 [ext_resource type="Texture2D" uid="uid://3x1en0oyy2af" path="res://sprites/кнопка/Attack_speed_Icon.png" id="21_qbeet"]
 [ext_resource type="Texture2D" uid="uid://d2akxweruduxl" path="res://sprites/кнопка/Move_speed_Icon.png" id="22_acq0i"]
 [ext_resource type="Texture2D" uid="uid://dbj6c7vtko67d" path="res://sprites/кнопка/Magic_Icon.png" id="23_f3lur"]
 [ext_resource type="Texture2D" uid="uid://dnx0468nr6wt3" path="res://sprites/кнопка/cancel_icon.png" id="24_52w7a"]
+[ext_resource type="Texture2D" uid="uid://dbtqg6ibeu3fd" path="res://sprites/Items/axe_icon2.png" id="26_xeujg"]
+[ext_resource type="Texture2D" uid="uid://b6io7jm5o4g43" path="res://sprites/Inventory/Slot_inv.png" id="27_0p6ph"]
+[ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
+[ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
+[ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
@@ -397,6 +404,9 @@ script = ExtResource("11_6nq1w")
 [node name="Check_inv" type="Node2D" parent="Skills" index="6"]
 script = ExtResource("14_rt58o")
 
+[node name="Changing" type="Node2D" parent="Skills" index="7"]
+script = ExtResource("20_bn51s")
+
 [node name="Anim" parent="." index="6"]
 script = ExtResource("14_jpe8x")
 
@@ -409,13 +419,7 @@ autoplay = "Idel"
 [node name="Pause" type="CanvasLayer" parent="." index="7"]
 
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
-
-
-[node name="Inventory" parent="Pause" index="1" instance=ExtResource("17_8pbyw")]
-offset_left = -812.0
-offset_top = -298.0
-offset_right = -300.0
-offset_bottom = 214.0
+visible = false
 
 [node name="убрать" type="Button" parent="Pause" index="1"]
 offset_left = 11.0
@@ -445,7 +449,137 @@ offset_bottom = 31.0
 texture = ExtResource("20_y04de")
 stretch_mode = 5
 
-[node name="Input" type="CanvasLayer" parent="." index="9"]
+[node name="Inventory" parent="Pause" index="3" instance=ExtResource("17_8pbyw")]
+visible = false
+offset_left = -812.0
+offset_top = -298.0
+offset_right = -300.0
+offset_bottom = 214.0
+
+[node name="Control" type="Control" parent="Pause" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1666.0
+offset_top = 47.0
+offset_right = 1706.0
+offset_bottom = 87.0
+
+[node name="1" type="TextureRect" parent="Pause/Control" index="0"]
+z_index = 2
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_top = 30.0
+offset_right = 64.0
+offset_bottom = 94.0
+texture = ExtResource("26_xeujg")
+
+[node name="TextureRect" type="TextureRect" parent="Pause/Control/1" index="0"]
+z_index = -1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_0p6ph")
+
+[node name="2" type="TextureRect" parent="Pause/Control" index="1"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -80.0
+offset_right = 48.0
+offset_bottom = 128.0
+texture = ExtResource("28_a4u3s")
+
+[node name="TextureRect" type="TextureRect" parent="Pause/Control/2" index="0"]
+z_index = -1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_0p6ph")
+
+[node name="Z" type="TextureRect" parent="Pause/Control/2" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 82.0
+offset_bottom = 132.0
+texture = ExtResource("29_vpbfn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Pause/Control/2/Z" index="0"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -3.0
+offset_right = 49.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 25
+text = "Z"
+
+[node name="3" type="TextureRect" parent="Pause/Control" index="2"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 80.0
+offset_right = 208.0
+offset_bottom = 128.0
+texture = ExtResource("30_tjbea")
+
+[node name="TextureRect" type="TextureRect" parent="Pause/Control/3" index="0"]
+z_index = -1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_0p6ph")
+
+[node name="Z2" type="TextureRect" parent="Pause/Control/3" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 82.0
+offset_bottom = 132.0
+texture = ExtResource("29_vpbfn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Pause/Control/3/Z2" index="0"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -3.0
+offset_right = 48.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 25
+text = "X"
+
+[node name="Input" type="CanvasLayer" parent="." index="8"]
+visible = false
 script = ExtResource("19_3msca")
 
 [node name="r" type="TouchScreenButton" parent="Input" index="0"]
@@ -512,11 +646,10 @@ texture_normal = ExtResource("23_f3lur")
 action = "inventory"
 
 [node name="ESC" type="TouchScreenButton" parent="Input" index="8"]
-position = Vector2(1789, 17)
+position = Vector2(24.0001, 21)
 scale = Vector2(6, 6)
 texture_normal = ExtResource("24_52w7a")
 action = "Esc"
-
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]
