@@ -21,13 +21,13 @@ func _process(_delta):
 		label.visible = false
 		$"../CanvasLayer/Camspeed".visible = true
 		Global.player_canmove = false
-		Global.playercam_eneble = false
+		Global.player_camera_enable = false
 		cam.enabled = true
 	elif Input.is_action_just_pressed("F3") and cam.enabled == true:
 		$"../CanvasLayer/Camspeed".visible = false
 		label.visible = true
 		Global.player_canmove = true
-		Global.playercam_eneble = true
+		Global.player_camera_enable = true
 		cam.enabled = false
 	if cam.enabled == true and Input.is_action_just_pressed("Block F3 cam") and cam_move == true:
 		cam_move = false
