@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=15 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
 [ext_resource type="PackedScene" uid="uid://bo6sbhfc6e5y6" path="res://scenes/items/sword.tscn" id="10_60dle"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
+[ext_resource type="PackedScene" uid="uid://b7imhurbepeyr" path="res://scenes/Entities/Enemy/necromancer.tscn" id="11_ipiws"]
+[ext_resource type="PackedScene" uid="uid://c7r7s3ifooqnp" path="res://scenes/Entities/Enemy/pig.tscn" id="12_dfnmx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -121,5 +123,11 @@ position = Vector2(-4634, 519)
 
 [node name="Sword3" parent="." instance=ExtResource("10_60dle")]
 position = Vector2(-5895, 587)
+
+[node name="Necromancer" parent="." instance=ExtResource("11_ipiws")]
+position = Vector2(-4408, 1156)
+
+[node name="pig" parent="." instance=ExtResource("12_dfnmx")]
+position = Vector2(-5640, 8)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]

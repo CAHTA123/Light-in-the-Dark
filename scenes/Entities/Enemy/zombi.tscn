@@ -1,24 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://oudduvyysxcl"]
+[gd_scene load_steps=5 format=3 uid="uid://oudduvyysxcl"]
 
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/Zombi.gd" id="1_jl4wg"]
-[ext_resource type="Texture2D" uid="uid://dw4so0pwo3xrv" path="res://sprites/Enemy/Zombie.png" id="2_qlka4"]
+[ext_resource type="Texture2D" uid="uid://i7lpg4gc1qvc" path="res://sprites/Enemy/Zombi.png" id="2_62el1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpa5y"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1ecv"]
-atlas = ExtResource("2_qlka4")
-region = Rect2(0, 0, 32, 38)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xhyo6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h1ecv")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6u6hu"]
 radius = 829.0
@@ -34,11 +19,10 @@ script = ExtResource("1_jl4wg")
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_qpa5y")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_xhyo6")
-autoplay = "default"
-frame_progress = 0.499164
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.33333, 1.33333)
+scale = Vector2(0.126667, 0.126667)
+texture = ExtResource("2_62el1")
 
 [node name="Chase_area" type="Area2D" parent="."]
 scale = Vector2(0.333333, 0.333333)
