@@ -21,6 +21,14 @@
 [ext_resource type="Script" path="res://scenes/Entities/Player/Check_inv.gd" id="14_rt58o"]
 [ext_resource type="PackedScene" uid="uid://covvb82eug10n" path="res://scenes/GUI/pause/pause.tscn" id="15_xpn3h"]
 [ext_resource type="PackedScene" uid="uid://6q6opwqntvin" path="res://scenes/GUI/Inventory_test/inventory.tscn" id="17_8pbyw"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/Input.gd" id="19_3msca"]
+[ext_resource type="Texture2D" uid="uid://r471x3j37exk" path="res://sprites/кнопка/Remove-bg.ai_1723567872882.png" id="19_70pd0"]
+[ext_resource type="Texture2D" uid="uid://cxauw66xh5kfp" path="res://sprites/кнопка/Defense_Icon.png" id="20_frwxw"]
+[ext_resource type="Texture2D" uid="uid://bfya1rx1hiuqm" path="res://sprites/кнопка/accept_icon.png" id="20_y04de"]
+[ext_resource type="Texture2D" uid="uid://3x1en0oyy2af" path="res://sprites/кнопка/Attack_speed_Icon.png" id="21_qbeet"]
+[ext_resource type="Texture2D" uid="uid://d2akxweruduxl" path="res://sprites/кнопка/Move_speed_Icon.png" id="22_acq0i"]
+[ext_resource type="Texture2D" uid="uid://dbj6c7vtko67d" path="res://sprites/кнопка/Magic_Icon.png" id="23_f3lur"]
+[ext_resource type="Texture2D" uid="uid://dnx0468nr6wt3" path="res://sprites/кнопка/cancel_icon.png" id="24_52w7a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
@@ -402,11 +410,115 @@ autoplay = "Idel"
 
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
 
+
 [node name="Inventory" parent="Pause" index="1" instance=ExtResource("17_8pbyw")]
 offset_left = -812.0
 offset_top = -298.0
 offset_right = -300.0
 offset_bottom = 214.0
 
+[node name="убрать" type="Button" parent="Pause" index="1"]
+offset_left = 11.0
+offset_top = 179.0
+offset_right = 86.0
+offset_bottom = 213.0
+
+[node name="TextureRect" type="TextureRect" parent="Pause/убрать" index="0"]
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 32.0
+texture = ExtResource("24_52w7a")
+stretch_mode = 5
+
+[node name="вернуть" type="Button" parent="Pause" index="2"]
+offset_left = 11.0
+offset_top = 140.0
+offset_right = 85.0
+offset_bottom = 171.0
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="Pause/вернуть" index="0"]
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 31.0
+texture = ExtResource("20_y04de")
+stretch_mode = 5
+
+[node name="Input" type="CanvasLayer" parent="." index="9"]
+script = ExtResource("19_3msca")
+
+[node name="r" type="TouchScreenButton" parent="Input" index="0"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(317, 803)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "D"
+
+[node name="l" type="TouchScreenButton" parent="Input" index="1"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(180, 960)
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "A"
+
+[node name="w" type="TouchScreenButton" parent="Input" index="2"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(170, 880)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "W"
+
+[node name="s" type="TouchScreenButton" parent="Input" index="3"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(330, 900)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "S"
+
+[node name="Block" type="TouchScreenButton" parent="Input" index="4"]
+modulate = Color(1, 1, 1, 0.760784)
+position = Vector2(1582, 783)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("20_frwxw")
+action = "block"
+
+[node name="Attack" type="TouchScreenButton" parent="Input" index="5"]
+position = Vector2(1687, 881)
+scale = Vector2(5.5, 5.5)
+texture_normal = ExtResource("21_qbeet")
+action = "attack"
+
+[node name="Dash" type="TouchScreenButton" parent="Input" index="6"]
+modulate = Color(1, 1, 1, 0.760784)
+position = Vector2(1478, 905)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("22_acq0i")
+passby_press = true
+action = "dash"
+
+[node name="Invt" type="TouchScreenButton" parent="Input" index="7"]
+modulate = Color(1, 1, 1, 0.760784)
+position = Vector2(1753, 723)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("23_f3lur")
+action = "inventory"
+
+[node name="ESC" type="TouchScreenButton" parent="Input" index="8"]
+position = Vector2(1789, 17)
+scale = Vector2(6, 6)
+texture_normal = ExtResource("24_52w7a")
+action = "Esc"
+
+
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]
+[connection signal="pressed" from="Pause/убрать" to="Input" method="_on_убрать_pressed"]
+[connection signal="pressed" from="Pause/вернуть" to="Input" method="_on_вернуть_pressed"]
