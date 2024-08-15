@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=14 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
 [ext_resource type="PackedScene" uid="uid://bo6sbhfc6e5y6" path="res://scenes/items/sword.tscn" id="10_60dle"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
+[ext_resource type="Script" path="res://scenes/Game/Camera.gd" id="11_cp2go"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -94,6 +95,10 @@ theme_override_font_sizes/font_size = 60
 text = "MONEY:"
 script = SubResource("GDScript_ptu1r")
 
+[node name="Camspeed" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_i1pqy")
 volume_db = -10.38
@@ -121,5 +126,12 @@ position = Vector2(-4634, 519)
 
 [node name="Sword3" parent="." instance=ExtResource("10_60dle")]
 position = Vector2(-5895, 587)
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("11_cp2go")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(0, 440)
+zoom = Vector2(0.08, 0.08)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]
