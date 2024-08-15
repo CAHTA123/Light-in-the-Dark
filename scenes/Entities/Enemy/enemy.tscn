@@ -67,17 +67,8 @@ _data = {
 [node name="Enemy" instance=ExtResource("1_r510p")]
 script = ExtResource("2_m367u")
 
-[node name="Animations#Animation" type="AnimationPlayer" parent="." index="0"]
+[node name="Anim" type="AnimationPlayer" parent="Anim" index="0"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_a58ok")
 }
-
-[node name="Body#Shape" type="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-21, -95, -31, -91, -35, -80, -19, -11, -15, -5, -7, -1, 0, 0, 7, -1, 14, -4, 18, -8, 20, -12, 36, -79, 32, -90, 21, -95, 26, -106, 26, -137, 26, -163, 0, -174, -26, -162, -26, -139, -26, -106)
-
-[node name="Body_Skin#Skin" type="Node2D" parent="." index="2"]
-modulate = Color(1, 0.7, 0.7, 1)
-
-[node name="Skin" type="Sprite2D" parent="Body_Skin#Skin" index="0"]
-scale = Vector2(0.1, 0.1)
-offset = Vector2(0, -900)

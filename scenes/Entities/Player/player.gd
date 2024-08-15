@@ -11,14 +11,11 @@ enum States {IDLE, MOVE, DASH, ATTACK, BLOCK , TAKEDAMAGE}
 @export var axe: Axe
 @export var shield: Shield
 
-
 var we
 var ax
 var pi
 
-var weapon_tex
-var pickaxe_tex
-var axe_tex
-var shield_tex
+var adamage
+var pdamage
 
-var new_item = false
+var now_slot = null

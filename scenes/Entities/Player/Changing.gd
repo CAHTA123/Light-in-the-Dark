@@ -7,12 +7,3 @@ extends Node2D
 @onready var skin = $"../../Skin/Skin/Weapon/shape/Skin"
 @onready var b = $"../.."
 
-var now_slot
-
-#func _ready():
-	#check()
-#
-#
-#func check():
-	#
-	#skin.texture = now_slot.texture

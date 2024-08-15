@@ -10,7 +10,7 @@ func _process(delta):
 			body.take_damage = 0
 		else:
 			take(body.take_damage)
-		
+
 
 func take(d):
 	body.take_damage = 0
