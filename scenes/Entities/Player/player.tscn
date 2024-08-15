@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=33 format=3 uid="uid://wcix67e82g86"]
-=======
-[gd_scene load_steps=29 format=3 uid="uid://wcix67e82g86"]
->>>>>>> Stashed changes
-
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/Move.gd" id="2_nw2w3"]
@@ -408,17 +403,10 @@ autoplay = "Idel"
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
 
 [node name="Inventory" parent="Pause" index="1" instance=ExtResource("17_8pbyw")]
-<<<<<<< Updated upstream
 offset_left = -812.0
 offset_top = -298.0
 offset_right = -300.0
 offset_bottom = 214.0
-=======
-offset_left = -263.0
-offset_top = -293.0
-offset_right = 249.0
-offset_bottom = 219.0
->>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]
