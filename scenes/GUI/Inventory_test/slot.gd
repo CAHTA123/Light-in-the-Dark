@@ -66,7 +66,6 @@ func update(slot):
 			text.text = str(slot.amount)
 		else:
 			text.text = ""
-		b.new_item = true
 
 func get_slot_index():
 	var parent_container = get_parent()
