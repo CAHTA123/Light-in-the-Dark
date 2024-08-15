@@ -6,7 +6,7 @@ func _process(delta):
 	if player:
 
 		var direction = (player.global_position - global_position)
-		print(direction)
+		#print(direction)
 		velocity = direction 
 		if direction.x < 0:
 			$AnimatedSprite2D.scale.x = -2

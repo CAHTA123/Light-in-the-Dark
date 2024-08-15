@@ -5,8 +5,8 @@ var item = null
 
 var default_style: StyleBoxTexture = null
 var empty_style: StyleBoxTexture = null
-var default_tex = preload("res://scenes/inventory/back_slots.png")
-var empty_tex = preload("res://scenes/inventory/slot.png")
+var default_tex = preload("res://scenes/GUI/inventory/back_slots.png")
+var empty_tex = preload("res://scenes/GUI/inventory/slot.png")
 
 func _ready():
 	if randi() % 2 == 0:
