@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqhegexofc3wb"]
+[gd_scene load_steps=3 format=3 uid="uid://bqhegexofc3wb"]
 
-[ext_resource type="Texture2D" uid="uid://bdgf00ptehw23" path="res://sprites/Islands/01.png" id="1_5n40e"]
 [ext_resource type="Script" path="res://scenes/Islands/Shape.gd" id="2_duy2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elv4n"]
@@ -13,7 +12,6 @@ scale = Vector2(2, 2)
 
 [node name="Island" type="Sprite2D" parent="Sprite"]
 position = Vector2(0, 350)
-texture = ExtResource("1_5n40e")
 
 [node name="shape" type="Node2D" parent="Sprite/Island"]
 scale = Vector2(0.5, 0.5)
