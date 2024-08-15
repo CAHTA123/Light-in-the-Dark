@@ -1,92 +1,55 @@
 extends Node2D
 
 @onready var body = $"../.."
-@onready var _1 = $"../../Pause/Control/1"
-@onready var _2 = $"../../Pause/Control/2"
-@onready var _3 = $"../../Pause/Control/3"
 @onready var skin = $"../../Skin/Skin/Weapon/shape/Skin"
+@onready var controls = [$"../../Pause/Control/1", $"../../Pause/Control/2", $"../../Pause/Control/3"]
 
-var w
-var a
-var p
-var s
-
-var cur = 0
 var item_on = []
+var sh
+var cur = 0
 
 func _ready():
-	item_on.append(body.weapon.slot.item.name)
-	item_on.append(body.pickaxe.slot.item.name)
-	item_on.append(body.axe.slot.item.name)
-
-	a = body.axe.slot.item
-	w = body.weapon.slot.item
-	p = body.pickaxe.slot.item
-	s = body.shield.slot.item
-	
+	update_item_list()
 	body.now_slot = item_on[cur]
 	new_slots()
 
 func _process(delta):
-	if a != body.axe.slot.item or w != body.weapon.slot.item or p != body.pickaxe.slot.item or s != body.shield.slot.item:
-		a = body.axe.slot.item
-		w = body.weapon.slot.item
-		p = body.pickaxe.slot.item
-		s = body.shield.slot.item
+	if has_item_changed():
+		update_item_list()
 		new_slots()
+	handle_input()
 
+func update_item_list():
+	item_on.clear()
+	item_on.append(body.weapon.slot.item)
+	item_on.append(body.pickaxe.slot.item)
+	item_on.append(body.axe.slot.item)
+	sh = body.shield.slot.item
+
+func has_item_changed():
+	return body.weapon.slot.item != item_on[0] or body.pickaxe.slot.item != item_on[1] or body.axe.slot.item != item_on[2] or body.shield.slot.item != sh
+
+func handle_input():
 	if Input.is_action_just_pressed("X"):
 		cur = (cur + 1) % item_on.size()
-		body.now_slot = item_on[cur]
 		new_slots()
-
 	elif Input.is_action_just_pressed("Z"):
 		cur = (cur - 1 + item_on.size()) % item_on.size()
-		body.now_slot = item_on[cur]
 		new_slots()
+	body.now_slot = item_on[cur].name
 
 func new_slots():
-	if body.weapon.slot.item and body.now_slot == item_on[0]:
-		_2.texture = body.axe.slot.item.texture
-		_3.texture = body.pickaxe.slot.item.texture
-		_1.texture = body.weapon.slot.item.texture
-		skin.texture = body.weapon.slot.item.texture
-		for key in body.weapon.slot.item.character.keys():
-			if key in body:
-				body[key] = body.weapon.slot.item.character[key]
-	else:
-		for key in body.weapon.slot.item.character.keys():
-			if key in body:
-				body[key] = 0
+	var current_item = item_on[cur]
+	update_textures(current_item)
+	update_character_stats(current_item)
 
-	if body.pickaxe.slot.item and body.now_slot == item_on[1]:
-		_3.texture = body.axe.slot.item.texture
-		_1.texture = body.pickaxe.slot.item.texture
-		_2.texture = body.weapon.slot.item.texture
-		skin.texture = body.pickaxe.slot.item.texture
-		for key in body.pickaxe.slot.item.character.keys():
-			if key in body:
-				body[key] = body.pickaxe.slot.item.character[key]
-	else:
-		for key in body.pickaxe.slot.item.character.keys():
-			if key in body:
-				body[key] = 0
+func update_textures(current_item):
+	if current_item:
+		for i in range(controls.size()):
+			controls[i].texture = item_on[(i + cur) % item_on.size()].texture if item_on[i] else null
+		skin.texture = current_item.texture if current_item else null
 
-	if body.axe.slot.item and body.now_slot == item_on[2]:
-		_1.texture = body.axe.slot.item.texture
-		_2.texture = body.pickaxe.slot.item.texture
-		_3.texture = body.weapon.slot.item.texture
-		skin.texture = body.axe.slot.item.texture
-		for key in body.axe.slot.item.character.keys():
-			if key in body:
-				body[key] = body.axe.slot.item.character[key]
-	else:
-		for key in body.axe.slot.item.character.keys():
-			if key in body:
-				body[key] = 0
+func update_character_stats(current_item):
+	for key in current_item.character.keys():
+		body[key] = current_item.character[key] if key in body else 0
 
-	if body.shield.slot.item:
-		$"../../Skin/Skin/Shield/Skin".texture = body.shield.slot.item.texture
-		for key in body.shield.slot.item.character.keys():
-			if key in body:
-				body[key] = body.shield.slot.item.character[key]

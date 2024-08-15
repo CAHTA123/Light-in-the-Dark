@@ -46,9 +46,11 @@ offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
 columns = 6
 
-[node name="SlotWeap" type="NinePatchRect" parent="."]
+[node name="SlotSuper" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,14 +58,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -41.0
-offset_top = 264.0
+offset_top = 384.0
 offset_right = -1.0
-offset_bottom = 304.0
+offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="G" type="GridContainer" parent="SlotWeap"]
+[node name="G" type="GridContainer" parent="SlotSuper"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,7 +81,7 @@ grow_vertical = 2
 mouse_filter = 2
 columns = 2
 
-[node name="Sword" type="TextureRect" parent="SlotWeap/G"]
+[node name="Sword" type="TextureRect" parent="SlotSuper/G"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 expand_mode = 1
@@ -92,7 +94,7 @@ slot_types = {
 "weapon": true
 }
 
-[node name="Slot" type="Panel" parent="SlotWeap/G/Sword"]
+[node name="Slot" type="Panel" parent="SlotSuper/G/Sword"]
 show_behind_parent = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
@@ -100,7 +102,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 mouse_filter = 2
 
-[node name="item" type="TextureRect" parent="SlotWeap/G/Sword/Slot"]
+[node name="item" type="TextureRect" parent="SlotSuper/G/Sword/Slot"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 offset_right = 64.0
@@ -108,7 +110,7 @@ offset_bottom = 64.0
 texture = ExtResource("4_p878a")
 expand_mode = 1
 
-[node name="Item" type="Panel" parent="SlotWeap/G/Sword"]
+[node name="Item" type="Panel" parent="SlotSuper/G/Sword"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -120,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="amount" type="Label" parent="SlotWeap/G/Sword/Item"]
+[node name="amount" type="Label" parent="SlotSuper/G/Sword/Item"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 10.0
@@ -132,146 +134,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Shield" type="TextureRect" parent="SlotWeap/G"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-expand_mode = 1
-script = ExtResource("3_fmukl")
-slot_inventory = false
-slot_types = {
-"axe": false,
-"pickaxe": false,
-"shield": true,
-"weapon": false
-}
-
-[node name="Slot" type="Panel" parent="SlotWeap/G/Shield"]
-show_behind_parent = true
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-mouse_filter = 2
-
-[node name="item" type="TextureRect" parent="SlotWeap/G/Shield/Slot"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 1
-offset_right = 64.0
-offset_bottom = 64.0
-texture = ExtResource("5_7twg4")
-expand_mode = 1
-
-[node name="Item" type="Panel" parent="SlotWeap/G/Shield"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="amount" type="Label" parent="SlotWeap/G/Shield/Item"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 22.0
-offset_bottom = 24.0
-theme_override_font_sizes/font_size = 10
-horizontal_alignment = 2
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="T" type="NinePatchRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -276.0
-offset_top = 194.0
-offset_right = -236.0
-offset_bottom = 234.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-
-[node name="G" type="GridContainer" parent="T"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 258.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/h_separation = 150
-columns = 2
-
-[node name="Axe" type="TextureRect" parent="T/G"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-expand_mode = 1
-script = ExtResource("3_fmukl")
-slot_inventory = false
-slot_types = {
-"axe": true,
-"pickaxe": false,
-"shield": false,
-"weapon": false
-}
-
-[node name="Slot" type="Panel" parent="T/G/Axe"]
-show_behind_parent = true
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-mouse_filter = 2
-
-[node name="item" type="TextureRect" parent="T/G/Axe/Slot"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 1
-offset_right = 64.0
-offset_bottom = 64.0
-texture = ExtResource("6_tms2t")
-expand_mode = 1
-
-[node name="Item" type="Panel" parent="T/G/Axe"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="amount" type="Label" parent="T/G/Axe/Item"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 22.0
-offset_bottom = 24.0
-theme_override_font_sizes/font_size = 10
-horizontal_alignment = 2
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Pickaxe" type="TextureRect" parent="T/G"]
+[node name="Pickaxe" type="TextureRect" parent="SlotSuper/G"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 expand_mode = 1
@@ -284,7 +147,7 @@ slot_types = {
 "weapon": false
 }
 
-[node name="Slot" type="Panel" parent="T/G/Pickaxe"]
+[node name="Slot" type="Panel" parent="SlotSuper/G/Pickaxe"]
 show_behind_parent = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
@@ -292,7 +155,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 mouse_filter = 2
 
-[node name="item" type="TextureRect" parent="T/G/Pickaxe/Slot"]
+[node name="item" type="TextureRect" parent="SlotSuper/G/Pickaxe/Slot"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 offset_right = 64.0
@@ -300,7 +163,7 @@ offset_bottom = 64.0
 texture = ExtResource("7_vmnmq")
 expand_mode = 1
 
-[node name="Item" type="Panel" parent="T/G/Pickaxe"]
+[node name="Item" type="Panel" parent="SlotSuper/G/Pickaxe"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -312,7 +175,113 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="amount" type="Label" parent="T/G/Pickaxe/Item"]
+[node name="amount" type="Label" parent="SlotSuper/G/Pickaxe/Item"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Axe" type="TextureRect" parent="SlotSuper/G"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+script = ExtResource("3_fmukl")
+slot_inventory = false
+slot_types = {
+"axe": true,
+"pickaxe": false,
+"shield": false,
+"weapon": false
+}
+
+[node name="Slot" type="Panel" parent="SlotSuper/G/Axe"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="item" type="TextureRect" parent="SlotSuper/G/Axe/Slot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("6_tms2t")
+expand_mode = 1
+
+[node name="Item" type="Panel" parent="SlotSuper/G/Axe"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="amount" type="Label" parent="SlotSuper/G/Axe/Item"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Shield" type="TextureRect" parent="SlotSuper/G"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+script = ExtResource("3_fmukl")
+slot_inventory = false
+slot_types = {
+"axe": false,
+"pickaxe": false,
+"shield": true,
+"weapon": false
+}
+
+[node name="Slot" type="Panel" parent="SlotSuper/G/Shield"]
+show_behind_parent = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="item" type="TextureRect" parent="SlotSuper/G/Shield/Slot"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("5_7twg4")
+expand_mode = 1
+
+[node name="Item" type="Panel" parent="SlotSuper/G/Shield"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="amount" type="Label" parent="SlotSuper/G/Shield/Item"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 10.0

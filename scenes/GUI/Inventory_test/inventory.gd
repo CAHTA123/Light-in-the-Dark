@@ -10,7 +10,7 @@ var slots: Array
 var slots_wea
 var slots_tools: Array
 var slot_count = 0
-var slot_limit = 20
+var slot_limit = 36
 var is_open
 
 func _ready():
@@ -41,10 +41,12 @@ func _process(delta):
 			open()
 
 func open():
+	get_tree().paused = true
 	visible = true
 	is_open = true
 
 func close():
+	get_tree().paused = false
 	visible = false
 	is_open = false
 

@@ -3,11 +3,9 @@ extends TextureRect
 @onready var text = $Item/amount
 @onready var b = $"../../../../.."
 @export var slot_inventory = true
-
 @export var slot_types = { "weapon": false, "shield": false, "axe": false, "pickaxe": false }
 
 var dict = {}
-
 var slot_index
 
 func _ready():
@@ -44,8 +42,9 @@ func _can_drop_data(at_position, data):
 	if !slot_inventory:
 		for slot_type in slot_types.keys():
 			if slot_types[slot_type]:
-				if data.item.slot_type[slot_type]:
-					return true
+				if data.item:
+					if data.item.slot_type[slot_type]:
+						return true
 		return false
 	return true
 
@@ -62,7 +61,6 @@ func update(slot):
 			for slot_type in slot_types.keys():
 				if slot_types[slot_type]:
 					dict[slot_type].slot.item = slot.item
-					print(slot_type)
 		text.text = str(slot.amount) if slot.amount > 1 else ""
 
 func get_slot_index():
