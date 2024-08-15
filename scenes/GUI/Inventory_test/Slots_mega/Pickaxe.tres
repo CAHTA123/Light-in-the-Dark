@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Pickaxe" load_steps=5 format=3 uid="uid://b5q3bibx6ldgx"]
+
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_7ubr3"]
+[ext_resource type="Texture2D" uid="uid://criwkd6iiq0wp" path="res://sprites/weapon/pickaxe/P1.png" id="2_jeg42"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Pickaxe_tres.gd" id="3_0xpt3"]
+
+[sub_resource type="Resource" id="Resource_h2nik"]
+script = ExtResource("1_7ubr3")
+stack = true
+weapon = false
+shield = false
+axe = false
+pickaxe = false
+name = "Pickaxe"
+texture = ExtResource("2_jeg42")
+character = {}
+
+[resource]
+script = ExtResource("3_0xpt3")
+i = SubResource("Resource_h2nik")

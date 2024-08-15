@@ -1,17 +1,25 @@
 extends Control
 
-@onready var body = $".."
-@onready var grid = $NinePatchRect/GridContainer
+@onready var body = $"../.."
+@onready var grid_inv = $I/G
+@onready var grid_wea = $W/G
+@onready var grid_tool = $T/G
 @onready var slot = "res://scenes/GUI/Inventory_test/slot.tscn"
 
 var slots: Array
+var slots_wea
+var slots_tools: Array
 var slot_count = 0
 var slot_limit = 20
+var is_open
 
 func _ready():
+	close()
 	update_slots()
 	body.inv.update.connect(add_slots)
-	slots = $NinePatchRect/GridContainer.get_children()
+	slots = grid_inv.get_children()
+	slots_wea = grid_inv.get_children()
+	slots_tools = grid_inv.get_children()
 
 func update_slots():
 	for i in range(slot_limit - slot_count):
@@ -19,8 +27,24 @@ func update_slots():
 		var sl = Slot.new() 
 		body.inv.slots_tres.append(sl)
 		var s = load(slot).instantiate()
-		grid.add_child(s)
+		grid_inv.add_child(s)
 
 func add_slots():
 	for i in range(slots.size()):
 		slots[i].update(body.inv.slots_tres[i])
+
+func _process(delta):
+	if Input.is_action_just_pressed("I"):
+		if is_open:
+			close()
+		else:
+			open()
+
+func open():
+	visible = true
+	is_open = true
+
+func close():
+	visible = false
+	is_open = false
+
