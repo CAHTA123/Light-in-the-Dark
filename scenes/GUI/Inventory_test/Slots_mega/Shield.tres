@@ -6,9 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_sm2r5"]
 script = ExtResource("1_hrt5c")
-stack = true
+stack = false
 weapon = false
-shield = false
+shield = true
 axe = false
 pickaxe = false
 name = "Shield"
