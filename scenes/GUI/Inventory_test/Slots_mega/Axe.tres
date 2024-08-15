@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_td330"]
 script = ExtResource("1_tw186")
+stack = true
 weapon = false
 shield = false
 axe = false
