@@ -1,20 +1,28 @@
-[gd_resource type="Resource" script_class="Pickaxe" load_steps=5 format=3 uid="uid://b5q3bibx6ldgx"]
+[gd_resource type="Resource" script_class="Pickaxe" load_steps=7 format=3 uid="uid://b5q3bibx6ldgx"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_7ubr3"]
 [ext_resource type="Texture2D" uid="uid://dcxr1rfefyhpv" path="res://sprites/Items/pickaxe_icon1.png" id="2_3xswn"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Pickaxe_tres.gd" id="3_0xpt3"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_siapx"]
 
-[sub_resource type="Resource" id="Resource_h2nik"]
+[sub_resource type="Resource" id="Resource_t2p7q"]
 script = ExtResource("1_7ubr3")
 stack = false
-weapon = false
-shield = false
-axe = false
-pickaxe = true
+slot_type = {
+"axe": false,
+"pickaxe": true,
+"shield": false,
+"weapon": false
+}
 name = "Pickaxe"
 texture = ExtResource("2_3xswn")
 character = {}
 
+[sub_resource type="Resource" id="Resource_3g63q"]
+script = ExtResource("3_siapx")
+item = SubResource("Resource_t2p7q")
+amount = 0
+
 [resource]
 script = ExtResource("3_0xpt3")
-i = SubResource("Resource_h2nik")
+slot = SubResource("Resource_3g63q")

@@ -2,49 +2,53 @@ extends TextureRect
 
 @onready var text = $Item/amount
 @onready var b = $"../../../../.."
-
 @export var slot_inventory = true
 
-@export var slot_weapon = false
-@export var slot_shield = false
-@export var slot_axe = false
-@export var slot_pickaxe = false
+@export var slot_types = { "weapon": false, "shield": false, "axe": false, "pickaxe": false }
+
+var dict = {}
+
 var slot_index
 
 func _ready():
+	dict = {"weapon": b.weapon,"shield": b.shield,"axe": b.axe,"pickaxe": b.pickaxe}
 	slot_index = get_slot_index()
 
 func _get_drag_data(at_position):
-	var item = b.inv.slots_tres[slot_index]
+	
 	var p = TextureRect.new()
 	p.texture = texture
 	p.modulate.a = 0.3
 	p.expand_mode = 1
 	p.size = Vector2(64,64)
+	
 	var pr = Control.new()
 	pr.add_child(p)
 	set_drag_preview(pr)
-	texture = null
+	
+	var drag_data
+	if slot_inventory:
+		drag_data = b.inv.slots_tres[slot_index].duplicate()
+		b.inv.slots_tres[slot_index].item = null
+		b.inv.slots_tres[slot_index].amount = 0
+	else:
+		for slot_type in slot_types.keys():
+			if slot_type:
+				drag_data = dict[slot_type].slot.duplicate()
+				dict[slot_type].slot.item = null
 	text.text = ""
-	b.inv.slots_tres[slot_index] = Slot
-	var drag_data = item
+	texture = null
 	return drag_data
 
 func _can_drop_data(at_position, data):
 	if !slot_inventory:
-		if data.item.weapon and slot_weapon:
-			return true
-		elif data.item.shield and slot_shield:
-			return true
-		elif data.item.axe and slot_axe:
-			return true
-		elif data.item.pickaxe and slot_pickaxe:
-			return true
-		else:
-			return false
-	else:
-		return true
-	
+		for slot_type in slot_types.keys():
+			if slot_types[slot_type]:
+				if data.item.slot_type[slot_type]:
+					return true
+		return false
+	return true
+
 func _drop_data(at_position, data):
 	update(data)
 
@@ -54,18 +58,12 @@ func update(slot):
 		if slot_inventory:
 			b.inv.slots_tres[slot_index].item = slot.item
 			b.inv.slots_tres[slot_index].amount = slot.amount
-		elif slot_weapon and slot.item.weapon:
-			b.weapon.i = slot.item
-		elif slot_shield and slot.item.shield:
-			b.shield.i = slot.item
-		elif slot_axe and slot.item.axe:
-			b.axe.i = slot.item
-		elif slot_pickaxe and slot.item.pickaxe:
-			b.pickaxe.i = slot.item
-		if slot.amount > 1:
-			text.text = str(slot.amount)
 		else:
-			text.text = ""
+			for slot_type in slot_types.keys():
+				if slot_types[slot_type]:
+					dict[slot_type].slot.item = slot.item
+					print(slot_type)
+		text.text = str(slot.amount) if slot.amount > 1 else ""
 
 func get_slot_index():
 	var parent_container = get_parent()

@@ -85,7 +85,12 @@ layout_mode = 2
 expand_mode = 1
 script = ExtResource("3_fmukl")
 slot_inventory = false
-slot_weapon = true
+slot_types = {
+"axe": false,
+"pickaxe": false,
+"shield": false,
+"weapon": true
+}
 
 [node name="Slot" type="Panel" parent="SlotWeap/G/Sword"]
 show_behind_parent = true
@@ -133,7 +138,12 @@ layout_mode = 2
 expand_mode = 1
 script = ExtResource("3_fmukl")
 slot_inventory = false
-slot_shield = true
+slot_types = {
+"axe": false,
+"pickaxe": false,
+"shield": true,
+"weapon": false
+}
 
 [node name="Slot" type="Panel" parent="SlotWeap/G/Shield"]
 show_behind_parent = true
@@ -214,7 +224,12 @@ layout_mode = 2
 expand_mode = 1
 script = ExtResource("3_fmukl")
 slot_inventory = false
-slot_axe = true
+slot_types = {
+"axe": true,
+"pickaxe": false,
+"shield": false,
+"weapon": false
+}
 
 [node name="Slot" type="Panel" parent="T/G/Axe"]
 show_behind_parent = true
@@ -262,7 +277,12 @@ layout_mode = 2
 expand_mode = 1
 script = ExtResource("3_fmukl")
 slot_inventory = false
-slot_pickaxe = true
+slot_types = {
+"axe": false,
+"pickaxe": true,
+"shield": false,
+"weapon": false
+}
 
 [node name="Slot" type="Panel" parent="T/G/Pickaxe"]
 show_behind_parent = true

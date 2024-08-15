@@ -1,20 +1,28 @@
-[gd_resource type="Resource" script_class="Shield" load_steps=5 format=3 uid="uid://m0cj0k3yjlo7"]
+[gd_resource type="Resource" script_class="Shield" load_steps=7 format=3 uid="uid://m0cj0k3yjlo7"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_hrt5c"]
-[ext_resource type="Texture2D" uid="uid://ccm2a2buo1hg4" path="res://sprites/weapon/shield/SH3.png" id="2_buo2x"]
+[ext_resource type="Texture2D" uid="uid://dffrh8gf58ux8" path="res://sprites/Items/shield_icon3.png" id="3_7eb5f"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Shield_tres.gd" id="3_875jx"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_ricli"]
 
-[sub_resource type="Resource" id="Resource_sm2r5"]
+[sub_resource type="Resource" id="Resource_rnif8"]
 script = ExtResource("1_hrt5c")
 stack = false
-weapon = false
-shield = true
-axe = false
-pickaxe = false
+slot_type = {
+"axe": false,
+"pickaxe": false,
+"shield": true,
+"weapon": false
+}
 name = "Shield"
-texture = ExtResource("2_buo2x")
+texture = ExtResource("3_7eb5f")
 character = {}
+
+[sub_resource type="Resource" id="Resource_g0yrn"]
+script = ExtResource("3_ricli")
+item = SubResource("Resource_rnif8")
+amount = 0
 
 [resource]
 script = ExtResource("3_875jx")
-i = SubResource("Resource_sm2r5")
+slot = SubResource("Resource_g0yrn")

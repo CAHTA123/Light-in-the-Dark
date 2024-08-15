@@ -1,15 +1,17 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b4cog5a3wluwj"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_rlr7o"]
-[ext_resource type="Texture2D" uid="uid://b1m52b7itqp2y" path="res://sprites/Items/sword_icon3.png" id="2_xmjf4"]
+[ext_resource type="Texture2D" uid="uid://becmrnguk3m3m" path="res://sprites/Items/shield_icon2.png" id="2_x710t"]
 
 [resource]
 script = ExtResource("1_rlr7o")
 stack = false
-weapon = true
-shield = false
-axe = false
-pickaxe = false
+slot_type = {
+"axe": false,
+"pickaxe": false,
+"shield": false,
+"weapon": true
+}
 name = "Sword"
-texture = ExtResource("2_xmjf4")
+texture = ExtResource("2_x710t")
 character = {}
