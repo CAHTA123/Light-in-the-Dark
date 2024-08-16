@@ -3,11 +3,14 @@ extends Area2D
 
 @onready var collision_node = $"../../../Sprite/Island/shape/StaticBody2D/CollisionPolygon2D"
 
-#func _ready():
-	#set_process_input(true)
 
+	
+func _process(delta: float) -> void:
+	pass
 func _on_body_entered(body):
+	print(1)
 	if body.name == "Player":
+		
 		collision_node.disabled = true
 
 func _on_body_exited(body):

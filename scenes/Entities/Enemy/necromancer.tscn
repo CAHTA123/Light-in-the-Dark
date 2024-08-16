@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7imhurbepeyr"]
+[gd_scene load_steps=6 format=3 uid="uid://b7imhurbepeyr"]
 
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/necromancer.gd" id="1_hxcj8"]
 [ext_resource type="Texture2D" uid="uid://ncdymqsjtfln" path="res://sprites/Enemy/Necromancer.png" id="2_4jo1p"]
+[ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="3_tigec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2r1hm"]
 radius = 30.0
@@ -31,6 +32,14 @@ shape = SubResource("CircleShape2D_p7xu1")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="hp_bar" type="Node2D" parent="."]
+
+[node name="hp_bar" parent="hp_bar" instance=ExtResource("3_tigec")]
+offset_left = -69.0
+offset_top = 86.0
+offset_right = -69.0
+offset_bottom = 86.0
 
 [connection signal="body_entered" from="Fight_area" to="." method="_on_fight_area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

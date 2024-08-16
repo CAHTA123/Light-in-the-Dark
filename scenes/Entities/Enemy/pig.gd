@@ -1,33 +1,35 @@
 extends Body
 var take_damage_ = false
 var player = null
+
 func _ready():
 	random_walk()
 	max_hp = 10
 	item_drop = ""
-	take_damage = 2
+	
 func _process(delta):
 	
 	if player and take_damage_:
-		print(1)
+		
 		var direction = (player.global_position - global_position)
 		
 		if direction.x < 0:
 			$"Body_Skin#Skin#Skin/Skin".scale.x = 1
-			velocity.x = 100
+			velocity.x = 200
 		elif direction.x > 50:
 			$"Body_Skin#Skin#Skin/Skin".scale.x = -1
-			velocity.x = -100
+			velocity.x = -200
 		if direction.y < 0:
-			velocity.y = 100
+			velocity.y = 200
 		elif direction.y > 50:
-			velocity.y = -100
+			velocity.y = -200
 	
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "Player":
 		player = body
+		
 		
 
 func _on_area_2d_body_exited(body):
@@ -45,12 +47,15 @@ func drop():
 func _on_hurt_area_entered(area):
 	
 	
-	if hp < take_damage:
+	if hp <= take_damage:
+		
 		drop()
 		queue_free()
 	else:
 		take_damage_ = true
-		hp -= take_damage
+		
+		hp -= player.damage
+		
 func random_walk():
 	
 	while true and not take_damage_:

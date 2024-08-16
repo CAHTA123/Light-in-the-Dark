@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Body
 
 
 var player = null

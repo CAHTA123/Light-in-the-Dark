@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://oudduvyysxcl"]
+[gd_scene load_steps=6 format=3 uid="uid://oudduvyysxcl"]
 
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/Zombi.gd" id="1_jl4wg"]
 [ext_resource type="Texture2D" uid="uid://i7lpg4gc1qvc" path="res://sprites/Enemy/Zombi.png" id="2_62el1"]
+[ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="3_n4yd5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpa5y"]
 
@@ -31,6 +32,16 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chase_area"]
 shape = SubResource("CapsuleShape2D_6u6hu")
+
+[node name="hp_bar" type="Node2D" parent="."]
+position = Vector2(0.333333, -11.6667)
+scale = Vector2(0.5, 0.5)
+
+[node name="hp_bar" parent="hp_bar" instance=ExtResource("3_n4yd5")]
+offset_left = -69.0
+offset_top = 86.0
+offset_right = -69.0
+offset_bottom = 86.0
 
 [connection signal="body_entered" from="Chase_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chase_area" to="." method="_on_area_2d_body_exited"]

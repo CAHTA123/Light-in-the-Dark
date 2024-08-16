@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=18 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
 [ext_resource type="PackedScene" uid="uid://b7imhurbepeyr" path="res://scenes/Entities/Enemy/necromancer.tscn" id="11_ipiws"]
 [ext_resource type="PackedScene" uid="uid://c7r7s3ifooqnp" path="res://scenes/Entities/Enemy/pig.tscn" id="12_dfnmx"]
+[ext_resource type="PackedScene" uid="uid://bjtl1qjh4dmtu" path="res://scenes/Entities/Potion/speed_potion.tscn" id="13_stvkk"]
+[ext_resource type="PackedScene" uid="uid://b6j1okxuer27d" path="res://scenes/Entities/Potion/heal_potion.tscn" id="14_mudlg"]
+[ext_resource type="PackedScene" uid="uid://bdifcsjg3o5g2" path="res://scenes/Entities/Potion/streng_potion.tscn" id="15_qvlwf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -129,5 +132,14 @@ position = Vector2(-4408, 1156)
 
 [node name="pig" parent="." instance=ExtResource("12_dfnmx")]
 position = Vector2(-5640, 8)
+
+[node name="Speed_Potion" parent="." instance=ExtResource("13_stvkk")]
+position = Vector2(-5955, 945)
+
+[node name="Heal_Potion" parent="." instance=ExtResource("14_mudlg")]
+position = Vector2(-5705, 945)
+
+[node name="Streng_potion" parent="." instance=ExtResource("15_qvlwf")]
+position = Vector2(-5532, 940)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]

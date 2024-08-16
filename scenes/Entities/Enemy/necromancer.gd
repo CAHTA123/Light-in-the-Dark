@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Body
 var player = null
 var zombi_preload = preload("res://scenes/Entities/Enemy/zombi_necromacer.tscn")
 var zombi_dead_ = 0
