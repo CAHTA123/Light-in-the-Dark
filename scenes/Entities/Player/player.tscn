@@ -312,7 +312,7 @@ shader_parameter/value = 1.835
 shader_parameter/brig = 0.343
 
 [node name="Player" instance=ExtResource("1_edq0g")]
-texture_filter = 3
+texture_filter = 1
 collision_layer = 9
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
@@ -627,6 +627,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="Inventory" parent="Pause" index="5" instance=ExtResource("17_8pbyw")]
 process_mode = 3
+texture_filter = 1
 offset_left = -249.0
 offset_top = -418.0
 offset_right = 263.0
