@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dob2e8fx7ceor" path="res://sprites/Inventory/Slot_p.png" id="7_vmnmq"]
 
 [node name="Inventory" type="Control"]
+z_index = 20
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 3
 anchors_preset = 8

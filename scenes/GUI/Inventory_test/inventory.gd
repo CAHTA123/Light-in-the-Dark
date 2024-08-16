@@ -42,11 +42,13 @@ func _process(delta):
 
 func open():
 	get_tree().paused = true
+	$"../Blur".visible = true
 	visible = true
 	is_open = true
 
 func close():
 	get_tree().paused = false
+	$"../Blur".visible = false
 	visible = false
 	is_open = false
 
