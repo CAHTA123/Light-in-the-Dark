@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=47 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -306,19 +306,18 @@ _data = {
 "take_damage": SubResource("Animation_h6j18")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ogoj"]
+shader = ExtResource("28_5g2ab")
+shader_parameter/value = 1.5
+shader_parameter/brig = 0.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdxe2"]
 radius = 41.0
 height = 178.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ogoj"]
-shader = ExtResource("28_5g2ab")
-shader_parameter/value = 1.835
-shader_parameter/brig = 0.343
-
-
 [node name="Player" instance=ExtResource("1_edq0g")]
 texture_filter = 1
+position = Vector2(45, 64)
 collision_layer = 9
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
@@ -332,6 +331,14 @@ polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
+[node name="ColorRect" type="ColorRect" parent="Camera2D" index="0"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -920.0
+offset_bottom = -500.0
+color = Color(0.0926576, 0.0498439, 0.132584, 1)
+
 [node name="Skin" parent="Skin" index="0"]
 scale = Vector2(0.105, 0.101)
 texture = ExtResource("3_4gg2j")
@@ -344,7 +351,6 @@ scale = Vector2(3.5, 3.5)
 script = ExtResource("2_k2voa")
 
 [node name="shape" type="Area2D" parent="Skin/Skin/Weapon" index="0"]
-visible = false
 position = Vector2(0, -175)
 monitoring = false
 monitorable = false
@@ -625,12 +631,13 @@ theme_override_font_sizes/font_size = 25
 text = "X"
 
 [node name="Blur" type="ColorRect" parent="Pause" index="4"]
+visible = false
 z_index = 3
 material = SubResource("ShaderMaterial_3ogoj")
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(1, 1, 1, 0)
+color = Color(0.2895, 0.13, 1, 0)
 
 [node name="Inventory" parent="Pause" index="5" instance=ExtResource("17_8pbyw")]
 process_mode = 3
