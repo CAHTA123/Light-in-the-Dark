@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqhegexofc3wb"]
 
-[ext_resource type="Script" path="res://scenes/Islands/Shape.gd" id="2_duy2y"]
+[ext_resource type="Script" path="res://scenes/Islands/islands.gd" id="1_qwwp7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_elv4n"]
-size = Vector2(6000, 1000)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmiso"]
+size = Vector2(7347, 1159)
 
 [node name="Islands" type="Node2D"]
+script = ExtResource("1_qwwp7")
 
 [node name="Sprite" type="Node2D" parent="."]
 scale = Vector2(2, 2)
@@ -19,65 +20,13 @@ scale = Vector2(0.5, 0.5)
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite/Island/shape"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/Island/shape/StaticBody2D"]
-light_mask = 2
-visibility_layer = 2
 build_mode = 1
-polygon = PackedVector2Array(-3123, -5864, -4483, -5264, -5543, -4524, -6563, -3484, -7283, -1864, -7123, 416, -6091, 2155, -5192, 3118, -3869, 3876, -2070, 4544, -1131, 4838, -212, 4615, -137, 4823, 135, 4834, 301, 4765, 690, 4829, 1059, 4653, 1267, 4647, 1555, 4685, 1822, 4642, 1919, 4428, 2143, 4487, 2501, 4316, 2832, 4279, 3077, 4167, 3104, 3985, 3754, 3989, 4664, 3659, 5139, 3349, 5639, 2774, 6267, 2377, 7006, 1108, 7331, -492, 7097, -825, 7380, -1529, 6497, -3544, 4537, -5204, 2502, -5990, 897, -6164, -1343, -6204)
+polygon = PackedVector2Array(-7173, -1302, -7731, -42, -5881, 3976, -1291, 5677, 3731, 5947, 6944, 3193, 7349, 169, 6728, -2531, 4487, -4448, 626, -5231, -1831, -4907, -5719, -3449, -6718, -2558)
 
-[node name="Bridge" type="Node2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="r" type="Node2D" parent="Bridge"]
-position = Vector2(10000, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10845, 0)
+shape = SubResource("RectangleShape2D_tmiso")
 
-[node name="Shape" type="Area2D" parent="Bridge/r"]
-monitoring = false
-monitorable = false
-script = ExtResource("2_duy2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/r/Shape"]
-position = Vector2(-20, -454)
-shape = SubResource("RectangleShape2D_elv4n")
-
-[node name="l" type="Node2D" parent="Bridge"]
-position = Vector2(-10000, 0)
-
-[node name="Shape" type="Area2D" parent="Bridge/l"]
-monitoring = false
-monitorable = false
-script = ExtResource("2_duy2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/l/Shape"]
-shape = SubResource("RectangleShape2D_elv4n")
-
-[node name="u" type="Node2D" parent="Bridge"]
-position = Vector2(0, -8300)
-rotation = -1.5708
-
-[node name="Shape" type="Area2D" parent="Bridge/u"]
-monitoring = false
-monitorable = false
-script = ExtResource("2_duy2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/u/Shape"]
-shape = SubResource("RectangleShape2D_elv4n")
-
-[node name="d" type="Node2D" parent="Bridge"]
-position = Vector2(0, 8300)
-rotation = -1.5708
-
-[node name="Shape" type="Area2D" parent="Bridge/d"]
-monitoring = false
-monitorable = false
-script = ExtResource("2_duy2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/d/Shape"]
-shape = SubResource("RectangleShape2D_elv4n")
-
-[connection signal="body_entered" from="Bridge/r/Shape" to="Bridge/r/Shape" method="_on_body_entered"]
-[connection signal="body_exited" from="Bridge/r/Shape" to="Bridge/r/Shape" method="_on_body_exited"]
-[connection signal="body_entered" from="Bridge/l/Shape" to="Bridge/l/Shape" method="_on_body_entered"]
-[connection signal="body_exited" from="Bridge/l/Shape" to="Bridge/l/Shape" method="_on_body_exited"]
-[connection signal="body_entered" from="Bridge/u/Shape" to="Bridge/u/Shape" method="_on_body_entered"]
-[connection signal="body_exited" from="Bridge/u/Shape" to="Bridge/u/Shape" method="_on_body_exited"]
-[connection signal="body_entered" from="Bridge/d/Shape" to="Bridge/d/Shape" method="_on_body_entered"]
-[connection signal="body_exited" from="Bridge/d/Shape" to="Bridge/d/Shape" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
