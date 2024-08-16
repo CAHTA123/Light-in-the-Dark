@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
+[ext_resource type="Script" path="res://scenes/Game/Camera.gd" id="11_cp2go"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -82,6 +83,21 @@ texture = ExtResource("7_6wc83")
 [node name="Zombi" parent="." instance=ExtResource("9_6cljr")]
 position = Vector2(-4923, -861)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 1817.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 60
+text = "MONEY:"
+script = SubResource("GDScript_ptu1r")
+
+[node name="Camspeed" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_i1pqy")
 volume_db = -10.38
@@ -111,5 +127,12 @@ offset_bottom = 480.0
 theme_override_font_sizes/font_size = 60
 text = "MONEY:"
 script = SubResource("GDScript_ptu1r")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("11_cp2go")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(0, 440)
+zoom = Vector2(0.08, 0.08)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]
