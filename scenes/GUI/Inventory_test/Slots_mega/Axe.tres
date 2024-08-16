@@ -1,20 +1,28 @@
-[gd_resource type="Resource" script_class="Axe" load_steps=5 format=3 uid="uid://bw256rv2php1n"]
+[gd_resource type="Resource" script_class="Axe" load_steps=7 format=3 uid="uid://bw256rv2php1n"]
 
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_tw186"]
-[ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="2_fd4w8"]
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_tw186"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Axe_tres.gd" id="3_5lu0y"]
+[ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="3_ny8lf"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_rgi1q"]
 
-[sub_resource type="Resource" id="Resource_td330"]
+[sub_resource type="Resource" id="Resource_pmiho"]
 script = ExtResource("1_tw186")
 stack = false
-weapon = false
-shield = false
-axe = true
-pickaxe = false
+slot_type = {
+"axe": true,
+"pickaxe": false,
+"shield": false,
+"weapon": false
+}
 name = "Axe"
-texture = ExtResource("2_fd4w8")
+texture = ExtResource("3_ny8lf")
 character = {}
+
+[sub_resource type="Resource" id="Resource_5j0ws"]
+script = ExtResource("3_rgi1q")
+item = SubResource("Resource_pmiho")
+amount = 0
 
 [resource]
 script = ExtResource("3_5lu0y")
-i = SubResource("Resource_td330")
+slot = SubResource("Resource_5j0ws")

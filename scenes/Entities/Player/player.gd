@@ -11,10 +11,6 @@ enum States {IDLE, MOVE, DASH, ATTACK, BLOCK , TAKEDAMAGE}
 @export var axe: Axe
 @export var shield: Shield
 
-var we
-var ax
-var pi
-
 var adamage
 var pdamage
 
