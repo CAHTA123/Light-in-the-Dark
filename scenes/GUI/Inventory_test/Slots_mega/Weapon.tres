@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=7 format=3 uid="uid://bkpe8dklitm8x"]
 
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_btywa"]
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_btywa"]
 [ext_resource type="Texture2D" uid="uid://b1m52b7itqp2y" path="res://sprites/Items/sword_icon3.png" id="2_6thug"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Weapon_tres.gd" id="3_mxql1"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_pcf3o"]

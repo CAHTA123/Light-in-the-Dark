@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=12 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
-[ext_resource type="PackedScene" uid="uid://bo6sbhfc6e5y6" path="res://scenes/items/sword.tscn" id="10_60dle"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
@@ -98,15 +97,6 @@ position = Vector2(-6467, -240)
 
 [node name="Gold3" parent="Collectables" instance=ExtResource("10_ctimv")]
 position = Vector2(-6635, -346)
-
-[node name="Sword" parent="." instance=ExtResource("10_60dle")]
-position = Vector2(-6146, 596)
-
-[node name="Sword2" parent="." instance=ExtResource("10_60dle")]
-position = Vector2(-4634, 519)
-
-[node name="Sword3" parent="." instance=ExtResource("10_60dle")]
-position = Vector2(-5895, 587)
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 position = Vector2(-443, 374)

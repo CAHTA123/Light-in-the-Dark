@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Axe" load_steps=7 format=3 uid="uid://bw256rv2php1n"]
 
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_tw186"]
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_tw186"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Axe_tres.gd" id="3_5lu0y"]
 [ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="3_ny8lf"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_rgi1q"]
