@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -98,6 +98,15 @@ script = SubResource("GDScript_ptu1r")
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 1817.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 60
+text = "MONEY:"
+script = SubResource("GDScript_ptu1r")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_i1pqy")
 volume_db = -10.38
@@ -114,25 +123,14 @@ position = Vector2(-6467, -240)
 [node name="Gold3" parent="Collectables" instance=ExtResource("10_ctimv")]
 position = Vector2(-6635, -346)
 
-[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(-443, 374)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 13.0
-offset_top = -1.0
-offset_right = 1817.0
-offset_bottom = 480.0
-theme_override_font_sizes/font_size = 60
-text = "MONEY:"
-script = SubResource("GDScript_ptu1r")
-
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("11_cp2go")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(0, 440)
 zoom = Vector2(0.08, 0.08)
+
+[node name="Player" parent="." instance=ExtResource("2_kc6yd")]
+position = Vector2(-443, 374)
 
 [connection signal="body_entered" from="Weapon/shape" to="Weapon" method="_on_shape_body_entered"]

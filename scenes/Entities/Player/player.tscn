@@ -312,6 +312,7 @@ shader_parameter/value = 1.835
 shader_parameter/brig = 0.343
 
 [node name="Player" instance=ExtResource("1_edq0g")]
+texture_filter = 3
 collision_layer = 9
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
@@ -388,7 +389,80 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="Pause" type="CanvasLayer" parent="." index="7"]
+[node name="Input" type="CanvasLayer" parent="." index="7"]
+visible = false
+script = ExtResource("19_3msca")
+
+[node name="r" type="TouchScreenButton" parent="Input" index="0"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(317, 803)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "D"
+
+[node name="l" type="TouchScreenButton" parent="Input" index="1"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(180, 960)
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "A"
+
+[node name="w" type="TouchScreenButton" parent="Input" index="2"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(170, 880)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "W"
+
+[node name="s" type="TouchScreenButton" parent="Input" index="3"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(330, 900)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_70pd0")
+passby_press = true
+action = "S"
+
+[node name="Block" type="TouchScreenButton" parent="Input" index="4"]
+modulate = Color(1, 1, 1, 0.760784)
+position = Vector2(1582, 783)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("20_frwxw")
+action = "block"
+
+[node name="Attack" type="TouchScreenButton" parent="Input" index="5"]
+position = Vector2(1687, 881)
+scale = Vector2(5.5, 5.5)
+texture_normal = ExtResource("21_qbeet")
+action = "attack"
+
+[node name="Dash" type="TouchScreenButton" parent="Input" index="6"]
+modulate = Color(1, 1, 1, 0.760784)
+position = Vector2(1478, 905)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("22_acq0i")
+passby_press = true
+action = "dash"
+
+[node name="Invt" type="TouchScreenButton" parent="Input" index="7"]
+modulate = Color(1, 1, 1, 0.760784)
+position = Vector2(1753, 723)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("23_f3lur")
+action = "inventory"
+
+[node name="ESC" type="TouchScreenButton" parent="Input" index="8"]
+position = Vector2(24.0001, 21)
+scale = Vector2(6, 6)
+texture_normal = ExtResource("24_52w7a")
+action = "Esc"
+
+[node name="Pause" type="CanvasLayer" parent="." index="8"]
 
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
 visible = false
@@ -557,79 +631,6 @@ offset_left = -249.0
 offset_top = -418.0
 offset_right = 263.0
 offset_bottom = 94.0
-
-[node name="Input" type="CanvasLayer" parent="." index="8"]
-visible = false
-script = ExtResource("19_3msca")
-
-[node name="r" type="TouchScreenButton" parent="Input" index="0"]
-modulate = Color(1, 1, 1, 0.360784)
-position = Vector2(317, 803)
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("19_70pd0")
-passby_press = true
-action = "D"
-
-[node name="l" type="TouchScreenButton" parent="Input" index="1"]
-modulate = Color(1, 1, 1, 0.360784)
-position = Vector2(180, 960)
-rotation = -3.14159
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("19_70pd0")
-passby_press = true
-action = "A"
-
-[node name="w" type="TouchScreenButton" parent="Input" index="2"]
-modulate = Color(1, 1, 1, 0.360784)
-position = Vector2(170, 880)
-rotation = -1.5708
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("19_70pd0")
-passby_press = true
-action = "W"
-
-[node name="s" type="TouchScreenButton" parent="Input" index="3"]
-modulate = Color(1, 1, 1, 0.360784)
-position = Vector2(330, 900)
-rotation = 1.5708
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("19_70pd0")
-passby_press = true
-action = "S"
-
-[node name="Block" type="TouchScreenButton" parent="Input" index="4"]
-modulate = Color(1, 1, 1, 0.760784)
-position = Vector2(1582, 783)
-scale = Vector2(4, 4)
-texture_normal = ExtResource("20_frwxw")
-action = "block"
-
-[node name="Attack" type="TouchScreenButton" parent="Input" index="5"]
-position = Vector2(1687, 881)
-scale = Vector2(5.5, 5.5)
-texture_normal = ExtResource("21_qbeet")
-action = "attack"
-
-[node name="Dash" type="TouchScreenButton" parent="Input" index="6"]
-modulate = Color(1, 1, 1, 0.760784)
-position = Vector2(1478, 905)
-scale = Vector2(4, 4)
-texture_normal = ExtResource("22_acq0i")
-passby_press = true
-action = "dash"
-
-[node name="Invt" type="TouchScreenButton" parent="Input" index="7"]
-modulate = Color(1, 1, 1, 0.760784)
-position = Vector2(1753, 723)
-scale = Vector2(4, 4)
-texture_normal = ExtResource("23_f3lur")
-action = "inventory"
-
-[node name="ESC" type="TouchScreenButton" parent="Input" index="8"]
-position = Vector2(24.0001, 21)
-scale = Vector2(6, 6)
-texture_normal = ExtResource("24_52w7a")
-action = "Esc"
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]
