@@ -1,22 +1,28 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://bkpe8dklitm8x"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=7 format=3 uid="uid://bkpe8dklitm8x"]
 
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="1_btywa"]
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_btywa"]
 [ext_resource type="Texture2D" uid="uid://b1m52b7itqp2y" path="res://sprites/Items/sword_icon3.png" id="2_6thug"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Weapon_tres.gd" id="3_mxql1"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_pcf3o"]
 
-[sub_resource type="Resource" id="Resource_6d0pi"]
+[sub_resource type="Resource" id="Resource_1kj6g"]
 script = ExtResource("1_btywa")
-stack = false
-weapon = true
-shield = false
-axe = false
-pickaxe = false
+stack = true
+slot_type = {
+"axe": false,
+"pickaxe": false,
+"shield": false,
+"weapon": true
+}
 name = "Sword"
 texture = ExtResource("2_6thug")
-character = {
-"damage": 10.0
-}
+character = {}
+
+[sub_resource type="Resource" id="Resource_7k7ac"]
+script = ExtResource("3_pcf3o")
+item = SubResource("Resource_1kj6g")
+amount = 0
 
 [resource]
 script = ExtResource("3_mxql1")
-i = SubResource("Resource_6d0pi")
+slot = SubResource("Resource_7k7ac")

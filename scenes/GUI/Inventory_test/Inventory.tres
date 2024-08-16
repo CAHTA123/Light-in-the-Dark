@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/inventory_tres.gd" id="1_5kl3e"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="2_ht0tn"]
 
-[sub_resource type="Resource" id="Resource_k6vev"]
+[sub_resource type="Resource" id="Resource_6xsj5"]
 script = ExtResource("2_ht0tn")
 amount = 0
 
 [resource]
 script = ExtResource("1_5kl3e")
-slots_tres = Array[ExtResource("2_ht0tn")]([SubResource("Resource_k6vev")])
+slots_tres = Array[ExtResource("2_ht0tn")]([SubResource("Resource_6xsj5")])

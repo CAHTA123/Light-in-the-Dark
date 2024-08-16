@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="7_6wc83"]
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
-[ext_resource type="PackedScene" uid="uid://bo6sbhfc6e5y6" path="res://scenes/items/sword.tscn" id="10_60dle"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
 [ext_resource type="PackedScene" uid="uid://b7imhurbepeyr" path="res://scenes/Entities/Enemy/necromancer.tscn" id="11_ipiws"]
 [ext_resource type="PackedScene" uid="uid://c7r7s3ifooqnp" path="res://scenes/Entities/Enemy/pig.tscn" id="12_dfnmx"]
 [ext_resource type="PackedScene" uid="uid://bjtl1qjh4dmtu" path="res://scenes/Entities/Potion/speed_potion.tscn" id="13_stvkk"]
 [ext_resource type="PackedScene" uid="uid://b6j1okxuer27d" path="res://scenes/Entities/Potion/heal_potion.tscn" id="14_mudlg"]
 [ext_resource type="PackedScene" uid="uid://bdifcsjg3o5g2" path="res://scenes/Entities/Potion/streng_potion.tscn" id="15_qvlwf"]
+[ext_resource type="Script" path="res://scenes/Game/Camera.gd" id="11_cp2go"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcmir"]
 radius = 40.0
@@ -74,7 +74,7 @@ position = Vector2(-889, -140)
 position = Vector2(1060, -355)
 
 [node name="Weapon" type="Node2D" parent="."]
-position = Vector2(88, -124)
+position = Vector2(-6, -178)
 script = ExtResource("6_306d2")
 
 [node name="shape" type="Area2D" parent="Weapon"]
@@ -99,6 +99,19 @@ theme_override_font_sizes/font_size = 60
 text = "MONEY:"
 script = SubResource("GDScript_ptu1r")
 
+[node name="Camspeed" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 1817.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 60
+text = "MONEY:"
+script = SubResource("GDScript_ptu1r")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_i1pqy")
 volume_db = -10.38
@@ -115,17 +128,15 @@ position = Vector2(-6467, -240)
 [node name="Gold3" parent="Collectables" instance=ExtResource("10_ctimv")]
 position = Vector2(-6635, -346)
 
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("11_cp2go")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(0, 440)
+zoom = Vector2(0.08, 0.08)
+
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(-5067, 775)
-
-[node name="Sword" parent="." instance=ExtResource("10_60dle")]
-position = Vector2(-6146, 596)
-
-[node name="Sword2" parent="." instance=ExtResource("10_60dle")]
-position = Vector2(-4634, 519)
-
-[node name="Sword3" parent="." instance=ExtResource("10_60dle")]
-position = Vector2(-5895, 587)
+position = Vector2(-443, 374)
 
 [node name="Necromancer" parent="." instance=ExtResource("11_ipiws")]
 position = Vector2(-4408, 1156)

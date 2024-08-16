@@ -1,17 +1,14 @@
 extends Control
 
 @onready var player = $"../.."
-@onready var pause_game = $"."
-
 var save_path = "res://savegame.save"
 
 func _ready():
-	pass
-	$".".visible = false
+	visible = false
 
 func _process(delta):
 	if Input.is_action_just_pressed("Esc"):
-		$".".visible = true
+		visible = true
 		get_tree().paused = true
 		visible = true 
 	
