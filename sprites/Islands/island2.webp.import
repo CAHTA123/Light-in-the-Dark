@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uyycwrv6th12"
-path="res://.godot/imported/circle.png-e160924817f371acd37f8c75b82478cb.ctex"
+uid="uid://dlqsbuju5ej7a"
+path="res://.godot/imported/island2.webp-4a1777aa5d401df3491958dcdf10917a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Enemy/circle.png"
-dest_files=["res://.godot/imported/circle.png-e160924817f371acd37f8c75b82478cb.ctex"]
+source_file="res://sprites/Islands/island2.webp"
+dest_files=["res://.godot/imported/island2.webp-4a1777aa5d401df3491958dcdf10917a.ctex"]
 
 [params]
 

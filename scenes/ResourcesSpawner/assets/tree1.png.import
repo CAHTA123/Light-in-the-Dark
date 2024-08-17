@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uyycwrv6th12"
-path="res://.godot/imported/circle.png-e160924817f371acd37f8c75b82478cb.ctex"
+uid="uid://dhxa04cs68hgm"
+path="res://.godot/imported/tree1.png-5979ea8dca37c7fee631b6b77a17239a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Enemy/circle.png"
-dest_files=["res://.godot/imported/circle.png-e160924817f371acd37f8c75b82478cb.ctex"]
+source_file="res://scenes/ResourcesSpawner/assets/tree1.png"
+dest_files=["res://.godot/imported/tree1.png-5979ea8dca37c7fee631b6b77a17239a.ctex"]
 
 [params]
 

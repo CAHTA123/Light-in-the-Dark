@@ -12,3 +12,6 @@ modulate = Color(0.79, 1, 0.804, 1)
 [node name="Skin" type="Sprite2D" parent="Body_Skin#Skin" index="0"]
 scale = Vector2(0.1, 0.1)
 offset = Vector2(0, -900)
+
+[node name="Skin" parent="Skin" index="0"]
+offset = Vector2(0, -150)
