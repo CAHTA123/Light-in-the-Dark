@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqhegexofc3wb"]
+[gd_scene load_steps=10 format=3 uid="uid://bqhegexofc3wb"]
 
-[ext_resource type="Texture2D" uid="uid://bdgf00ptehw23" path="res://sprites/Islands/01.png" id="1_5n40e"]
+[ext_resource type="Script" path="res://scenes/Islands/islands.gd" id="1_fiprl"]
+[ext_resource type="Texture2D" uid="uid://cibogrhjeh6t5" path="res://sprites/Islands/island1.webp" id="2_ln65l"]
 [ext_resource type="Texture2D" uid="uid://dsr5ynrx1vg1u" path="res://scenes/ResourcesSpawner/assets/tile_water.png" id="2_reljq"]
 [ext_resource type="Texture2D" uid="uid://biwf1tboarhsb" path="res://scenes/ResourcesSpawner/assets/tile_biom1.png" id="3_pbq4g"]
 
@@ -44,15 +45,17 @@ sources/3 = SubResource("TileSetAtlasSource_b8uni")
 sources/4 = SubResource("TileSetAtlasSource_tqdnm")
 
 [node name="Islands" type="Node2D"]
+script = ExtResource("1_fiprl")
 
 [node name="Sprite" type="Node2D" parent="."]
 scale = Vector2(2, 2)
 
 [node name="Island" type="Sprite2D" parent="Sprite"]
 position = Vector2(0, 350)
-texture = ExtResource("1_5n40e")
+texture = ExtResource("2_ln65l")
 
 [node name="shape" type="Node2D" parent="Sprite/Island"]
+visible = false
 scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite/Island/shape"]

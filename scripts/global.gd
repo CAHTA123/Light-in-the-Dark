@@ -60,7 +60,7 @@ enum IslandsId {
 var islands = [
 	{
 		"id": IslandsId.ISLAND1,
-		"path": "/root/Game/islnd/Islands",
+		"path": "/root/Game/Islands/Island1",
 		"resources": [
 			ResourcesId.TREE, 
 			ResourcesId.ROCK,
@@ -68,27 +68,27 @@ var islands = [
 	},
 	{
 		"id": IslandsId.ISLAND2,
-		"path": "/root/Game/islnd/Islands2",
+		"path": "/root/Game/Islands/Island2",
 		"resources": [
 			ResourcesId.TREE, 
 		]
 	},
 	{
 		"id": IslandsId.ISLAND3,
-		"path": "/root/Game/islnd/Islands3",
+		"path": "/root/Game/Islands/Island3",
 		"resources": [
 			ResourcesId.ROCK,
 		]
 	},
 	{
 		"id": IslandsId.ISLAND4,
-		"path": "/root/Game/islnd/Islands4",
+		"path": "/root/Game/Islands/Island4",
 		"resources": [
 		]
 	},
 	{
 		"id": IslandsId.ISLAND5,
-		"path": "/root/Game/islnd/Islands5",
+		"path": "/root/Game/Islands/Island5",
 		"resources": [
 			ResourcesId.TREE, 
 			ResourcesId.ROCK,
@@ -96,7 +96,7 @@ var islands = [
 	},
 	{
 		"id": IslandsId.ISLAND6,
-		"path": "/root/Game/islnd/Islands6",
+		"path": "/root/Game/Islands/Island6",
 		"resources": [
 			ResourcesId.TREE, 
 			ResourcesId.ROCK,
@@ -104,7 +104,7 @@ var islands = [
 	},
 	{
 		"id": IslandsId.ISLAND7,
-		"path": "/root/Game/islnd/Islands7",
+		"path": "/root/Game/Islands/Island7",
 		"resources": [
 			ResourcesId.TREE, 
 			ResourcesId.ROCK,
@@ -112,7 +112,7 @@ var islands = [
 	},
 	{
 		"id": IslandsId.ISLAND8,
-		"path": "/root/Game/islnd/Islands8",
+		"path": "/root/Game/Islands/Island8",
 		"resources": [
 			ResourcesId.TREE, 
 			ResourcesId.ROCK,
@@ -120,7 +120,7 @@ var islands = [
 	},
 	{
 		"id": IslandsId.ISLAND9,
-		"path": "/root/Game/islnd/Islands9",
+		"path": "/root/Game/Islands/Island9",
 		"resources": [
 			ResourcesId.TREE, 
 			ResourcesId.ROCK,
