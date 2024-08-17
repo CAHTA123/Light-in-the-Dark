@@ -1,10 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://fmc8pvkhhjm7"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item_take.gd" id="1_n3d1x"]
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/item.gd" id="2_p3kdg"]
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="2_p3kdg"]
 
 [sub_resource type="Resource" id="Resource_mpav5"]
 script = ExtResource("2_p3kdg")
+stack = true
+slot_type = {
+"axe": false,
+"pickaxe": false,
+"shield": false,
+"weapon": false
+}
 name = ""
 character = {}
 

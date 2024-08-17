@@ -8,6 +8,7 @@ func _ready():
 	body.current_state = body.States.IDLE
 
 func _process(delta):
+	
 	Global.player_pos = body.global_position
 	match (body.current_state):
 		body.States.IDLE:
