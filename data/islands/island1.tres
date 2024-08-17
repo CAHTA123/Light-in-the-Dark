@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Island" load_steps=4 format=3 uid="uid://dng6yw1bs4p3s"]
+
+[ext_resource type="Resource" uid="uid://bet08iuhfr73p" path="res://data/grows/tree.tres" id="1_8xn3a"]
+[ext_resource type="Script" path="res://model/island_model.gd" id="1_mpw2y"]
+[ext_resource type="Resource" uid="uid://b4bnjwm4pxg62" path="res://data/grows/rock.tres" id="2_a3wii"]
+
+[resource]
+script = ExtResource("1_mpw2y")
+name = "Island 1"
+node_path = "/root/Game/Islands/Island1"
+grows = Array[Resource("res://model/grow_model.gd")]([ExtResource("1_8xn3a"), ExtResource("2_a3wii")])

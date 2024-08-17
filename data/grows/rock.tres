@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Grow" load_steps=4 format=3 uid="uid://b4bnjwm4pxg62"]
+
+[ext_resource type="PackedScene" uid="uid://cmn7a86o2grnm" path="res://scenes/Entities/grow/grow.tscn" id="1_mif6w"]
+[ext_resource type="Script" path="res://model/grow_model.gd" id="2_dxwb8"]
+[ext_resource type="Texture2D" uid="uid://bkiqacj816pc6" path="res://scenes/ResourcesSpawner/assets/rock1.png" id="3_nmw8l"]
+
+[resource]
+script = ExtResource("2_dxwb8")
+name = "Rock"
+scene = ExtResource("1_mif6w")
+texture = ExtResource("3_nmw8l")
+spawn_cooldown = 5

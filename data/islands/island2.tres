@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Island" load_steps=3 format=3 uid="uid://qmxbybcwioqy"]
+
+[ext_resource type="Resource" uid="uid://bet08iuhfr73p" path="res://data/grows/tree.tres" id="1_pi8bw"]
+[ext_resource type="Script" path="res://model/island_model.gd" id="2_rxeun"]
+
+[resource]
+script = ExtResource("2_rxeun")
+name = "Island 2"
+node_path = "/root/Game/Islands/Island2"
+grows = Array[Resource("res://model/grow_model.gd")]([ExtResource("1_pi8bw")])

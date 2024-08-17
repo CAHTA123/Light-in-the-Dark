@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ck1jdw71slkbf"]
 
-[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
+[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/island/island.tscn" id="1_mhpm1"]
 [ext_resource type="Texture2D" uid="uid://cibogrhjeh6t5" path="res://sprites/Islands/island1.webp" id="2_bheth"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
 [ext_resource type="Texture2D" uid="uid://kopadkfqj2hk" path="res://sprites/Islands/island2.webp" id="3_j4oke"]
