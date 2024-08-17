@@ -1,6 +1,17 @@
 [gd_scene load_steps=15 format=3 uid="uid://ck1jdw71slkbf"]
 
-[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Islands/islands.tscn" id="1_mhpm1"]
+[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/island/island.tscn" id="1_mhpm1"]
+
+[ext_resource type="Texture2D" uid="uid://cibogrhjeh6t5" path="res://sprites/Islands/island1.webp" id="2_bheth"]
+[ext_resource type="Texture2D" uid="uid://kopadkfqj2hk" path="res://sprites/Islands/island2.webp" id="3_j4oke"]
+[ext_resource type="Texture2D" uid="uid://c4qrd0toahhj4" path="res://sprites/Islands/island3.webp" id="4_u1mkg"]
+[ext_resource type="Texture2D" uid="uid://bibhclxdq3501" path="res://sprites/Islands/island4.webp" id="5_ii0n5"]
+[ext_resource type="Texture2D" uid="uid://dko1slc54n7mi" path="res://sprites/Islands/island5.webp" id="6_vop13"]
+[ext_resource type="Texture2D" uid="uid://fdu1f45k0hwb" path="res://sprites/Islands/island6.webp" id="7_iianx"]
+[ext_resource type="Texture2D" uid="uid://bqdrf5g0xc2do" path="res://sprites/Islands/island7.webp" id="7_skofn"]
+[ext_resource type="Texture2D" uid="uid://qv6np5e0a8p4" path="res://sprites/Islands/island8.webp" id="8_plhmv"]
+[ext_resource type="Texture2D" uid="uid://bo747ad4demcw" path="res://sprites/Islands/island9.webp" id="9_c2lyn"]
+
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
 [ext_resource type="PackedScene" uid="uid://0vh3jhnjpwnn" path="res://scenes/Entities/Res/res.tscn" id="3_m2plk"]
 [ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Entities/Enemy/enemy.tscn" id="4_m7kfr"]
@@ -13,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bjtl1qjh4dmtu" path="res://scenes/Entities/Potion/speed_potion.tscn" id="13_stvkk"]
 [ext_resource type="PackedScene" uid="uid://b6j1okxuer27d" path="res://scenes/Entities/Potion/heal_potion.tscn" id="14_mudlg"]
 [ext_resource type="PackedScene" uid="uid://bdifcsjg3o5g2" path="res://scenes/Entities/Potion/streng_potion.tscn" id="15_qvlwf"]
+[ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
 
 [sub_resource type="GDScript" id="GDScript_ptu1r"]
 script/source = "extends Label
@@ -26,33 +38,42 @@ func _process(delta):
 
 [node name="Game" type="Node2D"]
 
-[node name="islnd" type="Node2D" parent="."]
+[node name="Islands" type="Node2D" parent="."]
 
-[node name="Islands" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island1" parent="Islands" instance=ExtResource("1_mhpm1")]
+texture = ExtResource("2_bheth")
 
-[node name="Islands2" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island2" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(20000, 0)
+texture = ExtResource("3_j4oke")
 
-[node name="Islands3" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island3" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(-20000, 0)
+texture = ExtResource("4_u1mkg")
 
-[node name="Islands4" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island4" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(-20000, 18000)
+texture = ExtResource("5_ii0n5")
 
-[node name="Islands5" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island5" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(20000, 18000)
+texture = ExtResource("6_vop13")
 
-[node name="Islands6" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island6" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(0, 18000)
+texture = ExtResource("7_iianx")
 
-[node name="Islands7" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island7" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(0, -18000)
+texture = ExtResource("7_skofn")
 
-[node name="Islands8" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island8" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(20000, -18000)
+texture = ExtResource("8_plhmv")
 
-[node name="Islands9" parent="islnd" instance=ExtResource("1_mhpm1")]
+[node name="Island9" parent="Islands" instance=ExtResource("1_mhpm1")]
 position = Vector2(-20000, -18000)
+texture = ExtResource("9_c2lyn")
 
 [node name="Res" parent="." instance=ExtResource("3_m2plk")]
 position = Vector2(-889, -140)
@@ -128,3 +149,5 @@ offset_bottom = 480.0
 theme_override_font_sizes/font_size = 60
 text = "MONEY:"
 script = SubResource("GDScript_ptu1r")
+
+[node name="ResourcesSpawner" parent="." instance=ExtResource("11_dvwmj")]

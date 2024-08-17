@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Grow" load_steps=4 format=3 uid="uid://bet08iuhfr73p"]
+
+[ext_resource type="PackedScene" uid="uid://cmn7a86o2grnm" path="res://scenes/Entities/grow/grow.tscn" id="1_mk3yb"]
+[ext_resource type="Script" path="res://model/grow_model.gd" id="2_2m785"]
+[ext_resource type="Texture2D" uid="uid://dhxa04cs68hgm" path="res://scenes/ResourcesSpawner/assets/tree1.png" id="3_iuofw"]
+
+[resource]
+script = ExtResource("2_2m785")
+name = "Tree"
+scene = ExtResource("1_mk3yb")
+texture = ExtResource("3_iuofw")
+spawn_cooldown = 1
