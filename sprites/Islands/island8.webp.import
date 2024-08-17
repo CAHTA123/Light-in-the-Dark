@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:sprites/Inventory/Slot_a.png.import
-uid="uid://coeox1udqkcbi"
-path="res://.godot/imported/Slot_a.png-dff0abf718e8e217405f05a530241223.ctex"
-========
-uid="uid://qv6np5e0a8p4"
+uid="uid://dlstuh4agorp8"
 path="res://.godot/imported/island8.webp-25239f4bdb28eda18b757c56bdd6a0f1.ctex"
->>>>>>>> b3c8f8da5ff76d152b020b4badf36ae328c02eb4:sprites/Enemy/island8.webp.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:sprites/Inventory/Slot_a.png.import
-source_file="res://sprites/Inventory/Slot_a.png"
-dest_files=["res://.godot/imported/Slot_a.png-dff0abf718e8e217405f05a530241223.ctex"]
-========
 source_file="res://sprites/Islands/island8.webp"
 dest_files=["res://.godot/imported/island8.webp-25239f4bdb28eda18b757c56bdd6a0f1.ctex"]
->>>>>>>> b3c8f8da5ff76d152b020b4badf36ae328c02eb4:sprites/Enemy/island8.webp.import
 
 [params]
 

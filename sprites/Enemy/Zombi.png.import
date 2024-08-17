@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:sprites/Enemy/Zombi.png.import
-uid="uid://i7lpg4gc1qvc"
+uid="uid://dwltcn2uli41x"
 path="res://.godot/imported/Zombi.png-a6967b5885e7766650be1c3de9e4a1a3.ctex"
-========
-uid="uid://kopadkfqj2hk"
-path="res://.godot/imported/island2.webp-4a1777aa5d401df3491958dcdf10917a.ctex"
->>>>>>>> b3c8f8da5ff76d152b020b4badf36ae328c02eb4:sprites/Enemy/island2.webp.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:sprites/Enemy/Zombi.png.import
 source_file="res://sprites/Enemy/Zombi.png"
 dest_files=["res://.godot/imported/Zombi.png-a6967b5885e7766650be1c3de9e4a1a3.ctex"]
-========
-source_file="res://sprites/Islands/island2.webp"
-dest_files=["res://.godot/imported/island2.webp-4a1777aa5d401df3491958dcdf10917a.ctex"]
->>>>>>>> b3c8f8da5ff76d152b020b4badf36ae328c02eb4:sprites/Enemy/island2.webp.import
 
 [params]
 

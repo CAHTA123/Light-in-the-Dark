@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bqhegexofc3wb"]
 
 [ext_resource type="Script" path="res://scenes/island/island.gd" id="1_fiprl"]
-[ext_resource type="Texture2D" uid="uid://cibogrhjeh6t5" path="res://sprites/Islands/island1.webp" id="2_ln65l"]
+[ext_resource type="Texture2D" uid="uid://c31x74a4k4uq4" path="res://sprites/Islands/island1.webp" id="2_ln65l"]
 [ext_resource type="Texture2D" uid="uid://dsr5ynrx1vg1u" path="res://scenes/ResourcesSpawner/assets/tile_water.png" id="2_reljq"]
 [ext_resource type="Texture2D" uid="uid://biwf1tboarhsb" path="res://scenes/ResourcesSpawner/assets/tile_biom1.png" id="3_pbq4g"]
 [ext_resource type="Script" path="res://scenes/island/bridge.gd" id="3_rb7l2"]
