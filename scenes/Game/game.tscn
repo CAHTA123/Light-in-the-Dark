@@ -1,20 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=24 format=3 uid="uid://ck1jdw71slkbf"]
 
-[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/island/island.tscn" id="1_mhpm1"]
-[ext_resource type="Texture2D" uid="uid://c31x74a4k4uq4" path="res://sprites/Islands/island1.webp" id="2_bheth"]
+[ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island_CAHTA/island_number/island_1.tscn" id="1_283dh"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
-[ext_resource type="Texture2D" uid="uid://dlqsbuju5ej7a" path="res://sprites/Islands/island2.webp" id="3_j4oke"]
+[ext_resource type="PackedScene" uid="uid://ber5ocx7ljjab" path="res://scenes/Island_CAHTA/island_number/island_2.tscn" id="2_v0ix3"]
+[ext_resource type="PackedScene" uid="uid://ylyw521caub6" path="res://scenes/Island_CAHTA/island_number/island_3.tscn" id="3_jpcbd"]
 [ext_resource type="PackedScene" uid="uid://0vh3jhnjpwnn" path="res://scenes/Entities/Res/res.tscn" id="3_m2plk"]
+[ext_resource type="PackedScene" uid="uid://cju84mk3g4djy" path="res://scenes/Island_CAHTA/island_number/island_4.tscn" id="4_evtwt"]
 [ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Entities/Enemy/enemy.tscn" id="4_m7kfr"]
-[ext_resource type="Texture2D" uid="uid://c4qrd0toahhj4" path="res://sprites/Islands/island3.webp" id="4_u1mkg"]
-[ext_resource type="Texture2D" uid="uid://bibhclxdq3501" path="res://sprites/Islands/island4.webp" id="5_ii0n5"]
-[ext_resource type="Texture2D" uid="uid://dko1slc54n7mi" path="res://sprites/Islands/island5.webp" id="6_vop13"]
+[ext_resource type="PackedScene" uid="uid://dledpwyjvklb1" path="res://scenes/Island_CAHTA/island_number/island_5.tscn" id="5_7k7da"]
+[ext_resource type="PackedScene" uid="uid://yj440nphfiif" path="res://scenes/Island_CAHTA/island_number/island_6.tscn" id="6_uxhis"]
 [ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
-[ext_resource type="Texture2D" uid="uid://b6a1w3tcpbm5g" path="res://sprites/Islands/island6.webp" id="7_iianx"]
-[ext_resource type="Texture2D" uid="uid://bqdrf5g0xc2do" path="res://sprites/Islands/island7.webp" id="7_skofn"]
-[ext_resource type="Texture2D" uid="uid://dlstuh4agorp8" path="res://sprites/Islands/island8.webp" id="8_plhmv"]
+[ext_resource type="PackedScene" uid="uid://dknx6b3mwwi7u" path="res://scenes/Island_CAHTA/island_number/island_7.tscn" id="7_yl0bs"]
+[ext_resource type="PackedScene" uid="uid://c6svppnkcdl5b" path="res://scenes/Island_CAHTA/island_number/island_8.tscn" id="8_lh0pw"]
 [ext_resource type="PackedScene" uid="uid://oudduvyysxcl" path="res://scenes/Entities/Enemy/zombi.tscn" id="9_6cljr"]
-[ext_resource type="Texture2D" uid="uid://bo747ad4demcw" path="res://sprites/Islands/island9.webp" id="9_c2lyn"]
+[ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island_CAHTA/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://d17g01y2hx4tt" path="res://gold.tscn" id="10_ctimv"]
 [ext_resource type="Script" path="res://scenes/Game/Camera.gd" id="11_cp2go"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
@@ -38,40 +37,31 @@ func _process(delta):
 
 [node name="Islands" type="Node2D" parent="."]
 
-[node name="Island1" parent="Islands" instance=ExtResource("1_mhpm1")]
-texture = ExtResource("2_bheth")
+[node name="Island1" parent="Islands" instance=ExtResource("1_283dh")]
 
-[node name="Island2" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(20000, 0)
-texture = ExtResource("3_j4oke")
+[node name="Island2" parent="Islands" instance=ExtResource("2_v0ix3")]
+position = Vector2(-24241, 7953)
 
-[node name="Island3" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(-20000, 0)
-texture = ExtResource("4_u1mkg")
+[node name="Island3" parent="Islands" instance=ExtResource("3_jpcbd")]
+position = Vector2(-17315, -6013)
 
-[node name="Island4" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(-20000, 18000)
-texture = ExtResource("5_ii0n5")
+[node name="Island4" parent="Islands" instance=ExtResource("4_evtwt")]
+position = Vector2(-10922, 11987)
 
-[node name="Island5" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(20000, 18000)
-texture = ExtResource("6_vop13")
+[node name="Island5" parent="Islands" instance=ExtResource("5_7k7da")]
+position = Vector2(9628, -5860)
 
-[node name="Island6" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(0, 18000)
-texture = ExtResource("7_iianx")
+[node name="Island6" parent="Islands" instance=ExtResource("6_uxhis")]
+position = Vector2(15146, 10655)
 
-[node name="Island7" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(0, -18000)
-texture = ExtResource("7_skofn")
+[node name="Island7" parent="Islands" instance=ExtResource("7_yl0bs")]
+position = Vector2(-5366, -8106)
 
-[node name="Island8" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(20000, -18000)
-texture = ExtResource("8_plhmv")
+[node name="Island8" parent="Islands" instance=ExtResource("8_lh0pw")]
+position = Vector2(1827, 11264)
 
-[node name="Island9" parent="Islands" instance=ExtResource("1_mhpm1")]
-position = Vector2(-20000, -18000)
-texture = ExtResource("9_c2lyn")
+[node name="Island9" parent="Islands" instance=ExtResource("9_xon0m")]
+position = Vector2(16363, 228)
 
 [node name="Res" parent="." instance=ExtResource("3_m2plk")]
 position = Vector2(-889, -140)
@@ -80,7 +70,7 @@ position = Vector2(-889, -140)
 position = Vector2(1060, -355)
 
 [node name="Zombi" parent="." instance=ExtResource("9_6cljr")]
-position = Vector2(-4923, -861)
+position = Vector2(-3109, -910)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_i1pqy")
@@ -90,13 +80,13 @@ autoplay = true
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Gold" parent="Collectables" instance=ExtResource("10_ctimv")]
-position = Vector2(-6530, -102)
+position = Vector2(-2394, 1498)
 
 [node name="Gold2" parent="Collectables" instance=ExtResource("10_ctimv")]
-position = Vector2(-6467, -240)
+position = Vector2(-1683, 1720)
 
 [node name="Gold3" parent="Collectables" instance=ExtResource("10_ctimv")]
-position = Vector2(-6635, -346)
+position = Vector2(-1499, 1566)
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("11_cp2go")
@@ -107,22 +97,22 @@ enabled = false
 zoom = Vector2(0.08, 0.08)
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
-position = Vector2(-3694, 777)
+position = Vector2(2179, -1377)
 
 [node name="Necromancer" parent="." instance=ExtResource("11_ipiws")]
-position = Vector2(-4408, 1156)
+position = Vector2(-2352, 269)
 
 [node name="pig" parent="." instance=ExtResource("12_dfnmx")]
-position = Vector2(-5640, 8)
+position = Vector2(-3391, 399)
 
 [node name="Speed_Potion" parent="." instance=ExtResource("13_stvkk")]
-position = Vector2(-5955, 945)
+position = Vector2(-771, 1657)
 
 [node name="Heal_Potion" parent="." instance=ExtResource("14_mudlg")]
-position = Vector2(-5705, 945)
+position = Vector2(-969, 1977)
 
 [node name="Streng_potion" parent="." instance=ExtResource("15_qvlwf")]
-position = Vector2(-5532, 940)
+position = Vector2(-1340, 980)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=49 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dnx0468nr6wt3" path="res://sprites/кнопка/cancel_icon.png" id="24_52w7a"]
 [ext_resource type="Texture2D" uid="uid://2138t5uypp25" path="res://sprites/Items/sword_icon1.png" id="24_o7xo0"]
 [ext_resource type="Texture2D" uid="uid://b6io7jm5o4g43" path="res://sprites/Inventory/Slot_inv.png" id="27_0p6ph"]
-[ext_resource type="Shader" path="res://scenes/Game/game.gdshader" id="28_5g2ab"]
+[ext_resource type="Shader" path="res://scenes/Entities/Player/game.gdshader" id="28_5g2ab"]
 [ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
 [ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
 [ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
@@ -320,7 +320,8 @@ height = 178.0
 [node name="Player" instance=ExtResource("1_edq0g")]
 texture_filter = 1
 position = Vector2(45, 64)
-collision_layer = 9
+collision_layer = 10
+collision_mask = 2
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
 weapon = ExtResource("4_trmtx")
@@ -650,6 +651,7 @@ color = Color(0.2895, 0.13, 1, 0)
 
 [node name="Inventory" parent="Pause" index="5" instance=ExtResource("17_8pbyw")]
 process_mode = 3
+visible = false
 texture_filter = 1
 offset_left = -249.0
 offset_top = -418.0

@@ -25,5 +25,5 @@ func points(pos1, pos2):
 	var rot = pos1.angle_to(pos2) 
 	look_at(pos2)
 	$CollisionShape2D.shape.size.y = 200.0
-	$CollisionShape2D.shape.size.x = dis
+	$CollisionShape2D.shape.size.x = dis + 500
 	$CollisionShape2D.position.x = dis/2

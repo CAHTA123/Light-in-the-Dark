@@ -6,6 +6,8 @@
 size = Vector2(2000, 200)
 
 [node name="Bridge" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_jsn8t")
 
 [node name="Node2D" type="Node2D" parent="."]

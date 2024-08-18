@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ber5ocx7ljjab"]
+
+[ext_resource type="PackedScene" uid="uid://dvcxwbtljq7nc" path="res://scenes/Island_CAHTA/island.tscn" id="1_s4iga"]
+[ext_resource type="Texture2D" uid="uid://bcu7gmcequma4" path="res://sprites/Island/2.png" id="2_qlkon"]
+
+[node name="Island2" instance=ExtResource("1_s4iga")]
+
+[node name="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("2_qlkon")

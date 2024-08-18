@@ -12,6 +12,7 @@ func _ready():
 
 ##Сканирует острова
 func scanner():  
+
 	var last = Vector2.INF
 	var last_col = null
 	var closest_dist = INF

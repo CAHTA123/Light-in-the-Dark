@@ -2,8 +2,6 @@ extends Control
 
 @onready var body = $"../.."
 @onready var grid_inv = $I/G
-@onready var grid_wea = $W/G
-@onready var grid_tool = $T/G
 @onready var slot = "res://scenes/GUI/Inventory_test/slot.tscn"
 
 var slots: Array
