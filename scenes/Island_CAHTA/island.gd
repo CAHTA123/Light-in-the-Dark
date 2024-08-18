@@ -50,13 +50,16 @@ func mega():
 func spawn_plate(por):
 	var p = load("res://scenes/Island_CAHTA/plate.tscn").instantiate()
 	add_child(p)
+	var parent = p.get_parent()
+	parent.buy_island.connect(on_buy)
 	p.global_position = por
 	return p
 
-func on_buy(island):
-	if not island in plate_sosed.keys():
+func on_buy(plate):
+	prints(plate_sosed)
+	prints(plate)
+	if not plate in plate_sosed.values():
 		return
-	plate_sosed[island].most = true
-	var pos1 = plate_sosed[island].global_position
-	var pos2 = plate_sosed[island].get_parent().plate_sosed[self].global_position
-	prints(pos1 , pos2)
+	#plate_sosed[island].most = true
+	#var pos1 = plate_sosed[island].global_position
+	#var pos2 = plate_sosed[island].get_parent().plate_sosed[self].global_position

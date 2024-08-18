@@ -4,9 +4,10 @@ var bridge = "res://scenes/Island_CAHTA/bridge.tscn"
 var pos
 var rot
 var most = false
+var can = false
 
 func _process(delta):
-	if Input.is_action_just_pressed("dash") and !most:
+	if Input.is_action_just_pressed("dash") and !most and can:
 			most = true
 			$"..".buy_island.emit($"..")
 			var b = load(bridge).instantiate()
@@ -17,11 +18,13 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
+		can = true
 		$Sale.visible = true
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		$Sale.visible = false
+		can = false
 
 func buy():
 	most = true
