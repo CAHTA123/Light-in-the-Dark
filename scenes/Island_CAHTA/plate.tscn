@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cng5hdnik1ope"]
+
+[ext_resource type="Script" path="res://scenes/Island_CAHTA/plate.gd" id="1_soans"]
+[ext_resource type="Texture2D" uid="uid://e5p8aubhp3on" path="res://sprites/pnghq.com-clipart-banner-sign.png" id="1_vvkpt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5qtu"]
+radius = 752.16
+
+[node name="Plate" type="Node2D"]
+z_index = 2
+script = ExtResource("1_soans")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -70)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_vvkpt")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_p5qtu")
+
+[node name="Sale" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="Sale"]
+offset_left = -134.0
+offset_top = -263.0
+offset_right = 148.0
+offset_bottom = -122.0
+theme_override_font_sizes/font_size = 50
+text = "E
+100 MONEY"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]

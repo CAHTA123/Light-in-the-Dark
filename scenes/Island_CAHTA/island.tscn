@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvcxwbtljq7nc"]
+
+[ext_resource type="Texture2D" uid="uid://vw4ybbtwimyf" path="res://sprites/Island/1.png" id="1_2eqm2"]
+[ext_resource type="Script" path="res://scenes/Island_CAHTA/island.gd" id="1_2yj1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx13o"]
+size = Vector2(1000, 1)
+
+[node name="Island" type="Area2D"]
+script = ExtResource("1_2yj1j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-20, 350)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_2eqm2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(-3635, -66, -2751, 1474, -86, 2372, 2594, 1744, 3564, 34, 3521, -1221, 2366, -2589, 43, -3031, -2723, -2332)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(-20, 350)
+polygon = PackedVector2Array(-3827, -550, -111, 2521, 3720, -346, 90, -3305)
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+shape = SubResource("RectangleShape2D_gx13o")
+target_position = Vector2(0, 20000)
+collide_with_areas = true
+collide_with_bodies = false
