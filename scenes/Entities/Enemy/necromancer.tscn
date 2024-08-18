@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ncdymqsjtfln" path="res://sprites/Enemy/Necromancer.png" id="2_4jo1p"]
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="3_tigec"]
 
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2r1hm"]
 radius = 30.0
 height = 134.0

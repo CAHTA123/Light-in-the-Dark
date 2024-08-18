@@ -1,19 +1,29 @@
 extends Area2D
 
-#@export var collision_node_path ="../../shape/StaticBody2D/CollisionPolygon2D"   # Путь к узлу с коллизией
-#@onready var collision_node = get_node(collision_node_path)
+var collision1 = null
+var collision2 = null
+var i1 = null
+var i2 = null
 
-@onready var collision_node = $"../../../Sprite/Island/shape/StaticBody2D/CollisionPolygon2D"
+func _on_body_entered(body):
+	if body.name == "Player":
+		collision1 = i1.get_node("StaticBody2D/CollisionPolygon2D")
+		collision1.set_disabled.call_deferred(true)
+		collision2 = i2.get_node("StaticBody2D/CollisionPolygon2D")
+		collision2.set_disabled.call_deferred(true)
 
-func _ready():
-	set_process_input(true)
+func _on_body_exited(body):
+	if body.name == "Player":
+		collision1 = i1.get_node("StaticBody2D/CollisionPolygon2D")
+		collision1.set_disabled.call_deferred(false)
+		collision2 = i2.get_node("StaticBody2D/CollisionPolygon2D")
+		collision2.set_disabled.call_deferred(false)
 
-
-func _on_Area2D_body_entered(body):
-	if body.has_method("get_name") and body.get_name() == "Player":
-		collision_node.set_deferred("disabled", true)
-
-
-func _on_Area2D_body_exited(body):
-	if body.has_method("get_name") and body.get_name() == "Player":
-		collision_node.set_deferred("disabled", false)
+func points(pos1, pos2):
+	global_position = pos1
+	var dis = pos1.distance_to(pos2)
+	var rot = pos1.angle_to(pos2) 
+	look_at(pos2)
+	$CollisionShape2D.shape.size.y = 200.0
+	$CollisionShape2D.shape.size.x = dis + 500
+	$CollisionShape2D.position.x = dis/2

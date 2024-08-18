@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/GUI/hp_bar/hp_bar.gd" id="1_0g30r"]
 
+
 [node name="hp_bar" type="Control"]
 layout_mode = 3
 anchors_preset = 15
