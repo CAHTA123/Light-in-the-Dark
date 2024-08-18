@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dknx6b3mwwi7u"]
 
-[ext_resource type="PackedScene" uid="uid://dvcxwbtljq7nc" path="res://scenes/Island_CAHTA/island.tscn" id="1_yfa5y"]
+[ext_resource type="PackedScene" uid="uid://dvcxwbtljq7nc" path="res://scenes/Island/island.tscn" id="1_yfa5y"]
 [ext_resource type="Texture2D" uid="uid://d21csqldp85b6" path="res://sprites/Island/7.png" id="2_bppka"]
 
 [node name="Island7" instance=ExtResource("1_yfa5y")]

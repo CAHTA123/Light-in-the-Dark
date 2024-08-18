@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://f82w3f5coymx"]
 
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="1_fk6nh"]
-[ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="1_we1dq"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="1_we1dq"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
