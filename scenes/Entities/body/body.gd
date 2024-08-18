@@ -6,7 +6,7 @@ var hp: float
 var max_hp: float = 10
 var hp_bar
 var speed = 300
-var damage = 2
+var damage: float = 2
 var take_damage = 0
 var destroy = false
 var item_drop = ""

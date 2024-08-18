@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbl0fi24k8stc"]
+
+[ext_resource type="PackedScene" uid="uid://cdtvya2u1xsii" path="res://scenes/Entities/Enemy/enemy.tscn" id="1_8qrrf"]
+[ext_resource type="Texture2D" uid="uid://dkh2cv3crhm2h" path="res://sprites/Enemy/Cactus_not_agry.png" id="2_7ayjw"]
+[ext_resource type="Script" path="res://scenes/Entities/Enemy/cactus_angry.gd" id="2_lqqdw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hd6as"]
+radius = 309.131
+
+[node name="Cactus_angry" instance=ExtResource("1_8qrrf")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_lqqdw")
+
+[node name="Shape" parent="." index="0"]
+build_mode = 1
+polygon = PackedVector2Array(-79, -62, -80, 3, -27, 3, -27, 95, -28, 104, 30, 103, 28, 34, 79, 34, 78, -31, 51, -30, 53, 8, 27, 8, 29, -76, 15, -91, -16, -90, -25, -78, -26, -21, -51, -23, -52, -63)
+
+[node name="Skin" parent="." index="2"]
+scale = Vector2(2, 2)
+
+[node name="Skin" parent="Skin" index="0"]
+position = Vector2(0, 920)
+scale = Vector2(0.99, 1.02)
+texture = ExtResource("2_7ayjw")
+
+[node name="hp_bar" parent="hp_bar" index="0"]
+offset_left = -70.0
+offset_top = 58.0
+offset_right = -70.0
+offset_bottom = 58.0
+
+[node name="Hunt_area" type="Area2D" parent="." index="6"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hunt_area" index="0"]
+shape = SubResource("CircleShape2D_hd6as")
+
+[node name="Area2D" type="Area2D" parent="." index="7"]
+
+[node name="Shape" type="CollisionPolygon2D" parent="Area2D" index="0"]
+build_mode = 1
+polygon = PackedVector2Array(-79, -62, -80, 3, -27, 3, -27, 95, -28, 104, 30, 103, 28, 34, 79, 34, 78, -31, 51, -30, 53, 8, 27, 8, 29, -76, 15, -91, -16, -90, -25, -78, -26, -21, -51, -23, -52, -63)
+
+[node name="Hurt" type="Area2D" parent="." index="8"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Shape" type="CollisionPolygon2D" parent="Hurt" index="0"]
+build_mode = 1
+polygon = PackedVector2Array(-79, -62, -80, 3, -27, 3, -27, 95, -28, 104, 30, 103, 28, 34, 79, 34, 78, -31, 51, -30, 53, 8, 27, 8, 29, -76, 15, -91, -16, -90, -25, -78, -26, -21, -51, -23, -52, -63)
+
+[connection signal="body_entered" from="Hunt_area" to="." method="_on_hunt_area_body_entered"]
+[connection signal="body_exited" from="Hunt_area" to="." method="_on_hunt_area_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Hurt" to="." method="_on_hurt_area_entered"]
