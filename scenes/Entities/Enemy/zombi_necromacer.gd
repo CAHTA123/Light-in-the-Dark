@@ -37,8 +37,13 @@ func drop():
 	
 	
 	
-func _on_hurt_area_area_entered(area):
+func _on_hurt_area_area_entered(area: Area2D):
+	if hp < player.damage:
+		hp = 0
+		drop()
+		queue_free()
+	else:
+		Signals.emit_signal('zombi_died', zombi_dead)
+		hp -= player.damage
 	
-	Signals.emit_signal('zombi_died', zombi_dead)
-	drop()
-	queue_free()
+	

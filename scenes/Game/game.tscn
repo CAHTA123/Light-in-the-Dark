@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=26 format=3 uid="uid://ck1jdw71slkbf"]
 
-[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/island/island.tscn" id="1_mhpm1"]
+[ext_resource type="PackedScene" uid="uid://bqhegexofc3wb" path="res://scenes/Island/island.tscn" id="1_mhpm1"]
 [ext_resource type="Texture2D" uid="uid://c31x74a4k4uq4" path="res://sprites/Islands/island1.webp" id="2_bheth"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
 [ext_resource type="Texture2D" uid="uid://dlqsbuju5ej7a" path="res://sprites/Islands/island2.webp" id="3_j4oke"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bjtl1qjh4dmtu" path="res://scenes/Entities/Potion/speed_potion.tscn" id="13_stvkk"]
 [ext_resource type="PackedScene" uid="uid://b6j1okxuer27d" path="res://scenes/Entities/Potion/heal_potion.tscn" id="14_mudlg"]
 [ext_resource type="PackedScene" uid="uid://bdifcsjg3o5g2" path="res://scenes/Entities/Potion/streng_potion.tscn" id="15_qvlwf"]
+[ext_resource type="PackedScene" uid="uid://bbl0fi24k8stc" path="res://scenes/Entities/Enemy/cactus_angry.tscn" id="24_j3chx"]
 
 [sub_resource type="GDScript" id="GDScript_ptu1r"]
 script/source = "extends Label
@@ -149,3 +150,6 @@ text = "MONEY:"
 script = SubResource("GDScript_ptu1r")
 
 [node name="ResourcesSpawner" parent="." instance=ExtResource("11_dvwmj")]
+
+[node name="Cactus_angry" parent="." instance=ExtResource("24_j3chx")]
+position = Vector2(-2527, 765)

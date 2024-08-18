@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=47 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
@@ -312,10 +312,6 @@ shader = ExtResource("28_5g2ab")
 shader_parameter/value = 1.5
 shader_parameter/brig = 0.5
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdxe2"]
-radius = 41.0
-height = 178.0
-
 [node name="Player" instance=ExtResource("1_edq0g")]
 texture_filter = 1
 position = Vector2(45, 64)
@@ -354,8 +350,8 @@ script = ExtResource("2_k2voa")
 
 [node name="shape" type="Area2D" parent="Skin/Skin/Weapon" index="0"]
 position = Vector2(0, -175)
-monitoring = false
-monitorable = false
+collision_layer = 8
+collision_mask = 0
 
 [node name="Shape" type="CollisionShape2D" parent="Skin/Skin/Weapon/shape" index="0"]
 shape = SubResource("CapsuleShape2D_ooqpy")
@@ -648,14 +644,6 @@ offset_left = -249.0
 offset_top = -418.0
 offset_right = 263.0
 offset_bottom = 94.0
-
-[node name="Test_damage" type="Area2D" parent="." index="9"]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Test_damage" index="0"]
-position = Vector2(-2, -89)
-shape = SubResource("CapsuleShape2D_hdxe2")
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]

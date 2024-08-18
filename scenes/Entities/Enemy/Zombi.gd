@@ -1,7 +1,8 @@
 extends Body
 
 var player = null
-
+func _ready() -> void:
+	hp = 10
 func _process(delta):
 	if player:
 
@@ -32,6 +33,14 @@ func drop():
 	
 	
 	
-func _on_hurt_area_area_entered(area):
-	drop()
-	queue_free()
+func _on_hurt_area_area_entered(area: Area2D):
+	
+	if hp <= player.damage:
+		
+		drop()
+		queue_free()
+	else:
+		
+		
+		
+		hp -= player.damage

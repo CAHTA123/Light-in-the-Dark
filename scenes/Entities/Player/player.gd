@@ -17,4 +17,3 @@ var pdamage
 var now_slot = null
 func _ready() -> void:
 	damage = 2
-	hp -= 6
