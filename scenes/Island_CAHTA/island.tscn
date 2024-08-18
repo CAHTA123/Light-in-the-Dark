@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx13o"]
 size = Vector2(1000, 1)
 
-[node name="Island" type="Area2D" groups=["islands"]]
+[node name="Island" type="Area2D"]
 script = ExtResource("1_2yj1j")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

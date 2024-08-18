@@ -1,30 +1,22 @@
 extends Node2D
 
-var bridge = "res://scenes/Island_CAHTA/bridge.tscn"
-var pos
-var rot
-var most = false
-var can = false
+var island
+var has_bridge = true
 
-func _process(delta):
-	if Input.is_action_just_pressed("dash") and !most and can:
-			most = true
-			$"..".buy_island.emit($"..")
-			var b = load(bridge).instantiate()
-			#b.position = pos
-			#b.rotation = deg_to_rad(rot)
-			get_parent().add_child.call_deferred(b)
-			
+func action():
+	if has_bridge:
+		has_bridge = false
+		island.buy_island.emit($"..")
 
+## Показать подсказку покупки
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		can = true
 		$Sale.visible = true
+		if !body.action_object:
+			body.action_object = $"."
 
+## скрыть подсказку покупки
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		$Sale.visible = false
-		can = false
-
-func buy():
-	most = true
+		body.action_object = null

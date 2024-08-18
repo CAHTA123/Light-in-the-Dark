@@ -5,7 +5,6 @@ var current_state : States
 enum States {IDLE, MOVE, DASH, ATTACK, BLOCK , TAKEDAMAGE}
 
 @export var inv: Inventory
-
 @export var weapon: Weapon
 @export var pickaxe: Pickaxe
 @export var axe: Axe
@@ -18,3 +17,5 @@ var now_slot = null
 func _ready() -> void:
 	damage = 2
 	hp -= 6
+
+var action_object

@@ -2,20 +2,20 @@ extends Area2D
 
 @onready var ray_cast = $ShapeCast2D
 
-var plate_sosed = {}
+var neighbor_plates = {}
 
 signal buy_island(island)
 
 func _ready():
 	buy_island.connect(on_buy)
-	mega.call_deferred()
+	scanner.call_deferred()
 
-func mega():
+##Сканирует острова
+func scanner():  
 	var last = Vector2.INF
 	var last_col = null
 	var closest_dist = INF
 	var dist
-	var can = false
 	
 	ray_cast.add_exception(self)
 	ray_cast.enabled = true
@@ -31,35 +31,39 @@ func mega():
 			
 			if collider != last_col: 
 				if last_col:
-					plate_sosed[last_col] = last_col.spawn_plate(last)
+					neighbor_plates[last_col] = last_col.spawn_plate(last, self)
 				last_col = collider
 				closest_dist = dist
 				last = point
-				can = true
 			elif dist < closest_dist:
 				closest_dist = dist
 				last = point
 		
 		elif last_col != null: 
-			plate_sosed[last_col] = last_col.spawn_plate(last)
+			neighbor_plates[last_col] = last_col.spawn_plate(last, self)
 			last_col = null
 			last = Vector2.INF
 			closest_dist = INF
-			can = false
 
-func spawn_plate(por):
+##Создание таблички ,если есть остров к которому можно провести мост от текущего.
+func spawn_plate(pos, self_island):
 	var p = load("res://scenes/Island_CAHTA/plate.tscn").instantiate()
 	add_child(p)
 	var parent = p.get_parent()
-	parent.buy_island.connect(on_buy)
-	p.global_position = por
+	p.island = self_island
+	p.global_position = pos
 	return p
 
-func on_buy(plate):
-	prints(plate_sosed)
-	prints(plate)
-	if not plate in plate_sosed.values():
+##Покупка и спавн моста
+func on_buy(island):
+	if not island in neighbor_plates.keys():
 		return
-	#plate_sosed[island].most = true
-	#var pos1 = plate_sosed[island].global_position
-	#var pos2 = plate_sosed[island].get_parent().plate_sosed[self].global_position
+	neighbor_plates[island].has_bridge = false
+	neighbor_plates[island].get_parent().neighbor_plates[self].has_bridge = false
+	var pos1 = neighbor_plates[island].global_position
+	var pos2 = neighbor_plates[island].get_parent().neighbor_plates[self].global_position
+	var b = load("res://scenes/Island_CAHTA/bridge.tscn").instantiate()
+	b.i1 = island
+	b.i2 = self
+	island.add_child(b)
+	b.points(pos1, pos2)
