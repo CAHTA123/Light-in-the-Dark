@@ -39,6 +39,6 @@ func drop():
 	
 func _on_hurt_area_area_entered(area):
 	
-	Signals.emit_signal('zombi_died', zombi_dead)
+	#Signals.emit_signal('zombi_died', zombi_dead)
 	drop()
 	queue_free()

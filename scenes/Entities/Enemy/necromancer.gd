@@ -3,13 +3,11 @@ var player = null
 var zombi_preload = preload("res://scenes/Entities/Enemy/zombi_necromacer.tscn")
 var zombi_dead_ = 0
 var can_spawn_zombi = false
-func _ready():
-	Signals.connect("zombi_died", Callable(self, 'zombi_die'))
 
+#func _ready():
+	#Signals.connect("zombi_died", Callable(self, 'zombi_die'))
 
-
-func _process(delta):
-	
+func _process(delta):	
 	if zombi_dead_ > 0 and can_spawn_zombi:
 		zombi_dead_ -= 1
 		can_spawn_zombi = false

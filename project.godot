@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 Global="*res://scripts/global.gd"
-Signals="*res://scenes/Entities/Potion/signals.gd"
 
 [display]
 
