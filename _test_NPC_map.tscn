@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxuve6ixgupgb"]
+
+[ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island_CAHTA/island_number/island_1.tscn" id="1_0hg0y"]
+[ext_resource type="PackedScene" uid="uid://bocsoglpmw3cm" path="res://scenes/Entities/npc/TEST_npc/TEST_merchant.tscn" id="2_fy5jm"]
+[ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="3_4ssya"]
+
+[node name="TestNpcMap" type="Node2D"]
+position = Vector2(123, -499)
+
+[node name="Island1" parent="." instance=ExtResource("1_0hg0y")]
+position = Vector2(-56, 491)
+
+[node name="Player" parent="." instance=ExtResource("3_4ssya")]
+position = Vector2(-217, 279)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Player"]
+position = Vector2(-960, -540)
+rect = Rect2(0, 0, 1920, 1080)
+
+[node name="NPC_Merchant" parent="." instance=ExtResource("2_fy5jm")]

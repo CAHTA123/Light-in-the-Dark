@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bocsoglpmw3cm"]
+
+[ext_resource type="Texture2D" uid="uid://dwltcn2uli41x" path="res://sprites/Enemy/Zombi.png" id="1_b5oud"]
+[ext_resource type="Script" path="res://scenes/Entities/npc/utils/speech_line.gd" id="1_ebctr"]
+
+[sub_resource type="GDScript" id="GDScript_4p2jb"]
+resource_name = "TEST_merchant"
+script/source = "extends Merchant
+
+## Пример создания NPC торговца. При взаимодействии с ним вызывается окно торговли.
+
+
+var shop_window:Window = preload(\"res://scenes/Entities/npc/TEST_window/Shop.tscn\").instantiate()
+
+
+func _ready() -> void:
+	add_child(shop_window)
+	shop_window.target_pos = get_viewport().get_visible_rect().size/2 - Vector2(shop_window.size/2)
+	shop_window.hide()
+
+
+func action():
+	shop_window.show()
+"
+
+[sub_resource type="Resource" id="Resource_k8jbq"]
+script = ExtResource("1_ebctr")
+chance = 1.0
+time = 3.0
+text = "Один"
+
+[sub_resource type="Resource" id="Resource_ovqrn"]
+script = ExtResource("1_ebctr")
+chance = 1.0
+time = 3.0
+text = "Два"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1nh4"]
+radius = 200.0
+
+[node name="NPC_Merchant" type="Area2D"]
+collision_layer = 16
+script = SubResource("GDScript_4p2jb")
+text_hint = "E"
+speech_enabled = true
+speech_lines = Array[ExtResource("1_ebctr")]([SubResource("Resource_k8jbq"), SubResource("Resource_ovqrn")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c1nh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -138)
+texture = ExtResource("1_b5oud")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-200, -200, 400, 400)
