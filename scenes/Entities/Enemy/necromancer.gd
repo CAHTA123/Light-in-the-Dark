@@ -6,8 +6,15 @@ var can_spawn_zombi = false
 var zombi_dead_count: int
 
 func _ready() -> void:
-	pass
-func _process(delta):
+	var timer = Timer.new()
+	add_child(timer)
+	timer.name = "HuntTimer"
+	timer.connect('timeout', Callable(self, "_on_timer_timeout_"))
+	timer.set_wait_time(0.01)
+	timer.set_one_shot(false)
+	timer.stop()
+	move_and_slide()
+func hunt():
 	if zombi_dead_ > 0 and can_spawn_zombi:
 		zombi_dead_ -= 1
 		can_spawn_zombi = false
@@ -29,22 +36,37 @@ func _process(delta):
 
 func _on_fight_area_body_entered(body):
 	if body.get_name() == "Player":
-		for i in range(3):
-			if zombi_dead_ < 1:
-				Spawn_zombi()
 		player = body
-
+		$HuntTimer.start()
+		if player:
+			for i in range(3):
+				if zombi_dead_ < 1:
+					Spawn_zombi()
+					
+func _on_fight_area_body_exited(body: Node2D) -> void:
+	if body.get_name() == "Player":
+		$HuntTimer.stop()
+	
+	
 func Spawn_zombi():
 	var zombi = zombi_preload.instantiate()
 	zombi.position = Vector2(self.position.x + randi_range(-300, 300), self.position.y + randi_range(-300, 300) )
 	$"..".add_child.call_deferred(zombi)
 	
-func dead():
-	pass
-
 func zombi_die(zombi_dead_count):
-	print(1)
 	zombi_dead_ += zombi_dead_count
 
 func _on_timer_timeout():
 	can_spawn_zombi = true
+
+func _on_hurt_area_entered(area: Area2D) -> void:
+	if hp <= player.damage:
+		drop()
+		queue_free()
+	else:
+		hp -= player.damage
+func drop():
+	pass
+func _on_timer_timeout_():
+	if player != null:
+		hunt()

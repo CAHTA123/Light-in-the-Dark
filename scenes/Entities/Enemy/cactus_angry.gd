@@ -14,7 +14,6 @@ func _ready():
 	$hp_bar.visible = false
 #Перемещение к игроку
 func hunt():
-	print(1)
 	var direction = (player.global_position - global_position)
 	if direction.x < 0:
 		$Skin/Skin.scale.x = 1

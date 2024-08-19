@@ -58,6 +58,8 @@ offset_right = -69.0
 offset_bottom = 86.0
 
 [node name="Hit_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_area"]
 position = Vector2(0, 6.33333)

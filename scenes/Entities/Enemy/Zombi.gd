@@ -37,7 +37,7 @@ func _on_area_2d_body_exited(body):
 		player = null
 		$HuntTimer.stop()
 func check_other_bodies():
-	var overlapping_bodies = $Area2D.get_overlapping_bodies()
+	var overlapping_bodies = $Hit_area.get_overlapping_bodies()
 	for overlap_body in overlapping_bodies:
 		await get_tree().create_timer(1).timeout
 		if overlap_body.get_name() == "Player":
