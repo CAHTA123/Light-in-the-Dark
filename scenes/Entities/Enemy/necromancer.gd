@@ -1,12 +1,12 @@
 extends Body
 var player = null
-var zombi_preload = preload("res://scenes/Entities/Enemy/zombi_necromacer.tscn")
+var zombi_preload = preload("res://scenes/Entities/Enemy/zombi.tscn")
 var zombi_dead_ = 0
 var can_spawn_zombi = false
+var zombi_dead_count: int
 
-#func _ready():
-	#Signals.connect("zombi_died", Callable(self, 'zombi_die'))
-
+func _ready() -> void:
+	pass
 func _process(delta):
 	if zombi_dead_ > 0 and can_spawn_zombi:
 		zombi_dead_ -= 1
@@ -42,8 +42,9 @@ func Spawn_zombi():
 func dead():
 	pass
 
-func zombi_die(zombi_dead):
-	zombi_dead_ += zombi_dead
+func zombi_die(zombi_dead_count):
+	print(1)
+	zombi_dead_ += zombi_dead_count
 
 func _on_timer_timeout():
 	can_spawn_zombi = true
