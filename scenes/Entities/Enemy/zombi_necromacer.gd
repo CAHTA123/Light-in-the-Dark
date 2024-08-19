@@ -1,8 +1,8 @@
 extends Body
 
-
 var player = null
 var zombi_dead = 1
+
 func _process(delta):
 	
 	if player:

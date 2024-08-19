@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://i7lpg4gc1qvc" path="res://sprites/Enemy/Zombi.png" id="2_mrm5f"]
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="3_urolv"]
 
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpa5y"]
 radius = 6.33333
 height = 25.6667

@@ -5,8 +5,7 @@ extends Node2D
 @onready var SkinPlayer = $"../../Skin"
 
 func _process(delta):
-	$"../../Camera2D".enabled = Global.player_camera_enable
-	if ["W", "A", "S", "D"].any(Input.is_action_pressed) and (body.current_state == body.States.IDLE or body.current_state == body.States.MOVE) and Global.player_canmove:
+	if ["W", "A", "S", "D"].any(Input.is_action_pressed) and (body.current_state == body.States.IDLE or body.current_state == body.States.MOVE): 
 		body.current_state = body.States.MOVE
 		body.current_state = body.States.MOVE
 		move()
