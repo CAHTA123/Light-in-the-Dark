@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8hx1jsekxarq"]
+[gd_scene load_steps=2 format=3 uid="uid://b8hx1jsekxarq"]
 
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="1_omp3l"]
-[ext_resource type="PackedScene" uid="uid://c7r7s3ifooqnp" path="res://scenes/Entities/Enemy/pig.tscn" id="2_mhbiw"]
 
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_omp3l")]
-
-[node name="pig" parent="." instance=ExtResource("2_mhbiw")]
-position = Vector2(752, 500)

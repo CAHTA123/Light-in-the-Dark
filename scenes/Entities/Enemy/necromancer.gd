@@ -4,8 +4,10 @@ var zombi_preload = preload("res://scenes/Entities/Enemy/zombi.tscn")
 var zombi_dead_ = 0
 var can_spawn_zombi = false
 var zombi_dead_count: int
-
+#var drop_preload
 func _ready() -> void:
+	#item_drop = ""
+	#var drop_preload = item_drop
 	var timer = Timer.new()
 	add_child(timer)
 	timer.name = "HuntTimer"
@@ -67,6 +69,9 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 		hp -= player.damage
 func drop():
 	pass
+	#var drop = drop_preload.instantiate()
+	#drop.position = Vector2(self.position.x, self.position.y)
+	#$".".add_child.call_deferred(drop)
 func _on_timer_timeout_():
 	if player != null:
 		hunt()

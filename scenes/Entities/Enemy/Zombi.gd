@@ -3,8 +3,10 @@ extends Body
 var player = null
 var zombi_dead_count = 1
 var zombi_dead
-
+#var drop_preload
 func _ready():
+	#item_drop = ""
+	#var drop_preload = preload(item_drop)
 	var timer = Timer.new()
 	add_child(timer)
 	timer.name = "HuntTimer"
@@ -44,8 +46,10 @@ func check_other_bodies():
 			overlap_body.hp -= damage
 			
 func drop():
+	#var drop = drop_preload.instantiate()
+	#drop.position = Vector2(self.position.x, self.position.y)
+	#$".".add_child.call_deferred(drop)
 	pass
-	
 func _on_hurt_area_area_entered(area):
 	if hp <= player.damage:
 		if $"../Necromancer":

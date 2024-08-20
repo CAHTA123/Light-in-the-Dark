@@ -2,8 +2,10 @@ extends Body
 
 var player = null
 var direction = null
-
+#var drop_preload
 func _ready():
+	#item_drop = ""
+	#var drop_preload = preload(item_drop)
 	var timer = Timer.new()
 	add_child(timer)
 	timer.name = "HuntTimer"
@@ -58,6 +60,9 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 		player.hp -= (player.damage / 3)
 		hp -= player.damage
 func drop():
+	#var drop = drop_preload.instantiate()
+	#drop.position = Vector2(self.position.x, self.position.y)
+	#$".".add_child.call_deferred(drop)
 	pass
 func _on_timer_timeout():
 	if player != null:

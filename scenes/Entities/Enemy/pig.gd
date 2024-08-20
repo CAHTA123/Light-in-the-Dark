@@ -1,8 +1,11 @@
 extends Body
 var take_damage_ = false
 var player = null
+#var drop_preload
 #Создание таймера для охоты на игрока через код
 func _ready():
+	#item_drop = ""
+	#var drop_preload = item_drop
 	var timer = Timer.new()
 	add_child(timer)
 	timer.name = "HuntTimer"
@@ -44,6 +47,9 @@ func _on_area_2d_body_exited(body):
 		random_walk()
 		
 func drop():
+	#var drop = drop_preload.instantiate()
+	#drop.position = Vector2(self.position.x, self.position.y)
+	#$".".add_child.call_deferred(drop)
 	pass
 	
 func _on_timer_timeout():
