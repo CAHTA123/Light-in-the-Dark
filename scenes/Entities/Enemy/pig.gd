@@ -10,7 +10,6 @@ func _ready():
 	timer.set_wait_time(0.01)
 	timer.set_one_shot(false)
 	timer.stop()
-	move_and_slide()
 	random_walk()
 	max_hp = 10
 	item_drop = ""
@@ -31,7 +30,6 @@ func hunt():
 		elif direction.y > 50:
 			velocity.y = -200
 	move_and_slide()
-	
 #Обнаружение игрока
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "Player":
