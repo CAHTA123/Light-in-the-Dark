@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8hp7jc66lg0t"]
 
-[ext_resource type="Script" path="res://scenes/Island_CAHTA/bridge.gd" id="1_jsn8t"]
+[ext_resource type="Script" path="res://scenes/Island/bridge.gd" id="1_jsn8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dpae"]
 size = Vector2(2000, 200)

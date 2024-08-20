@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dmoeanarr4wd1"]
 
-[ext_resource type="Texture2D" path="res://sprites/Enemy/Moon_mob.png" id="1_j1t0x"]
+[ext_resource type="Texture2D" uid="uid://cw1oo23qkb5do" path="res://sprites/Enemy/Moon_mob.png" id="1_j1t0x"]
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/moon_mob_1.gd" id="1_yaewj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkrpy"]

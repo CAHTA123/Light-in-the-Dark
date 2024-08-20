@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cng5hdnik1ope"]
 
-[ext_resource type="Script" path="res://scenes/Island_CAHTA/plate.gd" id="1_soans"]
+[ext_resource type="Script" path="res://scenes/Island/plate.gd" id="1_soans"]
 [ext_resource type="Texture2D" uid="uid://e5p8aubhp3on" path="res://sprites/pnghq.com-clipart-banner-sign.png" id="1_vvkpt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5qtu"]

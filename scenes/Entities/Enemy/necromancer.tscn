@@ -11,35 +11,37 @@ height = 134.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7xu1"]
 radius = 696.735
 
-[node name="Necromancer" type="CharacterBody2D"]
+[node name="Necro_root" type="Node2D"]
+
+[node name="Necromancer" type="CharacterBody2D" parent="."]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_hxcj8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer"]
 shape = SubResource("CapsuleShape2D_2r1hm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Necromancer"]
 texture = ExtResource("2_4jo1p")
 
-[node name="Fight_area" type="Area2D" parent="."]
+[node name="Fight_area" type="Area2D" parent="Necromancer"]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fight_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer/Fight_area"]
 shape = SubResource("CircleShape2D_p7xu1")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Necromancer"]
 wait_time = 10.0
 autostart = true
 
-[node name="hp_bar" type="Node2D" parent="."]
+[node name="hp_bar" type="Node2D" parent="Necromancer"]
 
-[node name="hp_bar" parent="hp_bar" instance=ExtResource("3_tigec")]
+[node name="hp_bar" parent="Necromancer/hp_bar" instance=ExtResource("3_tigec")]
 offset_left = -69.0
 offset_top = 86.0
 offset_right = -69.0
 offset_bottom = 86.0
 
-[connection signal="body_entered" from="Fight_area" to="." method="_on_fight_area_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Necromancer/Fight_area" to="Necromancer" method="_on_fight_area_body_entered"]
+[connection signal="timeout" from="Necromancer/Timer" to="Necromancer" method="_on_timer_timeout"]

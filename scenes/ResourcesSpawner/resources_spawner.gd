@@ -1,25 +1,18 @@
-extends Node2D
+extends Node
 
 @export var enabled: bool = true
 @export var cooldown: float = 1
-
 @onready var timer = $Timer
 
+var ISLANDS = []
 var islands_resources = []
 
-const ISLANDS = [
-	preload("res://data/islands/island1.tres"),
-	preload("res://data/islands/island2.tres"),
-	preload("res://data/islands/island3.tres"),
-	preload("res://data/islands/island4.tres"),
-	preload("res://data/islands/island5.tres"),
-	preload("res://data/islands/island6.tres"),
-	preload("res://data/islands/island7.tres"),
-	preload("res://data/islands/island8.tres"),
-	preload("res://data/islands/island9.tres"),
-]
+const DIR = "res://data/islands/"
 
 func _ready():
+	# Загружаем из папки все TRES
+	for file in DirAccess.get_files_at(DIR):
+		ISLANDS.append(load(DIR.path_join(file)))
 	if enabled:
 		timer.wait_time = cooldown
 		timer.start()
@@ -35,11 +28,9 @@ func _ready():
 			}
 			islands_resources.append(dict)
 
-
 func _on_timer_timeout():
 	for island in ISLANDS:
 		_spawn_resources(island)
-
 
 func _spawn_resources(island):
 	# Для острова получить тайлмап, и далее работать с ним для спавна

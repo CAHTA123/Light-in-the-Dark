@@ -1,7 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=50 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
-[ext_resource type="Script" path="res://scenes/weapon/weapon.gd" id="2_k2voa"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="2_k2voa"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/Move.gd" id="2_nw2w3"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/player.gd" id="2_s5x7p"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/player_camera.gd" id="3_3bo7r"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
 [ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
 [ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
+[ext_resource type="Script" path="res://scenes/Entities/Player/Label.gd" id="38_xwesb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
 radius = 40.0
@@ -657,6 +658,16 @@ offset_left = -249.0
 offset_top = -418.0
 offset_right = 263.0
 offset_bottom = 94.0
+
+[node name="Label" type="Label" parent="Pause" index="6"]
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 1817.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 60
+text = "MONEY:"
+script = ExtResource("38_xwesb")
+metadata/_edit_use_anchors_ = true
 
 [node name="Test_damage" type="Area2D" parent="." index="9"]
 collision_layer = 4
