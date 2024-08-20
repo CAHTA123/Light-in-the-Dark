@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=14 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island/island_number/island_1.tscn" id="1_283dh"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6svppnkcdl5b" path="res://scenes/Island/island_number/island_8.tscn" id="8_lh0pw"]
 [ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
+[ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_2d.tscn" id="13_2jsiw"]
 
 [node name="Game" type="Node"]
 
@@ -53,3 +54,6 @@ volume_db = -10.38
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
+
+[node name="Camera2D" parent="." instance=ExtResource("13_2jsiw")]
+position_smoothing_enabled = true

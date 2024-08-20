@@ -334,6 +334,7 @@ shield = ExtResource("7_ccnph")
 polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
+enabled = false
 script = ExtResource("3_3bo7r")
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D" index="0"]
