@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd3kqo5i7jewx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_etqp6"]
+line_spacing = -20.0
+font_size = 50
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_ot83m"]
+script/source = "extends Label
+
+var show_time:float:
+	set(value):
+		show_time = value
+		_wait_time = value
+var _wait_time:float:
+	set(value):
+		_wait_time = value
+		if not _wait_time:
+			process_mode = Node.PROCESS_MODE_DISABLED
+			visible = false
+		else:
+			process_mode = Node.PROCESS_MODE_INHERIT
+			visible = true
+
+
+func _process(delta: float) -> void:
+	_wait_time = clampf(_wait_time-delta, 0.0, show_time)
+"
+
+[node name="SpeechBubble" type="Label"]
+anchors_preset = -1
+offset_left = -540.0
+offset_top = -36.0
+offset_right = 541.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_etqp6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = SubResource("GDScript_ot83m")
