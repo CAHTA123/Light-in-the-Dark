@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6b4cvdurramq"]
+
+[ext_resource type="Texture2D" uid="uid://bg801f2qxgo5b" path="res://scenes/Anдрюшка/builds_book/аяр.png" id="1_1gldc"]
+[ext_resource type="Texture2D" uid="uid://bwude15xq63nd" path="res://sprites/предметы/apple-icon.png" id="2_1ku0x"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(10.8999, 8.27441)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 55.0
+offset_right = 261.0
+offset_bottom = 89.0
+scale = Vector2(5.58913, 5.58913)
+texture = ExtResource("1_1gldc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 207.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Шалаш"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "нужные предметы:"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.21541, 2.0571)
+texture = ExtResource("2_1ku0x")

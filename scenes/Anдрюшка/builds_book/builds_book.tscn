@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvp0wlya30sfc"]
+
+[ext_resource type="Texture2D" uid="uid://ck04awo7le5wf" path="res://scenes/Anдрюшка/builds_book/1.png" id="1_vuxq0"]
+[ext_resource type="Texture2D" uid="uid://bg801f2qxgo5b" path="res://scenes/Anдрюшка/builds_book/аяр.png" id="2_7x06t"]
+
+[node name="Build_Book" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+offset_left = 163.0
+offset_top = 53.0
+offset_right = 1050.0
+offset_bottom = 569.0
+texture = ExtResource("1_vuxq0")
+region_rect = Rect2(90.7, 88, 526.9, 333)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 28.0
+offset_top = 31.0
+offset_right = 422.0
+offset_bottom = 91.0
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="MenuButton" type="MenuButton" parent="NinePatchRect/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "3кййк3й"
+icon = ExtResource("2_7x06t")
+clip_text = true
+item_count = 1
+popup/item_0/text = "Шалаш"
+popup/item_0/id = 0
+
+[node name="Button" type="Button" parent="NinePatchRect/ScrollContainer/GridContainer/MenuButton"]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "вфцвц"
+
+[node name="Button2" type="Button" parent="NinePatchRect/ScrollContainer/GridContainer/MenuButton"]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "фафвфв"

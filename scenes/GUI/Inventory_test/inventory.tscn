@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot.gd" id="3_fmukl"]
 [ext_resource type="Texture2D" uid="uid://dn3m4lty7w8b7" path="res://sprites/Inventory/Slot_sw.png" id="4_p878a"]
 [ext_resource type="Texture2D" uid="uid://cebrhqfrcngwq" path="res://sprites/Inventory/Slot_s.png" id="5_7twg4"]
-[ext_resource type="Texture2D" uid="uid://coeox1udqkcbi" path="res://sprites/Inventory/Slot_a.png" id="6_tms2t"]
+[ext_resource type="Texture2D" uid="uid://cpcjp0wqtr5e8" path="res://sprites/Inventory/Slot_a.png" id="6_tms2t"]
 [ext_resource type="Texture2D" uid="uid://dob2e8fx7ceor" path="res://sprites/Inventory/Slot_p.png" id="7_vmnmq"]
 
 [node name="Inventory" type="Control"]

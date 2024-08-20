@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6svppnkcdl5b" path="res://scenes/Island/island_number/island_8.tscn" id="8_lh0pw"]
 [ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
-[ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_2d.tscn" id="13_2jsiw"]
+[ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_zoom/camera_2d.tscn" id="13_2jsiw"]
 
 [node name="Game" type="Node"]
 
