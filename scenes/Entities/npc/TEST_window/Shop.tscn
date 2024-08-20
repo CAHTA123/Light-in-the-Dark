@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5df4e7vwa4bc"]
+
+[sub_resource type="GDScript" id="GDScript_qw27r"]
+script/source = "extends Window
+
+
+@onready var target_pos:Vector2
+
+
+func _ready() -> void:
+	min_size = size
+	close_requested.connect(hide)
+	visibility_changed.connect(func():
+		process_mode = Node.PROCESS_MODE_ALWAYS if visible else Node.PROCESS_MODE_DISABLED
+		)
+
+
+func _process(delta: float) -> void:
+	position = lerp(Vector2(position), target_pos, 0.3)
+"
+
+[node name="Shop" type="Window"]
+title = "Магазин"
+position = Vector2i(0, 36)
+size = Vector2i(500, 400)
+script = SubResource("GDScript_qw27r")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer"]
+layout_mode = 2
+text = "Ваш магазин в другом замке"
+horizontal_alignment = 1
+vertical_alignment = 1

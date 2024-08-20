@@ -48,7 +48,7 @@ func scanner():
 
 ##Создание таблички ,если есть остров к которому можно провести мост от текущего.
 func spawn_plate(pos, self_island):
-	var p = load("res://scenes/Island_CAHTA/plate.tscn").instantiate()
+	var p = load("res://scenes/Island/plate.tscn").instantiate()
 	add_child(p)
 	var parent = p.get_parent()
 	p.island = self_island
@@ -63,7 +63,7 @@ func on_buy(island):
 	neighbor_plates[island].get_parent().neighbor_plates[self].has_bridge = false
 	var pos1 = neighbor_plates[island].global_position
 	var pos2 = neighbor_plates[island].get_parent().neighbor_plates[self].global_position
-	var b = load("res://scenes/Island_CAHTA/bridge.tscn").instantiate()
+	var b = load("res://scenes/Island/bridge.tscn").instantiate()
 	b.i1 = island
 	b.i2 = self
 	island.add_child(b)
