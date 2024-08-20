@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6b4cvdurramq"]
+[gd_scene load_steps=2 format=3 uid="uid://c6b4cvdurramq"]
 
 [ext_resource type="Texture2D" uid="uid://bg801f2qxgo5b" path="res://scenes/Anдрюшка/builds_book/аяр.png" id="1_1gldc"]
-[ext_resource type="Texture2D" uid="uid://bwude15xq63nd" path="res://sprites/предметы/apple-icon.png" id="2_1ku0x"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,16 +37,3 @@ text = "Шалаш"
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "нужные предметы:"
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(2.21541, 2.0571)
-texture = ExtResource("2_1ku0x")
