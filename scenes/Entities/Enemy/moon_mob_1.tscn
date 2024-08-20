@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmoeanarr4wd1"]
+[gd_scene load_steps=11 format=3 uid="uid://dmoeanarr4wd1"]
 
 [ext_resource type="Texture2D" uid="uid://cw1oo23qkb5do" path="res://sprites/Enemy/Moon_mob.png" id="1_j1t0x"]
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/moon_mob_1.gd" id="1_yaewj"]
@@ -52,6 +52,9 @@ _data = {
 radius = 70.0
 height = 430.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ix4u"]
+radius = 67.6831
+
 [node name="Moon_mob_1" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
 collision_layer = 0
@@ -95,6 +98,13 @@ offset_top = 213.333
 offset_right = -382.333
 offset_bottom = 213.333
 scale = Vector2(5, 5)
+
+[node name="Collision_stop" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision_stop"]
+shape = SubResource("CircleShape2D_0ix4u")
 
 [connection signal="body_entered" from="Hunt_area" to="." method="_on_hunt_area_body_entered"]
 [connection signal="body_exited" from="Hunt_area" to="." method="_on_hunt_area_body_exited"]

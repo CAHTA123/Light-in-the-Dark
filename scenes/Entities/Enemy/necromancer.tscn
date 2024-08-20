@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7imhurbepeyr"]
+[gd_scene load_steps=7 format=3 uid="uid://b7imhurbepeyr"]
 
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/necromancer.gd" id="1_hxcj8"]
 [ext_resource type="Texture2D" uid="uid://ncdymqsjtfln" path="res://sprites/Enemy/Necromancer.png" id="2_4jo1p"]
@@ -10,6 +10,9 @@ height = 134.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7xu1"]
 radius = 696.735
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wen03"]
+radius = 67.6831
 
 [node name="Necro_root" type="Node2D"]
 
@@ -50,7 +53,15 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer/Hurt"]
 shape = SubResource("CapsuleShape2D_2r1hm")
 
+[node name="Collision_stop" type="Area2D" parent="Necromancer"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer/Collision_stop"]
+shape = SubResource("CircleShape2D_wen03")
+
 [connection signal="body_entered" from="Necromancer/Fight_area" to="Necromancer" method="_on_fight_area_body_entered"]
 [connection signal="body_exited" from="Necromancer/Fight_area" to="Necromancer" method="_on_fight_area_body_exited"]
 [connection signal="timeout" from="Necromancer/Timer" to="Necromancer" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Necromancer/Hurt" to="Necromancer" method="_on_hurt_area_entered"]
+[connection signal="body_entered" from="Necromancer/Collision_stop" to="Necromancer" method="_on_collision_stop_body_entered"]

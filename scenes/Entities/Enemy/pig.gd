@@ -44,6 +44,7 @@ func _on_area_2d_body_exited(body):
 	if body.get_name() == "Player":
 		player = null
 		$HuntTimer.stop()
+		regen_hp()
 		random_walk()
 		
 func drop():
@@ -74,3 +75,9 @@ func random_walk():
 			$"Body_Skin#Skin#Skin/Skin".scale.x = -1
 		velocity.y = randi_range(-50, 50)
 		await get_tree().create_timer(5).timeout
+		
+func regen_hp():
+	hp += 1
+	await get_tree().create_timer(5).timeout
+	if not player:
+		regen_hp()

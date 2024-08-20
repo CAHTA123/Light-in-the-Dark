@@ -40,6 +40,7 @@ func _on_hunt_area_body_exited(body: CharacterBody2D) -> void:
 		$hp_bar.visible = false
 		$Skin/Skin.texture = load("res://sprites/Enemy/Cactus_not_agry.png")
 		$HuntTimer.stop()
+		regen_hp()
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		body.hp -= damage
@@ -67,3 +68,8 @@ func drop():
 func _on_timer_timeout():
 	if player != null:
 		hunt()
+func regen_hp():
+	hp += 1
+	await get_tree().create_timer(5).timeout
+	if not player:
+		regen_hp()

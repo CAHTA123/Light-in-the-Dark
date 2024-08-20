@@ -17,24 +17,25 @@ func _ready() -> void:
 	timer.stop()
 	move_and_slide()
 func hunt():
-	if zombi_dead_ > 0 and can_spawn_zombi:
-		zombi_dead_ -= 1
-		can_spawn_zombi = false
-		Spawn_zombi() 
+	if hp > 0:
+		if zombi_dead_ > 0 and can_spawn_zombi:
+			zombi_dead_ -= 1
+			can_spawn_zombi = false
+			Spawn_zombi() 
 
-	if player:
-		var direction = (player.global_position - global_position)
-		if direction.x < 0:
-			$Sprite2D.scale.x = 1
-			velocity.x = -100
-		elif direction.x > 0:
-			$Sprite2D.scale.x = 1
-			velocity.x = 100
-		if direction.y < 0:
-			velocity.y = -100
-		elif direction.y > 0:
-			velocity.y = 100
-	move_and_slide()
+		if player:
+			var direction = (player.global_position - global_position)
+			if direction.x < 0:
+				$Sprite2D.scale.x = 1
+				velocity.x = -100
+			elif direction.x > 0:
+				$Sprite2D.scale.x = 1
+				velocity.x = 100
+			if direction.y < 0:
+				velocity.y = -100
+			elif direction.y > 0:
+				velocity.y = 100
+		move_and_slide()
 
 func _on_fight_area_body_entered(body):
 	if body.get_name() == "Player":
@@ -48,7 +49,7 @@ func _on_fight_area_body_entered(body):
 func _on_fight_area_body_exited(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		$HuntTimer.stop()
-	
+	regen_hp()
 	
 func Spawn_zombi():
 	var zombi = zombi_preload.instantiate()
@@ -63,6 +64,9 @@ func _on_timer_timeout():
 
 func _on_hurt_area_entered(area: Area2D) -> void:
 	if hp <= player.damage:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "modulate", Color( 1, 1, 1 , 0),  5)
+		await tween.finished
 		drop()
 		queue_free()
 	else:
@@ -75,3 +79,19 @@ func drop():
 func _on_timer_timeout_():
 	if player != null:
 		hunt()
+		
+func regen_hp():
+	hp += 1
+	await get_tree().create_timer(5).timeout
+	if not player:
+		regen_hp()
+
+
+func _on_collision_stop_body_entered(body: Node2D) -> void:
+	if body.get_name() == "StaticBody2D":
+		velocity.x = velocity.x * -1
+		velocity.y = velocity.y * -1
+		if velocity.x > 0:
+			$Sprite2D.scale.x = 1
+		else:
+			$Sprite2D.scale.x = -1
