@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8hx1jsekxarq"]
 
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="1_omp3l"]
-[ext_resource type="PackedScene" uid="uid://d3f8t7x5kbf86" path="res://scenes/Entities/Enemy/jellyfish.tscn" id="2_mwa0l"]
+[ext_resource type="PackedScene" uid="uid://bc0u4itxwduu0" path="res://scenes/Entities/Enemy/kamikadze.tscn" id="2_usltn"]
 
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_omp3l")]
 position = Vector2(-251, 28)
 
-[node name="Jellyfish" parent="." instance=ExtResource("2_mwa0l")]
-position = Vector2(248, 12)
+[node name="Kamikadze" parent="." instance=ExtResource("2_usltn")]
+position = Vector2(780, 68)
