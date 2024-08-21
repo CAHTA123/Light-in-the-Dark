@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cvw6ky6tab67d"]
 
-[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_6imhd"]
-[ext_resource type="Script" path="res://scenes/Entities/Enemy/craken.gd" id="2_5bbii"]
+[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_ni31o"]
+[ext_resource type="Script" path="res://scenes/Entities/Enemy/Dragon.gd" id="2_56vb8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flo32"]
 radius = 151.013
@@ -82,14 +82,18 @@ height = 538.667
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1thp"]
 radius = 67.6831
 
-[node name="Craken" instance=ExtResource("1_6imhd")]
+[node name="Dragon" instance=ExtResource("1_ni31o")]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("2_5bbii")
+script = ExtResource("2_56vb8")
 
 [node name="Shape" parent="." index="0"]
 build_mode = 1
 polygon = PackedVector2Array(-157, -208, -250, -91, -262, 17, -253, 101, -214, 173, -130, 230, -28, 263, 89, 266, 149, 209, 212, 152, 254, 41, 239, -109, 194, -190, 89, -241, -7, -259, -106, -256)
+
+[node name="hp_bar" parent="." index="3"]
+position = Vector2(0, 111)
+scale = Vector2(2, 2)
 
 [node name="Skills" parent="." index="4"]
 scale = Vector2(3, 3)
@@ -135,7 +139,6 @@ position = Vector2(2.66667, 5.33333)
 shape = SubResource("CapsuleShape2D_yt32j")
 
 [node name="Collision_stop" type="Area2D" parent="." index="8"]
-visible = false
 collision_layer = 0
 collision_mask = 2
 

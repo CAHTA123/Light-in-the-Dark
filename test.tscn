@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8hx1jsekxarq"]
 
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="1_omp3l"]
-[ext_resource type="PackedScene" uid="uid://cvw6ky6tab67d" path="res://scenes/Entities/Enemy/craken.tscn" id="2_hegu3"]
+[ext_resource type="PackedScene" uid="uid://d3f8t7x5kbf86" path="res://scenes/Entities/Enemy/jellyfish.tscn" id="2_mwa0l"]
 
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_omp3l")]
 position = Vector2(-251, 28)
 
-[node name="Craken" parent="." instance=ExtResource("2_hegu3")]
-position = Vector2(360, -8)
+[node name="Jellyfish" parent="." instance=ExtResource("2_mwa0l")]
+position = Vector2(248, 12)
