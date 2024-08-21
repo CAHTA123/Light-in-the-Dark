@@ -5,6 +5,7 @@ extends TextureRect
 var slot_index
 
 func _ready():
+	update(slot_index)
 	slot_index = get_slot_index()
 
 func get_slot_index():

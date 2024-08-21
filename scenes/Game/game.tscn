@@ -55,5 +55,4 @@ autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 
-[node name="Camera2D" parent="." instance=ExtResource("13_2jsiw")]
-position_smoothing_enabled = true
+[node name="Camera" parent="." instance=ExtResource("13_2jsiw")]

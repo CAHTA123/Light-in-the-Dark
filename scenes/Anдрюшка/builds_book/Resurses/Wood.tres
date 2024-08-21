@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Slot" load_steps=5 format=3 uid="uid://isyenmscl1bg"]
+
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_skfoa"]
+[ext_resource type="Texture2D" uid="uid://cfhcw07smkyr4" path="res://sprites/предметы/Wood_Icon.png" id="2_4kga6"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_ph1pt"]
+
+[sub_resource type="Resource" id="Resource_2r6wx"]
+script = ExtResource("1_skfoa")
+stack = true
+slot_type = {
+"axe": false,
+"pickaxe": false,
+"shield": false,
+"weapon": false
+}
+name = "Wood"
+texture = ExtResource("2_4kga6")
+character = {}
+
+[resource]
+script = ExtResource("3_ph1pt")
+item = SubResource("Resource_2r6wx")
+amount = 2

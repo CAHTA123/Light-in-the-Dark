@@ -1,10 +1,9 @@
-[gd_scene load_steps=50 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=49 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="2_k2voa"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/Move.gd" id="2_nw2w3"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/player.gd" id="2_s5x7p"]
-[ext_resource type="Script" path="res://scenes/Entities/Player/player_camera.gd" id="3_3bo7r"]
 [ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="3_4gg2j"]
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="3_4q6bb"]
 [ext_resource type="Resource" uid="uid://cj07el5l1r8ix" path="res://scenes/GUI/Inventory_test/Inventory.tres" id="3_d2r3l"]
@@ -334,8 +333,6 @@ shield = ExtResource("7_ccnph")
 polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
-enabled = false
-script = ExtResource("3_3bo7r")
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D" index="0"]
 visible = false
