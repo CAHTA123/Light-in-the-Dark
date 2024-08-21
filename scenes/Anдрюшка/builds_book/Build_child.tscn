@@ -1,54 +1,60 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6b4cvdurramq"]
+[gd_scene load_steps=5 format=3 uid="uid://c6b4cvdurramq"]
 
 [ext_resource type="Texture2D" uid="uid://bg801f2qxgo5b" path="res://scenes/Anдрюшка/builds_book/аяр.png" id="1_1gldc"]
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Build_child.gd" id="1_c2e3d"]
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/inventory_tres.gd" id="2_ox2k7"]
-[ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_dcjto"]
-[ext_resource type="Resource" uid="uid://isyenmscl1bg" path="res://scenes/Anдрюшка/builds_book/Resurses/Wood.tres" id="4_2el2q"]
-
-[sub_resource type="Resource" id="Resource_yag2n"]
-script = ExtResource("2_ox2k7")
-slots_tres = Array[Resource("res://scenes/GUI/Inventory_test/slot_tres.gd")]([ExtResource("3_dcjto"), ExtResource("4_2el2q")])
+[ext_resource type="Resource" uid="uid://b57klyt0d03a4" path="res://scenes/Anдрюшка/builds_book/Resurses/shalash.tres" id="2_4vchl"]
+[ext_resource type="PackedScene" uid="uid://dnbyg07fupfr7" path="res://scenes/Anдрюшка/builds_book/necessary_item_slot.tscn" id="3_u5djm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -116.5
+offset_right = 200.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_c2e3d")
-necessary_items = SubResource("Resource_yag2n")
+building_data = ExtResource("2_4vchl")
+material_slot_scene = ExtResource("3_u5djm")
 
 [node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 233)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(10.8999, 8.27441)
+offset_right = 300.0
+offset_bottom = 233.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
-offset_left = 227.0
-offset_top = 55.0
-offset_right = 261.0
-offset_bottom = 89.0
+offset_left = 114.0
+offset_top = 30.5
+offset_right = 144.0
+offset_bottom = 60.5
 scale = Vector2(5.58913, 5.58913)
 texture = ExtResource("1_1gldc")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_left = 20.0
-offset_top = 16.0
-offset_right = 207.0
-offset_bottom = 85.0
-
-[node name="Name" type="Label" parent="VBoxContainer"]
+[node name="Name" type="Label" parent="."]
 layout_mode = 2
+offset_left = 258.0
+offset_top = -86.5
+offset_right = 445.0
+offset_bottom = -17.5
 theme_override_font_sizes/font_size = 50
 text = "Шалаш"
 
-[node name="necessary items" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "нужные предметы:"
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 210)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 108.0
+offset_bottom = 221.0
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="necessary_items" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2

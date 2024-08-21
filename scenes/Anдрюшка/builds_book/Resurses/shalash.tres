@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Building_data" load_steps=3 format=3 uid="uid://b57klyt0d03a4"]
+
+[ext_resource type="Texture2D" uid="uid://coxt1e0thlr0w" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="1_unipr"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/building_data.gd" id="2_fwy1d"]
+
+[resource]
+script = ExtResource("2_fwy1d")
+building_name = "Shalash"
+icon = ExtResource("1_unipr")
+materials = {
+"res://scenes/Anдрюшка/builds_book/Resurses/Rock.tres": 2,
+"res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres": 3,
+"res://scenes/Anдрюшка/builds_book/Resurses/Wood.tres": 2
+}

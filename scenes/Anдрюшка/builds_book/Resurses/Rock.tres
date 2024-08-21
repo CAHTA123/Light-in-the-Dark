@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Slot" load_steps=5 format=3 uid="uid://ckdgc8s56ccxm"]
+
+[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_yl3fk"]
+[ext_resource type="Texture2D" uid="uid://c3jnfwrv78uf4" path="res://sprites/предметы/Rock.png" id="2_sp47l"]
+[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_y3pnp"]
+
+[sub_resource type="Resource" id="Resource_28xcr"]
+script = ExtResource("1_yl3fk")
+stack = true
+slot_type = {
+"axe": false,
+"pickaxe": false,
+"shield": false,
+"weapon": false
+}
+name = "Rock"
+texture = ExtResource("2_sp47l")
+character = {}
+
+[resource]
+script = ExtResource("3_y3pnp")
+item = SubResource("Resource_28xcr")
+amount = 0
