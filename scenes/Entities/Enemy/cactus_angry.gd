@@ -2,8 +2,10 @@ extends Body
 
 var player = null
 var direction = null
-
+#var drop_preload
 func _ready():
+	#item_drop = ""
+	#var drop_preload = preload(item_drop)
 	var timer = Timer.new()
 	add_child(timer)
 	timer.name = "HuntTimer"
@@ -14,7 +16,6 @@ func _ready():
 	$hp_bar.visible = false
 #Перемещение к игроку
 func hunt():
-	print(1)
 	var direction = (player.global_position - global_position)
 	if direction.x < 0:
 		$Skin/Skin.scale.x = 1
@@ -39,6 +40,7 @@ func _on_hunt_area_body_exited(body: CharacterBody2D) -> void:
 		$hp_bar.visible = false
 		$Skin/Skin.texture = load("res://sprites/Enemy/Cactus_not_agry.png")
 		$HuntTimer.stop()
+		regen_hp()
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		body.hp -= damage
@@ -59,7 +61,15 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 		player.hp -= (player.damage / 3)
 		hp -= player.damage
 func drop():
+	#var drop = drop_preload.instantiate()
+	#drop.position = Vector2(self.position.x, self.position.y)
+	#$".".add_child.call_deferred(drop)
 	pass
 func _on_timer_timeout():
 	if player != null:
 		hunt()
+func regen_hp():
+	hp += 1
+	await get_tree().create_timer(5).timeout
+	if not player:
+		regen_hp()

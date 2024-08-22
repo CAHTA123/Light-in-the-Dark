@@ -3,10 +3,10 @@ extends Body
 var can_attack = true
 var attack = false
 var player = null
-var zombi_dead_count = 1
-var zombi_dead
 #var drop_preload
 func _ready():
+	max_hp = 40
+	hp = 40
 	#item_drop = ""
 	#var drop_preload = preload(item_drop)
 	var timer = Timer.new()
@@ -20,17 +20,13 @@ func _ready():
 	process()
 #Функция преследования игрока(Обновляется по таймеру)
 func hunt():
-	if hp > 0 and not attack:
+	if hp > 0 and not attack and player:
 		var direction = (player.global_position - global_position)
 		if direction.x < 0:
-			$Sprite2D.scale.x = 0.2
+			#$Sprite2D.scale.x = 1
 			velocity.x = -50
-			$Skills/Attack.scale.y = 1
-			$Skills/Attack.rotation_degrees = 0
 		elif direction.x > 100:
-			$Skills/Attack.scale.y = -1
-			$Skills/Attack.rotation_degrees = 180
-			$Sprite2D.scale.x = -0.2
+			#$Sprite2D.scale.x = -1
 			velocity.x = 50
 		if direction.y < 0:
 			velocity.y = -50
@@ -51,10 +47,10 @@ func _on_area_2d_body_exited(body):
 
 		_patrul()
 func check_other_bodies():
-	var overlapping_bodies = $Skills/Attack/Hit_area.get_overlapping_bodies()
+	var overlapping_bodies = $Skills/Attack/Attack_direction.get_overlapping_bodies()
 	for overlap_body in overlapping_bodies:
 		if overlap_body.get_name() == "Player":
-			overlap_body.hp -= damage
+			attack_enemy()
 func drop():
 	#var drop = drop_preload.instantiate()
 	#drop.position = Vector2(self.position.x, self.position.y)
@@ -65,8 +61,6 @@ func _on_hurt_area_area_entered(area):
 	if hp <= player.damage:
 		velocity = Vector2(0, 0)
 		hp = 0
-		if $"../Necromancer":
-			$"../Necromancer".zombi_die(zombi_dead_count)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "modulate", Color( 1, 1, 1 , 0),  5)
 		await tween.finished
@@ -92,15 +86,16 @@ func regen_hp():
 		regen_hp()
 #Патрулирование 
 func _patrul():
-	if hp > 0 and not attack:
-		while true:
-			velocity.x = randi_range(-50, 50)
-			if velocity.x > 0:
-				$Sprite2D.scale.x = -0.2
-			else:
-				$Sprite2D.scale.x = 0.2
-			velocity.y = randi_range(-50, 50)
-			await get_tree().create_timer(5).timeout
+	#if hp > 0 and not attack:
+		#while true:
+			#velocity.x = randi_range(-50, 50)
+			#if velocity.x > 0:
+				#$Sprite2D.scale.x = -1
+			#else:
+				#$Sprite2D.scale.x = 1
+			#velocity.y = randi_range(-50, 50)
+			#await get_tree().create_timer(5).timeout
+	pass
 #Обновление физики
 func process():
 	while true:
@@ -112,32 +107,32 @@ func _on_collision_stop_body_entered(body: Node2D) -> void:
 		velocity.x = velocity.x * -1
 		velocity.y = velocity.y * -1
 		if velocity.x > 0:
-			$Sprite2D.scale.x = -0.2
+			pass
+			#$Sprite2D.scale.x = -1
 		else:
-			$Sprite2D.scale.x = 0.2
+			pass
+			#$Sprite2D.scale.x = 1
 
 #Функция атаки моба, если игрок вошёл в нужную зону
 func _on_attack_direction_body_entered(body: Node2D) -> void:
-	if can_attack:
-		attack = true
-		var direction = (player.global_position - global_position)
-		if body.get_name() == "Player":
-			if direction.x < 0:
-				$Sprite2D.scale.x = 0.2
-				velocity.x = -1000
-				await get_tree().create_timer(0.5).timeout
-				attack = false
-				velocity.x = 0
-			elif direction.x > 0:
-				$Sprite2D.scale.x = -0.2
-				velocity.x = 1000
-				await get_tree().create_timer(0.5).timeout
-				velocity.x = 0
-				attack = false
+	if body.get_name() == "Player":
+		attack_enemy()
 
 #Кулдаун атаки моба
 func _on_attack_direction_body_exited(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		can_attack =false
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(1).timeout
 		can_attack =true
+func attack_enemy():
+	if can_attack:
+		attack = true
+		velocity = Vector2(0, 0)
+		#$Sprite2D.scale.x = 1
+		$Anim/AnimationPlayer.play("Attack")
+		await $Anim/AnimationPlayer.animation_finished
+		$Skills/Attack/Hit_area/CollisionShape2D.disabled = false
+		$Skills/Attack/Hit_area.rotation_degrees = 90
+		check_other_bodies()
+		attack = false
+		
