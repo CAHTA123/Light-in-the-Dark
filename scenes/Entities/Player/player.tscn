@@ -330,10 +330,16 @@ pickaxe = ExtResource("5_xvaox")
 axe = ExtResource("6_v732v")
 shield = ExtResource("7_ccnph")
 
-[node name="Shape" parent="." index="0"]
+[node name="Build_Book" parent="." index="0" instance=ExtResource("38_wp4fq")]
+offset_left = -47.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -18.0
+
+[node name="Shape" parent="." index="1"]
 polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
 
-[node name="Camera2D" type="Camera2D" parent="." index="1"]
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D" index="0"]
 visible = false
@@ -403,7 +409,7 @@ script = ExtResource("11_6nq1w")
 process_mode = 3
 script = ExtResource("14_rt58o")
 
-[node name="Anim" parent="." index="6"]
+[node name="Anim" parent="." index="7"]
 script = ExtResource("14_jpe8x")
 
 [node name="Anim" type="AnimationPlayer" parent="Anim" index="0"]
@@ -412,7 +418,7 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="Input" type="CanvasLayer" parent="." index="7"]
+[node name="Input" type="CanvasLayer" parent="." index="8"]
 visible = false
 script = ExtResource("19_3msca")
 
@@ -485,7 +491,7 @@ scale = Vector2(6, 6)
 texture_normal = ExtResource("24_52w7a")
 action = "Esc"
 
-[node name="Pause" type="CanvasLayer" parent="." index="8"]
+[node name="Pause" type="CanvasLayer" parent="." index="9"]
 
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
 visible = false
@@ -668,13 +674,7 @@ text = "MONEY:"
 script = ExtResource("38_xwesb")
 metadata/_edit_use_anchors_ = true
 
-[node name="Build_Book" parent="Pause" index="7" instance=ExtResource("38_wp4fq")]
-offset_left = -2.0
-offset_top = 6.0
-offset_right = 38.0
-offset_bottom = 46.0
-
-[node name="Test_damage" type="Area2D" parent="." index="9"]
+[node name="Test_damage" type="Area2D" parent="." index="10"]
 collision_layer = 4
 collision_mask = 0
 

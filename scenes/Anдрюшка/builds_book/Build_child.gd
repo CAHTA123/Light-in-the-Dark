@@ -6,7 +6,9 @@ extends Control
 @onready var build_texture = $TextureRect
 @onready var build_name = $Name
 @onready var bg = $ColorRect
-@onready var build_book = $"../.."
+@onready var build_book = $"../../.."
+@onready var canvas_layer = $"../.."
+
 #@onready var build_preview = $"../../../TextureRect"
 
 
@@ -55,6 +57,7 @@ func _on_gui_input(event):
 		
 	
 func close ():
+	canvas_layer.visible = false
 	build_book.visible = false
 	get_tree().paused = false
 	

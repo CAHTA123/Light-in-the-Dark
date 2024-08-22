@@ -12,33 +12,33 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_k47pt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = 86.0
 offset_top = 39.0
 offset_right = 1086.0
 offset_bottom = 603.0
 color = Color(0.52, 0.508733, 0.182, 0.635294)
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
 clip_contents = true
 custom_minimum_size = Vector2(200, 116)
-layout_mode = 0
 offset_left = 187.0
 offset_top = 81.0
 offset_right = 987.0
 offset_bottom = 551.0
 columns = 5
 
-[node name="Control" parent="GridContainer" instance=ExtResource("2_bt0vq")]
+[node name="Control" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
 process_mode = 3
 layout_mode = 2
 
-[node name="Control2" parent="GridContainer" instance=ExtResource("2_bt0vq")]
+[node name="Control2" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
 process_mode = 3
 layout_mode = 2
 building_data = ExtResource("3_wca3v")
 
-[node name="Control3" parent="GridContainer" instance=ExtResource("2_bt0vq")]
+[node name="Control3" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
 process_mode = 3
 layout_mode = 2
