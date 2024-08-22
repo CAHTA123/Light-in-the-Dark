@@ -9,7 +9,7 @@ var speed = 300
 var damage = 2
 var take_damage = 0
 var destroy = false
-var item_drop : String = ""
+var item_drop = ""
 
 
 
