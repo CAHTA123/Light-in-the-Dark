@@ -23,7 +23,7 @@ func _process(delta):
 		player_cam_node.camera_2d = true
 		enabled = false
 	elif zoom != Vector2(1, 1):
-		Signals.change_zoom.emit(self.zoom)
+		Signals.change_zoom.emit(zoom, global_position)
 	if Input.is_action_just_pressed("+") and zoom < Vector2(0.9, 0.9):
 		if position != Vector2(player_pos):
 			if zoom > Vector2(0.075, 0.075):
