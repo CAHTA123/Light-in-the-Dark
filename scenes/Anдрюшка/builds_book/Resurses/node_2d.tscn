@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtqv4dcb4mb27"]
-
-[ext_resource type="PackedScene" uid="uid://dvp0wlya30sfc" path="res://scenes/Anдрюшка/builds_book/builds_book.tscn" id="1_jlu6a"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="Build_Book" parent="." instance=ExtResource("1_jlu6a")]

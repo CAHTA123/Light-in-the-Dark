@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Light In The Dark"
-run/main_scene="res://scenes/Anдрюшка/builds_book/Build_child.tscn"
+run/main_scene="res://scenes/Game/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+Signals="*res://scenes/Anдрюшка/camera_zoom/signals.gd"
 
 [display]
 
@@ -87,6 +88,11 @@ X={
 -={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+open_builds_list={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":66,"key_label":0,"unicode":98,"echo":false,"script":null)
 ]
 }
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=50 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="2_k2voa"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
 [ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
 [ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
+[ext_resource type="PackedScene" uid="uid://dvp0wlya30sfc" path="res://scenes/Anдрюшка/builds_book/builds_book.tscn" id="38_wp4fq"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/Label.gd" id="38_xwesb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
@@ -666,6 +667,12 @@ theme_override_font_sizes/font_size = 60
 text = "MONEY:"
 script = ExtResource("38_xwesb")
 metadata/_edit_use_anchors_ = true
+
+[node name="Build_Book" parent="Pause" index="7" instance=ExtResource("38_wp4fq")]
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 38.0
+offset_bottom = 46.0
 
 [node name="Test_damage" type="Area2D" parent="." index="9"]
 collision_layer = 4

@@ -5,11 +5,13 @@ var drag_start_pos = Vector2()
 @onready var player_cam_node = $"../Player"
 var player_cam_enabled = false
 var player_pos = Vector2(0, 0)
+
 func _ready():
 	if player_cam_node != null:
 		player_cam_enabled = player_cam_node.camera_2d
 		player_cam_node.camera_2d = true
 		player_pos = player_cam_node.position
+		
 		
 	
 func _process(delta):
@@ -20,6 +22,8 @@ func _process(delta):
 	elif zoom == Vector2(1, 1):
 		player_cam_node.camera_2d = true
 		enabled = false
+	elif zoom != Vector2(1, 1):
+		Signals.change_zoom.emit(self.zoom)
 	if Input.is_action_just_pressed("+") and zoom < Vector2(0.9, 0.9):
 		if position != Vector2(player_pos):
 			if zoom > Vector2(0.075, 0.075):

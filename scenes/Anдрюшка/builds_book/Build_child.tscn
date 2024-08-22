@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnbyg07fupfr7" path="res://scenes/Anдрюшка/builds_book/necessary_item_slot.tscn" id="3_u5djm"]
 
 [node name="Control" type="Control"]
+custom_minimum_size = Vector2(150, 120)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -13,48 +14,52 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -116.5
-offset_right = 200.0
-offset_bottom = 116.5
+offset_top = -116.0
+offset_right = -50.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2e3d")
 building_data = ExtResource("2_4vchl")
 material_slot_scene = ExtResource("3_u5djm")
 
-[node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(300, 233)
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 300.0
-offset_bottom = 233.0
+offset_right = 150.0
+offset_bottom = 120.0
+color = Color(0.737255, 0.74902, 0.611765, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(50, 105)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.5
+offset_right = 56.0
+offset_bottom = 111.5
+
+[node name="necessary_items" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(15, 15)
 layout_mode = 0
-offset_left = 114.0
-offset_top = 30.5
-offset_right = 144.0
-offset_bottom = 60.5
+offset_left = 62.0
+offset_top = 27.5
+offset_right = 77.0
+offset_bottom = 42.5
 scale = Vector2(5.58913, 5.58913)
 texture = ExtResource("1_1gldc")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 2
-offset_left = 258.0
-offset_top = -86.5
-offset_right = 445.0
-offset_bottom = -17.5
-theme_override_font_sizes/font_size = 50
+offset_left = 65.0
+offset_top = 1.0
+offset_right = 141.0
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 20
 text = "Шалаш"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(100, 210)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 11.0
-offset_right = 108.0
-offset_bottom = 221.0
-
-[node name="necessary_items" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

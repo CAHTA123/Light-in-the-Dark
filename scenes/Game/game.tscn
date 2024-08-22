@@ -53,6 +53,8 @@ stream = ExtResource("7_i1pqy")
 volume_db = -10.38
 autoplay = true
 
+[node name="Buildings" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 
 [node name="Camera" parent="." instance=ExtResource("13_2jsiw")]
