@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6b4cvdurramq"]
+[gd_scene load_steps=4 format=3 uid="uid://c6b4cvdurramq"]
 
-[ext_resource type="Texture2D" uid="uid://bg801f2qxgo5b" path="res://scenes/Anдрюшка/builds_book/аяр.png" id="1_1gldc"]
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Build_child.gd" id="1_c2e3d"]
 [ext_resource type="Resource" uid="uid://b57klyt0d03a4" path="res://scenes/Anдрюшка/builds_book/Resurses/shalash.tres" id="2_4vchl"]
 [ext_resource type="PackedScene" uid="uid://dnbyg07fupfr7" path="res://scenes/Anдрюшка/builds_book/necessary_item_slot.tscn" id="3_u5djm"]
 
-[node name="Control" type="Control"]
+[node name="Build_child" type="Control"]
 custom_minimum_size = Vector2(150, 120)
 layout_mode = 3
 anchors_preset = 8
@@ -48,7 +47,6 @@ offset_top = 27.5
 offset_right = 77.0
 offset_bottom = 42.5
 scale = Vector2(5.58913, 5.58913)
-texture = ExtResource("1_1gldc")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="."]
@@ -58,7 +56,6 @@ offset_top = 1.0
 offset_right = 141.0
 offset_bottom = 29.0
 theme_override_font_sizes/font_size = 20
-text = "Шалаш"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

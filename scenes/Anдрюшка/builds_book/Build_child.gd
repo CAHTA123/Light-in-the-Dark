@@ -5,12 +5,12 @@ extends Control
 @onready var slot = "res://scenes/GUI/Inventory_test/slot.tscn"
 @onready var build_texture = $TextureRect
 @onready var build_name = $Name
-@onready var bg = $ColorRect
+@onready var bg = $"."
 @onready var build_book = $"../../.."
 @onready var canvas_layer = $"../.."
-
+var selection_build_place = false
 #@onready var build_preview = $"../../../TextureRect"
-
+var build_prev
 
 @export var building_data: Resource  # Ссылка на ресурс постройки
 @export var material_slot_scene: PackedScene  # Сцена слота материала
@@ -49,22 +49,26 @@ func setup_building(data: Resource):
 			
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		print("-materials")
-		close()
-		build_book.build_preview(build_texture.texture)
-		
-		
-		
-	
-func close ():
-	canvas_layer.visible = false
-	build_book.visible = false
-	get_tree().paused = false
+		build_book.close()
+		build_preview(build_texture.texture)
+func build_preview (texture: CompressedTexture2D):
+	var preview_texture = TextureRect.new()
+	preview_texture.texture = texture
+	preview_texture.modulate.a = 0.3
+	preview_texture.expand_mode = 1
+	preview_texture.size = Vector2(400, 400)
+	get_tree().root.add_child(preview_texture)
+	build_prev = preview_texture
+	selection_build_place = true
 	
 func _on_mouse_entered():
-	bg.color.a = 0.5
-
+	bg.modulate.a = 0.5
 
 func _on_mouse_exited():
-	bg.color.a = 1
-	
+	bg.modulate.a = 1
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		if selection_build_place:
+			build_prev.global_position = (get_global_mouse_position() - build_prev.get_size() / 2) 
+			
