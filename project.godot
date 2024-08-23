@@ -99,6 +99,7 @@ B={
 [layer_names]
 
 2d_physics/layer_2="Player"
+2d_physics/layer_5="Buildings"
 2d_physics/layer_6="Island"
 
 [rendering]

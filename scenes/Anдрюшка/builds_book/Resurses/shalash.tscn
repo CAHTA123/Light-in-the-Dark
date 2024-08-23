@@ -4,11 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://coxt1e0thlr0w" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="2_372rx"]
 
 [node name="Shalash" instance=ExtResource("1_cgll5")]
+collision_layer = 2
+collision_mask = 2
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_372rx")
+[node name="Area2D" parent="." index="0"]
+collision_layer = 0
+collision_mask = 50
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(188, 144, 239, 152, 294, 166, 382, 283, 318, 385, 131, 406, 20, 309, 49, 197, 120, 150)
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-position = Vector2(0, 1)
-scale = Vector2(3.16, 3.16)
-polygon = PackedVector2Array(3.16456, -1.58228, -5.37975, -0.632911, -7.59494, 2.53165, -5.6962, 7.27848, -0.316456, 8.5443, 5.37975, 7.27848, 6.64557, 3.79747, 6.32911, 1.26582)
+polygon = PackedVector2Array(119, 147, 270, 157, 296, 169, 382, 282, 318, 386, 125, 407, 15, 309, 52, 195)
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(200, 200)
+scale = Vector2(8, 8)
+texture = ExtResource("2_372rx")

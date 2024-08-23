@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Building_data" load_steps=3 format=3 uid="uid://djr668otkss5w"]
+[gd_resource type="Resource" script_class="Building_data" load_steps=4 format=3 uid="uid://djr668otkss5w"]
 
+[ext_resource type="PackedScene" uid="uid://bqey6btn0tiyh" path="res://scenes/Anдрюшка/builds_book/Resurses/Camp_fire.tscn" id="1_jjgxx"]
 [ext_resource type="Texture2D" uid="uid://bl463jdljvy6a" path="res://sprites/предметы/Camp Fire.png" id="1_s2tx1"]
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/building_data.gd" id="2_vh4mk"]
 
@@ -7,6 +8,8 @@
 script = ExtResource("2_vh4mk")
 building_name = "Костёр"
 icon = ExtResource("1_s2tx1")
+texture = ExtResource("1_s2tx1")
+build_scene = ExtResource("1_jjgxx")
 materials = {
 "uid://bg4vlexewnvdd": 5
 }

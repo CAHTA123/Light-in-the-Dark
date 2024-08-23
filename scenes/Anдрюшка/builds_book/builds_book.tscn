@@ -6,7 +6,6 @@
 
 [node name="Build_Book" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -31,15 +30,12 @@ offset_right = 987.0
 offset_bottom = 551.0
 columns = 5
 
-[node name="Control" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
-process_mode = 3
+[node name="Build_child" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2
 
-[node name="Control2" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
-process_mode = 3
+[node name="Build_child2" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2
 building_data = ExtResource("3_wca3v")
 
-[node name="Control3" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
-process_mode = 3
+[node name="Build_child3" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2

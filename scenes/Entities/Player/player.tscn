@@ -321,7 +321,7 @@ height = 178.0
 [node name="Player" instance=ExtResource("1_edq0g")]
 texture_filter = 1
 position = Vector2(45, 64)
-collision_layer = 10
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
@@ -677,6 +677,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Test_damage" type="Area2D" parent="." index="10"]
 collision_layer = 4
 collision_mask = 0
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test_damage" index="0"]
 position = Vector2(-2, -89)
