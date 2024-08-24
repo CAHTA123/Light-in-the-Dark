@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cry6ncxk4h1hg"]
+[gd_scene load_steps=8 format=3 uid="uid://cry6ncxk4h1hg"]
 
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/zombi.gd" id="1_kwdhf"]
 [ext_resource type="Texture2D" uid="uid://dwltcn2uli41x" path="res://sprites/Enemy/Zombi.png" id="2_62el1"]
@@ -15,23 +15,55 @@ height = 1658.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c1qh5"]
 height = 50.6667
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5iacd"]
+radius = 67.6831
+
 [node name="Zombi" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 collision_layer = 0
-collision_mask = 0
+collision_mask = 32
 script = ExtResource("1_kwdhf")
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 6.33333)
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_qpa5y")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, 7.66667)
 scale = Vector2(0.159167, 0.135833)
 texture = ExtResource("2_62el1")
 
+[node name="Skills" type="Node2D" parent="."]
+
+[node name="Attack" type="Node2D" parent="Skills"]
+
+[node name="Attack_direction" type="Area2D" parent="Skills/Attack"]
+position = Vector2(-26, 0)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Attack/Attack_direction"]
+position = Vector2(0, 6.33333)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_qpa5y")
+
+[node name="Hit_area" type="Area2D" parent="Skills/Attack"]
+position = Vector2(0, -0.666667)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Attack/Hit_area"]
+position = Vector2(0, 6.33333)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_qpa5y")
+
 [node name="Chase_area" type="Area2D" parent="."]
+visible = false
 scale = Vector2(0.333333, 0.333333)
 collision_layer = 0
 collision_mask = 8
@@ -40,6 +72,7 @@ collision_mask = 8
 shape = SubResource("CapsuleShape2D_6u6hu")
 
 [node name="Hurt_area" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 8
 
@@ -48,6 +81,7 @@ position = Vector2(2.66667, 5.33333)
 shape = SubResource("CapsuleShape2D_c1qh5")
 
 [node name="hp_bar" type="Node2D" parent="."]
+visible = false
 position = Vector2(-1.33333, -11.6667)
 scale = Vector2(0.5, 0.5)
 
@@ -57,6 +91,18 @@ offset_top = 86.0
 offset_right = -69.0
 offset_bottom = 86.0
 
+[node name="Collision_stop" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision_stop"]
+shape = SubResource("CircleShape2D_5iacd")
+
+[connection signal="body_entered" from="Skills/Attack/Attack_direction" to="." method="_on_attack_direction_body_entered"]
+[connection signal="body_exited" from="Skills/Attack/Attack_direction" to="." method="_on_attack_direction_body_exited"]
+[connection signal="body_entered" from="Skills/Attack/Hit_area" to="." method="_on_hit_area_body_entered"]
 [connection signal="body_entered" from="Chase_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Chase_area" to="." method="_on_area_2d_body_exited"]
 [connection signal="area_entered" from="Hurt_area" to="." method="_on_hurt_area_area_entered"]
+[connection signal="body_entered" from="Collision_stop" to="." method="_on_collision_stop_body_entered"]

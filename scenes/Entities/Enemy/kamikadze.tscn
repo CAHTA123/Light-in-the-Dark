@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc0u4itxwduu0"]
+
+[ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_m6kfe"]
+[ext_resource type="Script" path="res://scenes/Entities/Enemy/kamikadze.gd" id="2_f4qmf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5jl4"]
+radius = 191.316
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s0ol"]
+radius = 295.108
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gh8lq"]
+radius = 73.0616
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_svmcb"]
+radius = 679.106
+
+[node name="Kamikadze" instance=ExtResource("1_m6kfe")]
+safe_margin = 0.001
+script = ExtResource("2_f4qmf")
+
+[node name="Boom" type="Node2D" parent="Skills" index="0"]
+
+[node name="Boom_area" type="Area2D" parent="Skills/Boom" index="0"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Boom/Boom_area" index="0"]
+shape = SubResource("CircleShape2D_o5jl4")
+disabled = true
+
+[node name="Boom_direction" type="Area2D" parent="Skills/Boom" index="1"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skills/Boom/Boom_direction" index="0"]
+shape = SubResource("CircleShape2D_1s0ol")
+
+[node name="Hurt" type="Area2D" parent="." index="6"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt" index="0"]
+shape = SubResource("CircleShape2D_gh8lq")
+
+[node name="Area2D" type="Area2D" parent="." index="7"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_svmcb")
+
+[connection signal="body_entered" from="Skills/Boom/Boom_area" to="." method="_on_boom_area_body_entered"]
+[connection signal="body_entered" from="Skills/Boom/Boom_direction" to="." method="_on_boom_direction_body_entered"]
+[connection signal="area_entered" from="Hurt" to="." method="_on_hurt_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

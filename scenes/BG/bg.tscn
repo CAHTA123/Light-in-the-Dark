@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://br3pbsabmxlbn"]
+
+[ext_resource type="Texture2D" uid="uid://ba7id104dytm5" path="res://sprites/кнопка/1682858395_furman-top-p-oboi-na-telefon-oblaka-belie-vkontakte-51.png" id="1_1vp0r"]
+[ext_resource type="Script" path="res://scenes/BG/bg.gd" id="1_hwjju"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_hwjju")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_offset = Vector2(1, 0)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="1682858395Furman-top-p-oboi-na-telefon-oblaka-belie-vkontakte-51" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(963.714, 540.5)
+scale = Vector2(1.09902, 1.09898)
+texture = ExtResource("1_1vp0r")

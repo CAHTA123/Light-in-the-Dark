@@ -5,6 +5,7 @@
 # Godot 4+ specific ignores
 .godot/
 .DS_Store
+
 /addons/gdscript_input_field
 /addons/run-configs
 /addons/script-ide

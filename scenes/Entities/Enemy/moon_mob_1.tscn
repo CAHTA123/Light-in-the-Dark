@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmoeanarr4wd1"]
+[gd_scene load_steps=11 format=3 uid="uid://dmoeanarr4wd1"]
 
 [ext_resource type="Texture2D" uid="uid://cw1oo23qkb5do" path="res://sprites/Enemy/Moon_mob.png" id="1_j1t0x"]
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/moon_mob_1.gd" id="1_yaewj"]
+[ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="3_utkhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkrpy"]
 radius = 71.0
@@ -51,6 +52,9 @@ _data = {
 radius = 70.0
 height = 430.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ix4u"]
+radius = 67.6831
+
 [node name="Moon_mob_1" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
 collision_layer = 0
@@ -65,7 +69,7 @@ shape = SubResource("CapsuleShape2D_tkrpy")
 texture = ExtResource("1_j1t0x")
 
 [node name="Hunt_area" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hunt_area"]
@@ -78,11 +82,29 @@ libraries = {
 
 [node name="Hurt_area" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_area"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lq4kq")
+
+[node name="hp_bar" type="Node2D" parent="."]
+position = Vector2(-1.33333, -11.6667)
+scale = Vector2(0.5, 0.5)
+
+[node name="hp_bar" parent="hp_bar" instance=ExtResource("3_utkhd")]
+offset_left = -382.333
+offset_top = 213.333
+offset_right = -382.333
+offset_bottom = 213.333
+scale = Vector2(5, 5)
+
+[node name="Collision_stop" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision_stop"]
+shape = SubResource("CircleShape2D_0ix4u")
 
 [connection signal="body_entered" from="Hunt_area" to="." method="_on_hunt_area_body_entered"]
 [connection signal="body_exited" from="Hunt_area" to="." method="_on_hunt_area_body_exited"]
