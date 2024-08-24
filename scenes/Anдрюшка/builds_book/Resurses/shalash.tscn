@@ -16,7 +16,7 @@ position = Vector2(200, 299.5)
 shape = SubResource("RectangleShape2D_qfdgi")
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(119, 147, 270, 157, 296, 169, 382, 282, 318, 386, 125, 407, 15, 309, 52, 195)
+polygon = PackedVector2Array(139, 197, 243, 198, 313, 227, 343, 281, 318, 386, 125, 407, 15, 309, 70, 213)
 
 [node name="Sprite2D" parent="." index="2"]
 position = Vector2(200, 200)

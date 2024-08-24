@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqey6btn0tiyh"]
+[gd_scene load_steps=4 format=3 uid="uid://bqey6btn0tiyh"]
 
 [ext_resource type="PackedScene" uid="uid://cqwwyn0xkltxy" path="res://scenes/Anдрюшка/builds_book/build_body.tscn" id="1_8mmaj"]
 [ext_resource type="Texture2D" uid="uid://bl463jdljvy6a" path="res://sprites/предметы/Camp Fire.png" id="2_vlvmp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uddjo"]
+size = Vector2(347.758, 232.815)
+
 [node name="Build_body" instance=ExtResource("1_8mmaj")]
+
+[node name="Area2D" parent="." index="0"]
+collision_mask = 144
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(196.5, 313.912)
+scale = Vector2(0.831037, 0.815347)
+shape = SubResource("RectangleShape2D_uddjo")
 
 [node name="CollisionPolygon2D" parent="." index="1"]
 position = Vector2(192, 213)

@@ -101,6 +101,7 @@ B={
 2d_physics/layer_2="Player"
 2d_physics/layer_5="Buildings"
 2d_physics/layer_6="Island"
+2d_physics/layer_8="can_build_here"
 
 [rendering]
 
