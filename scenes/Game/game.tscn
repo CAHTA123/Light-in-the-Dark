@@ -62,3 +62,4 @@ autoplay = true
 
 [node name="Node2D" parent="." instance=ExtResource("14_6c01m")]
 position = Vector2(-1427, -385)
+scale = Vector2(0.160138, 0.160138)

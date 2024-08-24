@@ -87,7 +87,6 @@ func _on_mouse_exited():
 	bg.modulate.a = 1
 
 func _on_body_exited(body):
-	if body.name == "island_exited":
 		is_island_exited = true
 		
 	
@@ -118,7 +117,7 @@ func _input(event):
 				build_collision = false
 				if area.get_overlapping_bodies().size() == 1:
 					for body in area.get_overlapping_bodies():
-						if body.get_class() == "StaticBody2D":
+						if body.name == "island_exited":
 							can_build = true
 						else:
 							can_build = false
