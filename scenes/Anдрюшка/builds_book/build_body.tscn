@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cqwwyn0xkltxy"]
 
 [node name="Build_body" type="StaticBody2D"]
-collision_layer = 50
-collision_mask = 50
+collision_layer = 144
+collision_mask = 144
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 34
+collision_layer = 0
+collision_mask = 16
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 

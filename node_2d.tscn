@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpsqiyaetspis"]
+
+[ext_resource type="Texture2D" uid="uid://lcfq1mydmdcl" path="res://scenes/Anдрюшка/builds_book/imgbin_eiffel-tower-wall-decal-sticker-png.png" id="1_u2gaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr4u7"]
+size = Vector2(5564, 8911.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1515, -3701.25)
+shape = SubResource("RectangleShape2D_sr4u7")
+
+[node name="ImgbinEiffel-tower-wall-decal-sticker-png" type="Sprite2D" parent="."]
+position = Vector2(1515, -3747)
+scale = Vector2(3.01248, 3.01248)
+texture = ExtResource("1_u2gaa")

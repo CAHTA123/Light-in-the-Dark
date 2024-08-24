@@ -1,18 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0b25wdmv1528"]
+[gd_scene load_steps=4 format=3 uid="uid://c0b25wdmv1528"]
 
 [ext_resource type="PackedScene" uid="uid://cqwwyn0xkltxy" path="res://scenes/Anдрюшка/builds_book/build_body.tscn" id="1_cgll5"]
 [ext_resource type="Texture2D" uid="uid://coxt1e0thlr0w" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="2_372rx"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfdgi"]
+size = Vector2(329, 223)
+
 [node name="Shalash" instance=ExtResource("1_cgll5")]
-collision_layer = 2
-collision_mask = 2
 
 [node name="Area2D" parent="." index="0"]
-collision_layer = 0
-collision_mask = 50
+collision_mask = 144
 
-[node name="CollisionPolygon2D" parent="Area2D" index="0"]
-polygon = PackedVector2Array(188, 144, 239, 152, 294, 166, 382, 283, 318, 385, 131, 406, 20, 309, 49, 197, 120, 150)
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(200, 299.5)
+shape = SubResource("RectangleShape2D_qfdgi")
 
 [node name="CollisionPolygon2D" parent="." index="1"]
 polygon = PackedVector2Array(119, 147, 270, 157, 296, 169, 382, 282, 318, 386, 125, 407, 15, 309, 52, 195)

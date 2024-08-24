@@ -6,23 +6,20 @@ extends Control
 @onready var build_name = $Name
 @onready var bg = $"."
 @onready var build_book = $"../../.."
-@onready var canvas_layer = $"../.."
+
 @export var building_data: Resource  # Ссылка на ресурс постройки
-@export var material_slot_scene: PackedScene  # Сцена слота материала
+@export var material_slot_scene: PackedScene  # Сцена слота материала]
+
 var selection_build_place = false
 var build_prev
 var cam_zoom = Vector2(1, 1)
 var pos_cam = Vector2(0, 0)
 var texture_size
-var colision
-var objects_in_collision = []
-
-var colision_copy
+var build_collision
 var area
-var inside_log_path = 0
-
 var instance
 var can_build = true
+var is_island_exited = false
 
 func _ready():
 	Signals.connect("change_zoom", _change_zoom)
@@ -70,15 +67,17 @@ func build_preview (build_data: Resource):
 	instance = building_data.build_scene.instantiate()
 	add_child(instance)
 	
-	colision_copy = instance.get_node("Area2D/CollisionPolygon2D").duplicate()
+	build_collision = instance.get_node("Area2D/CollisionShape2D").duplicate()
 	area = instance.get_node("Area2D").duplicate()
-	area.connect("body_entered", Callable(self, "_on_body_entered"))
 	area.connect("body_exited", Callable(self, "_on_body_exited"))
-	area.connect("body_shape_entered", Callable(self, "_on_area_2d_body_shape_entered"))
 	get_tree().root.add_child(area)
-	area.add_child(colision_copy)
+	area.add_child(build_collision)
+	instance.queue_free()
+	
 	
 	get_tree().root.add_child(preview_texture)
+	area.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
+	build_prev.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
 	selection_build_place = true
 	
 func _on_mouse_entered():
@@ -87,29 +86,10 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	bg.modulate.a = 1
 
-func _on_body_entered(body):
-	print("enterted")
-	if body.name != "StaticBody2D":
-		if body not in objects_in_collision:
-			objects_in_collision.append(body)
-			can_build = false
-	if body.name == "StaticBody2D" and inside_log_path != 1:
-		if body not in objects_in_collision:
-			objects_in_collision.append(body)
-		inside_log_path = 1
 func _on_body_exited(body):
-	print("exit")
-	if body.name != "StaticBody2D":
-		if body in objects_in_collision:
-			objects_in_collision.erase(body)
-			if objects_in_collision.size() > 0:
-				can_build = false
-			else:
-				can_build = true
-	elif body.name == "StaticBody2D" and inside_log_path == 1:
-		inside_log_path = 6
-		can_build = false
-
+	if body.name == "island_exited":
+		is_island_exited = true
+		
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -117,12 +97,11 @@ func _input(event):
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if selection_build_place and build_prev and can_build:
 					print("-materials")
-					var build_scene = instance.duplicate()
-					build_scene.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
-					get_tree().root.add_child(build_scene)
+					var build_scenee = building_data.build_scene.instantiate()
+					build_scenee.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
+					get_tree().root.add_child(build_scenee)
 					
 					area.queue_free()
-					instance.queue_free()
 					build_prev.queue_free()
 					selection_build_place = false
 		#button right
@@ -130,12 +109,25 @@ func _input(event):
 				if selection_build_place  and build_prev:
 					build_prev.queue_free()
 					area.queue_free()
-					instance.queue_free()
 					build_prev = null
 					selection_build_place = false
 	#set preview pos
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		if selection_build_place:
+			if area.get_overlapping_bodies().size() > 0:
+				build_collision = false
+				if area.get_overlapping_bodies().size() == 1:
+					for body in area.get_overlapping_bodies():
+						if body.get_class() == "StaticBody2D":
+							can_build = true
+						else:
+							can_build = false
+				else:
+					can_build = false
+			elif !is_island_exited:
+				can_build = true
+			else:
+				can_build = false
 			if can_build:
 				build_prev.modulate.a = 0.5
 				build_prev.modulate.g = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=15 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island/island_number/island_1.tscn" id="1_283dh"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
 [ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_zoom/camera_2d.tscn" id="13_2jsiw"]
+[ext_resource type="PackedScene" uid="uid://dpsqiyaetspis" path="res://node_2d.tscn" id="14_6c01m"]
 
 [node name="Game" type="Node"]
 
@@ -58,3 +59,6 @@ autoplay = true
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 
 [node name="Camera" parent="." instance=ExtResource("13_2jsiw")]
+
+[node name="Node2D" parent="." instance=ExtResource("14_6c01m")]
+position = Vector2(-1427, -385)
