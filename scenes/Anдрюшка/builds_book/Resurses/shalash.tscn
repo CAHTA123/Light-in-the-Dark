@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0b25wdmv1528"]
+[gd_scene load_steps=7 format=3 uid="uid://c0b25wdmv1528"]
 
 [ext_resource type="PackedScene" uid="uid://cqwwyn0xkltxy" path="res://scenes/Anдрюшка/builds_book/build_body.tscn" id="1_cgll5"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/shalash.gd" id="2_6qqhx"]
 [ext_resource type="Texture2D" uid="uid://coxt1e0thlr0w" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="2_372rx"]
+[ext_resource type="Texture2D" uid="uid://b2xras8yceum2" path="res://scenes/Anдрюшка/builds_book/load.png" id="4_51cdm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfdgi"]
 size = Vector2(329, 223)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tul"]
+size = Vector2(181, 57.5)
+
 [node name="Shalash" instance=ExtResource("1_cgll5")]
+script = ExtResource("2_6qqhx")
 
 [node name="Area2D" parent="." index="0"]
 collision_mask = 144
@@ -16,9 +22,44 @@ position = Vector2(200, 299.5)
 shape = SubResource("RectangleShape2D_qfdgi")
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(139, 197, 243, 198, 313, 227, 343, 281, 318, 386, 125, 407, 15, 309, 70, 213)
+polygon = PackedVector2Array(139, 197, 243, 198, 313, 227, 343, 281, 284, 386, 193, 268, 101, 386, 15, 309, 70, 213)
 
 [node name="Sprite2D" parent="." index="2"]
 position = Vector2(200, 200)
 scale = Vector2(8, 8)
 texture = ExtResource("2_372rx")
+
+[node name="interaction" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction" index="0"]
+position = Vector2(191, 422.25)
+shape = SubResource("RectangleShape2D_j0tul")
+
+[node name="Panel" type="Panel" parent="." index="4"]
+offset_left = 159.0
+offset_top = 258.0
+offset_right = 229.0
+offset_bottom = 324.0
+
+[node name="Label" type="Label" parent="Panel" index="0"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 4.0
+offset_right = 51.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 40
+text = "E"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel" index="1"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 69.0
+offset_bottom = 67.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("4_51cdm")
+
+[connection signal="body_entered" from="interaction" to="." method="_on_interaction_body_entered"]
+[connection signal="body_exited" from="interaction" to="." method="_on_interaction_body_exited"]

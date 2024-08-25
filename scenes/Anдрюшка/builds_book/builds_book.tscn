@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvp0wlya30sfc"]
 
-[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/builds_book.gd" id="1_k47pt"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/builds_book.gd" id="1_hy166"]
 [ext_resource type="PackedScene" uid="uid://c6b4cvdurramq" path="res://scenes/Anдрюшка/builds_book/Build_child.tscn" id="2_bt0vq"]
 [ext_resource type="Resource" uid="uid://djr668otkss5w" path="res://scenes/Anдрюшка/builds_book/Resurses/camp_fire.tres" id="3_wca3v"]
 
@@ -10,7 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_k47pt")
+script = ExtResource("1_hy166")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

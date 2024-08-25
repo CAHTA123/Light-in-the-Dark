@@ -59,7 +59,7 @@ func build_preview (build_data: Resource):
 	preview_texture.texture = building_data.texture
 	preview_texture.modulate.a = 0.3
 	preview_texture.expand_mode = 1
-	preview_texture.size = Vector2(400, 400)
+	preview_texture.size = building_data.texture_size
 	
 	texture_size = preview_texture.size
 	build_prev = preview_texture
@@ -114,13 +114,21 @@ func _input(event):
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		if selection_build_place:
 			if area.get_overlapping_bodies().size() > 0:
+				var collisions
+				collisions = area.get_overlapping_bodies()
+				var found_island_exited
+				var found_zone_of_interactions
 				build_collision = false
-				if area.get_overlapping_bodies().size() == 1:
-					for body in area.get_overlapping_bodies():
+				if collisions.size() == 2:
+					for body in collisions:
 						if body.name == "island_exited":
-							can_build = true
-						else:
-							can_build = false
+							found_island_exited = true
+						elif body.name == "zone of interactions":
+							found_zone_of_interactions = true
+					if found_zone_of_interactions and found_zone_of_interactions:
+						can_build = true
+					else:
+						can_build = false
 				else:
 					can_build = false
 			elif !is_island_exited:

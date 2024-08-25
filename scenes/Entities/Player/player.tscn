@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=51 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="2_k2voa"]
@@ -318,7 +318,11 @@ shader_parameter/brig = 0.5
 radius = 41.0
 height = 178.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ep3t"]
+radius = 530.224
+
 [node name="Player" instance=ExtResource("1_edq0g")]
+z_index = 1
 texture_filter = 1
 position = Vector2(45, 64)
 collision_layer = 130
@@ -681,8 +685,17 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test_damage" index="0"]
+visible = false
 position = Vector2(-2, -89)
 shape = SubResource("CapsuleShape2D_hdxe2")
+
+[node name="zone of interactions" type="StaticBody2D" parent="." index="11"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone of interactions" index="0"]
+position = Vector2(-2, -89)
+shape = SubResource("CircleShape2D_4ep3t")
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]

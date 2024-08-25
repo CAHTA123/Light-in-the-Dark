@@ -22,29 +22,38 @@
 [node name="Islands" type="Node" parent="."]
 
 [node name="Island1" parent="Islands" instance=ExtResource("1_283dh")]
+z_index = 0
 
 [node name="Island2" parent="Islands" instance=ExtResource("2_v0ix3")]
+z_index = 0
 position = Vector2(-24241, 7953)
 
 [node name="Island3" parent="Islands" instance=ExtResource("3_jpcbd")]
+z_index = 0
 position = Vector2(-17315, -6013)
 
 [node name="Island4" parent="Islands" instance=ExtResource("4_evtwt")]
+z_index = 0
 position = Vector2(-10922, 11987)
 
 [node name="Island5" parent="Islands" instance=ExtResource("5_7k7da")]
+z_index = 0
 position = Vector2(9628, -5860)
 
 [node name="Island6" parent="Islands" instance=ExtResource("6_uxhis")]
+z_index = 0
 position = Vector2(15146, 10655)
 
 [node name="Island7" parent="Islands" instance=ExtResource("7_yl0bs")]
+z_index = 0
 position = Vector2(-5366, -8106)
 
 [node name="Island8" parent="Islands" instance=ExtResource("8_lh0pw")]
+z_index = 0
 position = Vector2(1827, 11264)
 
 [node name="Island9" parent="Islands" instance=ExtResource("9_xon0m")]
+z_index = 0
 position = Vector2(16363, 228)
 
 [node name="items" type="Node" parent="."]
@@ -53,8 +62,6 @@ position = Vector2(16363, 228)
 stream = ExtResource("7_i1pqy")
 volume_db = -10.38
 autoplay = true
-
-[node name="Buildings" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 
