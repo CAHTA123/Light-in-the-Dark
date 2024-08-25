@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=16 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island/island_number/island_1.tscn" id="1_283dh"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
 [ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_zoom/camera_2d.tscn" id="13_2jsiw"]
 [ext_resource type="PackedScene" uid="uid://dpsqiyaetspis" path="res://node_2d.tscn" id="14_6c01m"]
+[ext_resource type="PackedScene" uid="uid://pw3f6p8axq8d" path="res://Stick.tscn" id="15_y72u2"]
 
 [node name="Game" type="Node"]
 
@@ -66,6 +67,30 @@ autoplay = true
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 
 [node name="Camera" parent="." instance=ExtResource("13_2jsiw")]
+
+[node name="Sprite2D" parent="." instance=ExtResource("15_y72u2")]
+position = Vector2(-574, -48)
+scale = Vector2(6.27836, 6.27836)
+
+[node name="Sprite2D2" parent="." instance=ExtResource("15_y72u2")]
+position = Vector2(-96.9999, -379)
+scale = Vector2(6.27836, 6.27836)
+
+[node name="Sprite2D3" parent="." instance=ExtResource("15_y72u2")]
+position = Vector2(-280, 1.00001)
+scale = Vector2(6.27836, 6.27836)
+
+[node name="Sprite2D4" parent="." instance=ExtResource("15_y72u2")]
+position = Vector2(-331, -273)
+scale = Vector2(6.27836, 6.27836)
+
+[node name="Sprite2D5" parent="." instance=ExtResource("15_y72u2")]
+position = Vector2(113, -262)
+scale = Vector2(6.27836, 6.27836)
+
+[node name="Sprite2D6" parent="." instance=ExtResource("15_y72u2")]
+position = Vector2(-102, -198)
+scale = Vector2(6.27836, 6.27836)
 
 [node name="Node2D" parent="." instance=ExtResource("14_6c01m")]
 position = Vector2(-1427, -385)

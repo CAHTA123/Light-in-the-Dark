@@ -341,7 +341,7 @@ offset_right = -7.0
 offset_bottom = -18.0
 
 [node name="Shape" parent="." index="1"]
-polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
+polygon = PackedVector2Array(-18, -7, -28, -43, 30, -43, 19, -8, 0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 

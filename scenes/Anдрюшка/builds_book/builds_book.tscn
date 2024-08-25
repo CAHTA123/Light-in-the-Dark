@@ -21,21 +21,126 @@ offset_right = 1086.0
 offset_bottom = 603.0
 color = Color(0.52, 0.508733, 0.182, 0.635294)
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+offset_left = 100.0
+offset_top = 62.0
+offset_right = 1067.0
+offset_bottom = 583.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScrollContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(200, 116)
-offset_left = 187.0
-offset_top = 81.0
-offset_right = 987.0
-offset_bottom = 551.0
-columns = 5
+layout_mode = 2
+columns = 6
 
-[node name="Build_child" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
+[node name="Build_child" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2
 
-[node name="Build_child2" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
+[node name="Build_child4" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child5" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child6" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child7" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child8" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child9" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child10" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child11" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child12" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child13" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child14" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child15" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child16" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child17" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child18" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child19" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child20" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child21" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child22" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child23" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child24" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child25" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child26" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child27" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child28" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child29" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child30" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child31" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child32" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child33" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child34" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child35" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child36" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child37" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
+layout_mode = 2
+
+[node name="Build_child2" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2
 building_data = ExtResource("3_wca3v")
 
-[node name="Build_child3" parent="CanvasLayer/GridContainer" instance=ExtResource("2_bt0vq")]
+[node name="Build_child3" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2

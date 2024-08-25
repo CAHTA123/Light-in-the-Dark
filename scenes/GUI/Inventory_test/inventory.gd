@@ -3,6 +3,7 @@ extends Control
 @onready var body = $"../.."
 @onready var grid_inv = $I/G
 @onready var slot = "res://scenes/GUI/Inventory_test/slot.tscn"
+const WOOD_ICON = preload("res://sprites/предметы/Wood_Icon.png")
 
 var slots: Array
 var slots_wea
@@ -24,6 +25,8 @@ func update_slots():
 		slot_count += 1
 		var sl = Slot.new() 
 		body.inv.slots_tres.append(sl)
+		if body.inv.slots_tres[0]:
+			body.inv.slots_tres[0].item = WOOD_ICON
 		var s = load(slot).instantiate()
 		grid_inv.add_child(s)
 

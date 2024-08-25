@@ -8,8 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfdgi"]
 size = Vector2(329, 223)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tul"]
-size = Vector2(181, 57.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68tlh"]
+size = Vector2(114, 150)
 
 [node name="Shalash" instance=ExtResource("1_cgll5")]
 script = ExtResource("2_6qqhx")
@@ -34,10 +34,11 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction" index="0"]
-position = Vector2(191, 422.25)
-shape = SubResource("RectangleShape2D_j0tul")
+position = Vector2(193, 354)
+shape = SubResource("RectangleShape2D_68tlh")
 
 [node name="Panel" type="Panel" parent="." index="4"]
+z_index = 2
 offset_left = 159.0
 offset_top = 258.0
 offset_right = 229.0

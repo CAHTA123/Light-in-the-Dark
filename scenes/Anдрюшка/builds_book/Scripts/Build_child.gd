@@ -1,11 +1,10 @@
 extends Control
 
-
 @onready var necessary_item = $ScrollContainer/necessary_items
 @onready var build_texture = $TextureRect
 @onready var build_name = $Name
 @onready var bg = $"."
-@onready var build_book = $"../../.."
+@onready var build_book = $"../../../.."
 
 @export var building_data: Resource  # Ссылка на ресурс постройки
 @export var material_slot_scene: PackedScene  # Сцена слота материала]
@@ -20,8 +19,10 @@ var area
 var instance
 var can_build = true
 var is_island_exited = false
-
+var body 
+var necc
 func _ready():
+	body = get_tree().root.get_node("Game/Player")
 	Signals.connect("change_zoom", _change_zoom)
 	if building_data:
 		setup_building(building_data)
@@ -50,7 +51,13 @@ func setup_building(data: Resource):
 			slot_instance.amount = str(data.materials[item_path])
 
 func _on_gui_input(event):
+	check_resources(building_data.materials, body.inv.slots_tres)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if body.inv.slots_tres:
+			for i in range(body.inv.slots_tres.size()):
+				if body.inv.slots_tres[i].item:
+					if body.inv.slots_tres[i].item == necc:
+						print("name")
 		build_book.close()
 		build_preview(building_data)
 
@@ -88,8 +95,38 @@ func _on_mouse_exited():
 
 func _on_body_exited(body):
 		is_island_exited = true
+
+func check_resources(required: Dictionary, available_slots: Array):
+	var available_count = count_available_resources(available_slots)
+
+	for resource in required.keys():
+		var required_amount = required[resource]
+		print(resource)
 		
-	
+		if resource in available_count:
+			var available_amount = available_count[resource]
+			print(available_count[resource])
+			
+			if available_amount < required_amount:
+				print("no resurs")
+				return false  # Недостаточно ресурса
+		else:
+			print("resurs dont here")
+			return false  # Ресурс отсутствует
+	return true  # Все ресурсы есть в нужном количестве
+
+func count_available_resources(slots: Array):
+	var resource_count = {}
+	for slot in slots.size():
+		var item = slots[slot].item
+		var amount = slots[slot].amount
+		
+		if item in resource_count:
+			resource_count[item] += amount
+		else:
+			resource_count[item] = amount
+	return resource_count
+
 func _input(event):
 	if event is InputEventMouseButton:
 		#button left

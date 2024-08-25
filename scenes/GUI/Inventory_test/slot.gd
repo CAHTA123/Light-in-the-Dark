@@ -3,6 +3,7 @@ extends TextureRect
 @onready var text = $Item/amount
 @onready var b = $"../../../../.."
 @export var slot_inventory = true
+@export var resurse: Resource
 @export var slot_types = { "weapon": false, "shield": false, "axe": false, "pickaxe": false }
 
 var dict = {}
@@ -49,10 +50,12 @@ func _can_drop_data(at_position, data):
 	return true
 
 func _drop_data(at_position, data):
+	print(data)
 	update(data)
 
 func update(slot):
 	if slot.item:
+		print("Efsfs")
 		texture = slot.item.texture
 		if slot_inventory:
 			b.inv.slots_tres[slot_index].item = slot.item
