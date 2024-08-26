@@ -11,4 +11,6 @@ icon = ExtResource("2_1naq8")
 texture = ExtResource("2_1naq8")
 texture_size = Vector2(256, 256)
 build_scene = ExtResource("1_jjgxx")
-materials = {}
+materials = {
+"res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres": 2
+}

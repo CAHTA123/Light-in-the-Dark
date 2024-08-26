@@ -5,29 +5,32 @@ extends Control
 @onready var build_name = $Name
 @onready var bg = $"."
 @onready var build_book = $"../../../.."
-
 @export var building_data: Resource  # Ссылка на ресурс постройки
 @export var material_slot_scene: PackedScene  # Сцена слота материала]
 
 var selection_build_place = false
-var build_prev
+var can_build = true
+var is_island_exited = false
+var have_enough_res = false
+
 var cam_zoom = Vector2(1, 1)
 var pos_cam = Vector2(0, 0)
+
+var build_prev
 var texture_size
 var build_collision
 var area
 var instance
-var can_build = true
-var is_island_exited = false
 var body 
-var necc
+var build_visible
 func _ready():
+	build_visible = build_book.get_node("CanvasLayer")
 	body = get_tree().root.get_node("Game/Player")
 	Signals.connect("change_zoom", _change_zoom)
+	build_book.connect("open_book", _open_book)
 	if building_data:
 		setup_building(building_data)
 		instance = building_data.build_scene.instantiate()
-
 
 func _change_zoom (zoom, pos):
 	pos_cam = pos
@@ -51,15 +54,11 @@ func setup_building(data: Resource):
 			slot_instance.amount = str(data.materials[item_path])
 
 func _on_gui_input(event):
-	check_resources(building_data.materials, body.inv.slots_tres)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if body.inv.slots_tres:
-			for i in range(body.inv.slots_tres.size()):
-				if body.inv.slots_tres[i].item:
-					if body.inv.slots_tres[i].item == necc:
-						print("name")
-		build_book.close()
-		build_preview(building_data)
+		_open_book()
+		if have_enough_res:
+			build_book.close()
+			build_preview(building_data)
 
 func build_preview (build_data: Resource):
 	var preview_texture = TextureRect.new()
@@ -86,7 +85,19 @@ func build_preview (build_data: Resource):
 	area.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
 	build_prev.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
 	selection_build_place = true
-	
+
+func _open_book():
+	var have_res_count = count_available_resources(body.inv.slots_tres)
+		# Проверка, хватает ли всех ресурсов
+	var all_resources_available = check_resources(building_data.materials, have_res_count)
+
+	if all_resources_available:
+		have_enough_res = true
+		necessary_item.modulate  = Color(1, 1, 1)
+		
+	else:
+		have_enough_res = false
+		necessary_item.modulate  = Color(1, 0.58, 0.58)
 func _on_mouse_entered():
 	bg.modulate.a = 0.5
 
@@ -96,42 +107,48 @@ func _on_mouse_exited():
 func _on_body_exited(body):
 		is_island_exited = true
 
-func check_resources(required: Dictionary, available_slots: Array):
-	var available_count = count_available_resources(available_slots)
+func check_resources(required: Dictionary, available_count: Dictionary):
+	for resource_path in required:
+		if resource_path not in available_count or available_count[resource_path] < required[resource_path]:
+			return false
+	return true
 
-	for resource in required.keys():
-		var required_amount = required[resource]
-		print(resource)
-		
-		if resource in available_count:
-			var available_amount = available_count[resource]
-			print(available_count[resource])
-			
-			if available_amount < required_amount:
-				print("no resurs")
-				return false  # Недостаточно ресурса
-		else:
-			print("resurs dont here")
-			return false  # Ресурс отсутствует
-	return true  # Все ресурсы есть в нужном количестве
-
-func count_available_resources(slots: Array):
+func count_available_resources(slots: Array) -> Dictionary:
 	var resource_count = {}
 	for slot in slots.size():
-		var item = slots[slot].item
+		var item = slots[slot].item # Получаем путь к ресурсу
 		var amount = slots[slot].amount
 		
+		if item == null:
+			continue
+			
 		if item in resource_count:
 			resource_count[item] += amount
 		else:
-			resource_count[item] = amount
+			resource_count[item.patch_to_item] = amount
+			if selection_build_place:
+				for resourse_path in building_data.materials:
+					if resourse_path in resource_count:
+						print(building_data.materials)
+						remove_item(slot, amount, slots)
 	return resource_count
-
+	
+func remove_item(slot, amount, slots: Array):
+	var needed_col
+	for resource_path in building_data.materials:
+		needed_col = building_data.materials[resource_path]
+	if amount != 0:
+		slots[slot].amount = amount - needed_col
+	if slots[slot].amount == 0:
+		slots[slot].item = null
+	body.inv.emit_signal("update")
+	
 func _input(event):
 	if event is InputEventMouseButton:
 		#button left
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if selection_build_place and build_prev and can_build:
+					count_available_resources(body.inv.slots_tres)
 					print("-materials")
 					var build_scenee = building_data.build_scene.instantiate()
 					build_scenee.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom

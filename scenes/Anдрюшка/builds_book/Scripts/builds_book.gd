@@ -1,6 +1,7 @@
 extends Control
 
 var global_mouse
+signal open_book
 func _ready():
 	close()
 func _input(event):
@@ -14,6 +15,8 @@ func _input(event):
 func open ():
 	$CanvasLayer.visible = true
 	get_tree().paused = true
+	open_book.emit()
+	
 	
 func close ():
 	$CanvasLayer.visible = false

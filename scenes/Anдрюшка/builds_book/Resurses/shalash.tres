@@ -12,6 +12,6 @@ texture = ExtResource("1_unipr")
 texture_size = Vector2(400, 400)
 build_scene = ExtResource("1_rm72q")
 materials = {
-"res://scenes/Anдрюшка/builds_book/Resurses/List.tres": 10,
-"res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres": 15
+"res://scenes/Anдрюшка/builds_book/Resurses/List.tres": 2,
+"res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres": 2
 }

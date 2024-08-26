@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var anim = $AnimatedSprite2D
 var fire_state = 0
 var is_in_area = false
+var fire_limit = 2
 #
 func _ready():
 	press_e.visible = false
@@ -21,19 +22,30 @@ func _on_interaction_body_exited(body):
 #
 func _input(event):
 	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_E and load_progress.value != 100 and press_e.visible:
+		if event.pressed and event.keycode == KEY_E and load_progress.value != 100 and press_e.visible and fire_limit != 0:
 			load_progress.value += 10
 		else:
 			if load_progress.value == 100:
-				match fire_state:
-					0:
-						anim.play("Fire_start")
-						await anim.animation_finished
-						anim.play("Fire")
-						fire_state = 1
-					1:
-						anim.play("Fire_finish")
-						await anim.animation_finished
-						anim.play("not_fire")
-						fire_state = 0
+				if fire_state == 0:
+					anim.play("Fire_start")
+					await anim.animation_finished
+					anim.play("Fire")
+					$Timer.start()
+					fire_state = 1
+				else:
+					anim.play("Fire_finish")
+					await anim.animation_finished
+					anim.play("not_fire")
+					fire_state = 0
+					fire_limit -= 1
+			if fire_limit == 0:
+				queue_free()
 			load_progress.value = 0 
+
+
+func _on_timer_timeout():
+	anim.play("Fire_finish")
+	await anim.animation_finished
+	anim.play("not_fire")
+	fire_limit -= 1
+	fire_state = 0

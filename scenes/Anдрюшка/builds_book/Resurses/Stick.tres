@@ -15,9 +15,10 @@ slot_type = {
 }
 name = "Stick"
 texture = ExtResource("2_unhqb")
+patch_to_item = "res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres"
 character = {}
 
 [resource]
 script = ExtResource("3_kgtxn")
 item = SubResource("Resource_q48af")
-amount = 10
+amount = 0

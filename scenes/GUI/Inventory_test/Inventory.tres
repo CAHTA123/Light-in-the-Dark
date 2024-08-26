@@ -1,26 +1,7 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=6 format=3 uid="uid://cj07el5l1r8ix"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=2 format=3 uid="uid://cj07el5l1r8ix"]
 
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/inventory_tres.gd" id="1_5kl3e"]
-[ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="2_0k355"]
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_5dc2t"]
-
-[sub_resource type="Resource" id="Resource_re5tm"]
-script = ExtResource("2_0k355")
-stack = true
-slot_type = {
-"axe": false,
-"pickaxe": false,
-"shield": false,
-"weapon": false
-}
-name = ""
-character = {}
-
-[sub_resource type="Resource" id="Resource_yuu2m"]
-script = ExtResource("3_5dc2t")
-item = SubResource("Resource_re5tm")
-amount = 0
 
 [resource]
 script = ExtResource("1_5kl3e")
-slots_tres = Array[ExtResource("3_5dc2t")]([SubResource("Resource_yuu2m")])
+slots_tres = Array[Resource("res://scenes/GUI/Inventory_test/slot_tres.gd")]([])

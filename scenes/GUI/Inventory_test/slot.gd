@@ -55,7 +55,6 @@ func _drop_data(at_position, data):
 
 func update(slot):
 	if slot.item:
-		print("Efsfs")
 		texture = slot.item.texture
 		if slot_inventory:
 			b.inv.slots_tres[slot_index].item = slot.item
@@ -65,7 +64,9 @@ func update(slot):
 				if slot_types[slot_type]:
 					dict[slot_type].slot.item = slot.item
 		text.text = str(slot.amount) if slot.amount > 1 else ""
-
+	else:
+		texture = null
+		text.text = ""
 func get_slot_index():
 	var parent_container = get_parent()
 	if parent_container is GridContainer:

@@ -262,5 +262,9 @@ texture_progress = ExtResource("3_ta084")
 [node name="Sprite2D" parent="." index="5"]
 scale = Vector2(8, 8)
 
+[node name="Timer" type="Timer" parent="." index="6"]
+wait_time = 5.0
+
 [connection signal="body_entered" from="interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="interaction" to="." method="_on_interaction_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
