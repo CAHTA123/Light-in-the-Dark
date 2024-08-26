@@ -56,10 +56,9 @@ func setup_building(data: Resource):
 			# Устанавливаем количество материала
 			slot_instance.amount = str(data.materials[item_path].amount)
 			if item_res in necessary_items:
-				necessary_items[item_path] += item_res
+				necessary_items[item_path] += item_res.item.patch_to_item
 			else:
-				necessary_items[item_path] = item_res
-			print(necessary_items)
+				necessary_items[item_path] = item_res.item.patch_to_item#для того чтобы иметь индейс слота который надо менять цвет
 			apdate_necessary_slots({})
 
 func _on_mouse_signal_gui_input(event):
@@ -174,9 +173,9 @@ func apdate_necessary_slots(have_items: Dictionary):
 		if have_enough_res:
 			items[item].modulate = Color(1,1,1)
 		else:
+			#проверка с necessary_items
 			pass
 			
-
 	
 func _input(event):
 	if event is InputEventMouseButton:
