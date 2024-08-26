@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cib5w6muxfhow" path="res://sprites/предметы/List.png" id="2_ebgqc"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_ph61k"]
 
-[sub_resource type="Resource" id="Resource_ik48e"]
+[sub_resource type="Resource" id="Resource_stl4e"]
 script = ExtResource("1_rmtnx")
 stack = true
 slot_type = {
@@ -20,5 +20,5 @@ character = {}
 
 [resource]
 script = ExtResource("3_ph61k")
-item = SubResource("Resource_ik48e")
+item = SubResource("Resource_stl4e")
 amount = 0

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cqwwyn0xkltxy" path="res://scenes/Anдрюшка/builds_book/build_body.tscn" id="1_8mmaj"]
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/Camp_fire.gd" id="2_jlh7n"]
-[ext_resource type="Texture2D" uid="uid://b2xras8yceum2" path="res://scenes/Anдрюшка/builds_book/load.png" id="3_ta084"]
 [ext_resource type="Texture2D" uid="uid://t8hbdpbyusnt" path="res://scenes/Anдрюшка/builds_book/Camp Fire-sheet2.png" id="4_7ajok"]
+[ext_resource type="PackedScene" uid="uid://dl2ren27ilt4q" path="res://scenes/Anдрюшка/builds_book/press_e.tscn" id="4_g71xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uddjo"]
 size = Vector2(208.174, 156.988)
@@ -235,35 +235,18 @@ sprite_frames = SubResource("SpriteFrames_qtjay")
 animation = &"Fire"
 autoplay = "not_fire"
 
-[node name="Panel" type="Panel" parent="." index="4"]
-offset_left = 92.0
-offset_top = 50.0
-offset_right = 162.0
-offset_bottom = 116.0
-
-[node name="Label" type="Label" parent="Panel" index="0"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 4.0
-offset_right = 51.0
-offset_bottom = 73.0
-theme_override_font_sizes/font_size = 40
-text = "E"
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel" index="1"]
-layout_mode = 0
-offset_top = -2.0
-offset_right = 69.0
-offset_bottom = 67.0
-fill_mode = 4
-nine_patch_stretch = true
-texture_progress = ExtResource("3_ta084")
-
-[node name="Sprite2D" parent="." index="5"]
+[node name="Sprite2D" parent="." index="4"]
 scale = Vector2(8, 8)
 
-[node name="Timer" type="Timer" parent="." index="6"]
+[node name="Timer" type="Timer" parent="." index="5"]
 wait_time = 5.0
+
+[node name="Press_E" parent="." index="6" instance=ExtResource("4_g71xa")]
+offset_left = 109.0
+offset_top = 51.0
+offset_right = 179.0
+offset_bottom = 117.0
+scale = Vector2(0.542418, 0.542418)
 
 [connection signal="body_entered" from="interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="interaction" to="." method="_on_interaction_body_exited"]

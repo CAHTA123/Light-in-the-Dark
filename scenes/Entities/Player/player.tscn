@@ -157,6 +157,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Skin/Skin/Weapon/shape/Shape:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_jr5s7"]
 resource_name = "attack"
@@ -184,6 +196,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Skin/Skin/Weapon/shape/Shape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_37kxt"]
@@ -369,8 +393,6 @@ script = ExtResource("2_k2voa")
 position = Vector2(0, -175)
 collision_layer = 64
 collision_mask = 64
-monitoring = false
-monitorable = false
 
 [node name="Shape" type="CollisionShape2D" parent="Skin/Skin/Weapon/shape" index="0"]
 shape = SubResource("CapsuleShape2D_ooqpy")

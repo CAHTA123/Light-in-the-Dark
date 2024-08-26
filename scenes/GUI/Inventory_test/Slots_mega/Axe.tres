@@ -16,6 +16,7 @@ slot_type = {
 }
 name = "Axe"
 texture = ExtResource("3_ny8lf")
+patch_to_item = ""
 character = {}
 
 [sub_resource type="Resource" id="Resource_5j0ws"]

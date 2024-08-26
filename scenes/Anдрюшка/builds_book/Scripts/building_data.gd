@@ -7,6 +7,6 @@ class_name Building_data
 @export var texture: Texture
 @export var texture_size: Vector2
 @export var build_scene: PackedScene
-@export var materials: Dictionary = {}  # { "путь к предмету": количество }
+@export var materials: Array[Materials]
 
 

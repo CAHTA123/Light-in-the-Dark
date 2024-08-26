@@ -22,9 +22,12 @@ var build_collision
 var area
 var instance
 var body 
-var build_visible
+var book_visible
+var have_res
+var necessary_items = {}
+
 func _ready():
-	build_visible = build_book.get_node("CanvasLayer")
+	book_visible = build_book.get_node("CanvasLayer")
 	body = get_tree().root.get_node("Game/Player")
 	Signals.connect("change_zoom", _change_zoom)
 	build_book.connect("open_book", _open_book)
@@ -42,18 +45,24 @@ func setup_building(data: Resource):
 	# Устанавливаем название постройки
 	build_name.text = data.building_name
 	# Добавляем слоты для материалов
-	for item_path in data.materials.keys():
-		var item_res = load(item_path) as Resource
+	for item_path in data.materials.size():
+		var item_res = data.materials[item_path].material
 		var slot_instance = material_slot_scene.instantiate()
 		if item_res:
 			# Добавляем слот в necessary_items
 			necessary_item.add_child(slot_instance)
-			 #Устанавливаем иконку материала
+			#Устанавливаем иконку материала
 			slot_instance.texture = item_res.item.texture
 			# Устанавливаем количество материала
-			slot_instance.amount = str(data.materials[item_path])
+			slot_instance.amount = str(data.materials[item_path].amount)
+			if item_res in necessary_items:
+				necessary_items[item_path] += item_res
+			else:
+				necessary_items[item_path] = item_res
+			print(necessary_items)
+			apdate_necessary_slots({})
 
-func _on_gui_input(event):
+func _on_mouse_signal_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		_open_book()
 		if have_enough_res:
@@ -87,69 +96,94 @@ func build_preview (build_data: Resource):
 	selection_build_place = true
 
 func _open_book():
-	var have_res_count = count_available_resources(body.inv.slots_tres)
-		# Проверка, хватает ли всех ресурсов
-	var all_resources_available = check_resources(building_data.materials, have_res_count)
+	have_enough_res = check_resources(building_data.materials, body.inv.slots_tres)
+	apdate_necessary_slots(have_res)
 
-	if all_resources_available:
-		have_enough_res = true
-		necessary_item.modulate  = Color(1, 1, 1)
-		
-	else:
-		have_enough_res = false
-		necessary_item.modulate  = Color(1, 0.58, 0.58)
-func _on_mouse_entered():
+func _on_control_mouse_entered():
 	bg.modulate.a = 0.5
 
-func _on_mouse_exited():
+func _on_control_mouse_exited():
 	bg.modulate.a = 1
 
 func _on_body_exited(body):
 		is_island_exited = true
 
-func check_resources(required: Dictionary, available_count: Dictionary):
-	for resource_path in required:
-		if resource_path not in available_count or available_count[resource_path] < required[resource_path]:
-			return false
-	return true
+func check_resources(necessary_items: Array, inventory_slots: Array) -> bool:
+	# Создаем словарь для хранения доступных предметов и их количества
+	var available_items = {}
 
-func count_available_resources(slots: Array) -> Dictionary:
-	var resource_count = {}
-	for slot in slots.size():
-		var item = slots[slot].item # Получаем путь к ресурсу
-		var amount = slots[slot].amount
-		
+	# Проходим по слотам инвентаря и заполняем словарь доступных предметов
+	for slot in inventory_slots.size():
+		var item = inventory_slots[slot].item
+		var amount = inventory_slots[slot].amount
+
 		if item == null:
 			continue
-			
-		if item in resource_count:
-			resource_count[item] += amount
+		var item_path = item.patch_to_item
+		# Добавляем предмет и его количество в словарь
+		if item_path in available_items:
+			available_items[item_path] += amount
 		else:
-			resource_count[item.patch_to_item] = amount
-			if selection_build_place:
-				for resourse_path in building_data.materials:
-					if resourse_path in resource_count:
-						print(building_data.materials)
-						remove_item(slot, amount, slots)
-	return resource_count
-	
-func remove_item(slot, amount, slots: Array):
-	var needed_col
-	for resource_path in building_data.materials:
-		needed_col = building_data.materials[resource_path]
-	if amount != 0:
-		slots[slot].amount = amount - needed_col
-	if slots[slot].amount == 0:
-		slots[slot].item = null
-	body.inv.emit_signal("update")
+			available_items[item_path] = amount
+			have_res = available_items
+	#translate: available_itemsдоступные_элементы
+	# Проверяем, хватает ли каждого предмета из necessary_items в available_items
+	for neccess_slot in necessary_items.size():
+		var neccess_item = necessary_items[neccess_slot].material.item.patch_to_item
+		var neccess_amount = necessary_items[neccess_slot].amount
+
+		if neccess_item not in available_items or available_items[neccess_item] < neccess_amount:
+			return false # Не хватает одного из предметов
+
+	return true # Все предметы есть в нужном количестве
+func remove_items(necessary_items: Array, inventory_slots: Array):
+	# Проходим по необходимым предметам и удаляем их из инвентаря
+	for neccess_slot in necessary_items:
+		var neccess_item = neccess_slot.material.item.patch_to_item
+		var neccess_amount = neccess_slot.amount
+
+		for slot in inventory_slots:
+			var item = slot.item
+			if item == null:
+				continue
+
+			var item_path = item.patch_to_item
+
+			if item_path == neccess_item:
+				if slot.amount > neccess_amount:
+					# Уменьшаем количество предмета
+					slot.amount -= neccess_amount
+					body.inv.emit_signal("update")
+					break
+				elif slot.amount == neccess_amount:
+					# Удаляем предмет
+					slot.amount = 0
+					slot.item = null
+					body.inv.emit_signal("update")
+					break
+				else:
+					# Если предметов в слоте меньше, чем необходимо, удаляем все
+					neccess_amount -= slot.amount
+					slot.amount = 0
+					slot.item = null
+					body.inv.emit_signal("update")
+
+func apdate_necessary_slots(have_items: Dictionary):
+	var items = necessary_item.get_children()
+	for item in items.size():
+		if have_enough_res:
+			items[item].modulate = Color(1,1,1)
+		else:
+			pass
+			
+
 	
 func _input(event):
 	if event is InputEventMouseButton:
 		#button left
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				if selection_build_place and build_prev and can_build:
-					count_available_resources(body.inv.slots_tres)
-					print("-materials")
+					remove_items(building_data.materials, body.inv.slots_tres)
 					var build_scenee = building_data.build_scene.instantiate()
 					build_scenee.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
 					get_tree().root.add_child(build_scenee)
@@ -199,4 +233,4 @@ func _input(event):
 				build_prev.modulate.b = 0
 			area.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
 			build_prev.global_position = (build_book.global_mouse - texture_size / 2) + cam_zoom
-	
+

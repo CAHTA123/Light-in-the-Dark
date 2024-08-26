@@ -1,13 +1,14 @@
 extends StaticBody2D
 
-@onready var press_e = $Panel
-@onready var load_progress = $Panel/TextureProgressBar
+@onready var press_e = $Press_E
 @onready var anim = $AnimatedSprite2D
+var load_progress 
 var fire_state = 0
 var is_in_area = false
 var fire_limit = 2
 #
 func _ready():
+	load_progress = press_e.get_node("TextureProgressBar")
 	press_e.visible = false
 #
 #

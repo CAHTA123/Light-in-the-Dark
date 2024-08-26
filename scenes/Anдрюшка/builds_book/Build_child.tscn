@@ -57,6 +57,11 @@ offset_right = 141.0
 offset_bottom = 29.0
 theme_override_font_sizes/font_size = 20
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[node name="mouse_signal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 120.0
+
+[connection signal="gui_input" from="mouse_signal" to="." method="_on_mouse_signal_gui_input"]
+[connection signal="mouse_entered" from="mouse_signal" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="mouse_signal" to="." method="_on_control_mouse_exited"]
