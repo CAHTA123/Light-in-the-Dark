@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Building_data" load_steps=9 format=3 uid="uid://b57klyt0d03a4"]
+
+[ext_resource type="PackedScene" uid="uid://c0b25wdmv1528" path="res://scenes/Anдрюшка/builds_book/Resurses/shalash.tscn" id="1_rm72q"]
+[ext_resource type="Texture2D" uid="uid://coxt1e0thlr0w" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="1_unipr"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/building_data.gd" id="3_0r6wy"]
+[ext_resource type="Script" path="res://build_data_tres.gd" id="3_4s84n"]
+[ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_cxank"]
+[ext_resource type="Resource" uid="uid://c2r5edkg40w0x" path="res://scenes/Anдрюшка/builds_book/Resurses/List.tres" id="5_5dr6f"]
+
+[sub_resource type="Resource" id="Resource_thj0l"]
+script = ExtResource("3_4s84n")
+material = ExtResource("3_cxank")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_ckn2c"]
+script = ExtResource("3_4s84n")
+material = ExtResource("5_5dr6f")
+amount = 2
+
+[resource]
+script = ExtResource("3_0r6wy")
+building_name = "Шалаш"
+icon = ExtResource("1_unipr")
+texture = ExtResource("1_unipr")
+texture_size = Vector2(400, 400)
+build_scene = ExtResource("1_rm72q")
+materials = Array[ExtResource("3_4s84n")]([SubResource("Resource_thj0l"), SubResource("Resource_ckn2c")])

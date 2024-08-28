@@ -1,0 +1,203 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6b4cvdurramq"]
+
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/Build_child.gd" id="1_dq3vx"]
+[ext_resource type="Resource" uid="uid://b57klyt0d03a4" path="res://scenes/Anдрюшка/builds_book/Resurses/shalash.tres" id="2_4vchl"]
+[ext_resource type="PackedScene" uid="uid://dnbyg07fupfr7" path="res://scenes/Anдрюшка/builds_book/necessary_item_slot.tscn" id="3_u5djm"]
+
+[sub_resource type="Animation" id="Animation_bwfy6"]
+resource_name = "Don't have label"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Don\'t have resourse:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Don\'t have resourse:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, 80.5), Vector2(19, 48.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Don\'t have resourse:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Don\'t have resourse:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ykaxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Don\'t have resourse:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Don\'t have resourse:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 41.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Don\'t have resourse:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Don\'t have resourse:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwbiy"]
+_data = {
+"Don't have label": SubResource("Animation_bwfy6"),
+"RESET": SubResource("Animation_ykaxk")
+}
+
+[node name="Build_child" type="Control"]
+modulate = Color(0.9, 0.9, 0.9, 1)
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -116.5
+offset_right = -50.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dq3vx")
+building_data = ExtResource("2_4vchl")
+material_slot_scene = ExtResource("3_u5djm")
+metadata/_edit_vertical_guides_ = [375.0, 526.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 120.0
+pivot_offset = Vector2(75, 60)
+color = Color(0.69935, 0.71, 0.5822, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(50, 105)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.5
+offset_right = 56.0
+offset_bottom = 111.5
+
+[node name="necessary_items" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 0
+offset_left = 62.0
+offset_top = 27.5
+offset_right = 77.0
+offset_bottom = 42.5
+scale = Vector2(5.58913, 5.58913)
+expand_mode = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+offset_left = 65.0
+offset_top = 1.0
+offset_right = 141.0
+offset_bottom = 29.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "ddrrhrd"
+
+[node name="Don\'t have resourse" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 41.5
+offset_right = 133.0
+offset_bottom = 72.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 10
+text = "У тебя не достатотчно 
+ресурсов"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cwbiy")
+}
+
+[node name="mouse_signal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 120.0
+
+[connection signal="gui_input" from="mouse_signal" to="." method="_on_mouse_signal_gui_input"]
+[connection signal="mouse_entered" from="mouse_signal" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="mouse_signal" to="." method="_on_control_mouse_exited"]

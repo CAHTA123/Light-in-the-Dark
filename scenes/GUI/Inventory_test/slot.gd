@@ -3,6 +3,7 @@ extends TextureRect
 @onready var text = $Item/amount
 @onready var b = $"../../../../.."
 @export var slot_inventory = true
+@export var resurse: Resource
 @export var slot_types = { "weapon": false, "shield": false, "axe": false, "pickaxe": false }
 
 var dict = {}
@@ -49,6 +50,7 @@ func _can_drop_data(at_position, data):
 	return true
 
 func _drop_data(at_position, data):
+	print(data)
 	update(data)
 
 func update(slot):
@@ -62,7 +64,9 @@ func update(slot):
 				if slot_types[slot_type]:
 					dict[slot_type].slot.item = slot.item
 		text.text = str(slot.amount) if slot.amount > 1 else ""
-
+	else:
+		texture = null
+		text.text = ""
 func get_slot_index():
 	var parent_container = get_parent()
 	if parent_container is GridContainer:

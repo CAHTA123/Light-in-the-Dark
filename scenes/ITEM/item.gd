@@ -8,5 +8,6 @@ class_name Item
 
 @export var name: String = ""
 @export var texture: Texture2D
+@export var patch_to_item: String
 @export var character: Dictionary = {}
 

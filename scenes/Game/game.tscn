@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=17 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island/island_number/island_1.tscn" id="1_283dh"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://c6svppnkcdl5b" path="res://scenes/Island/island_number/island_8.tscn" id="8_lh0pw"]
 [ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
+[ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_zoom/camera_2d.tscn" id="13_2jsiw"]
+[ext_resource type="PackedScene" uid="uid://dpsqiyaetspis" path="res://eiffel_tower.tscn" id="14_6c01m"]
+[ext_resource type="PackedScene" uid="uid://cjtwndthlwww1" path="res://scenes/Anдрюшка/builds_book/Resurses/stick.tscn" id="15_4s2fb"]
+[ext_resource type="PackedScene" uid="uid://1hmvyoos0k2u" path="res://scenes/Anдрюшка/builds_book/Resurses/list.tscn" id="16_o68e7"]
 
 [node name="Game" type="Node"]
 
@@ -20,29 +24,38 @@
 [node name="Islands" type="Node" parent="."]
 
 [node name="Island1" parent="Islands" instance=ExtResource("1_283dh")]
+z_index = 0
 
 [node name="Island2" parent="Islands" instance=ExtResource("2_v0ix3")]
+z_index = 0
 position = Vector2(-24241, 7953)
 
 [node name="Island3" parent="Islands" instance=ExtResource("3_jpcbd")]
+z_index = 0
 position = Vector2(-17315, -6013)
 
 [node name="Island4" parent="Islands" instance=ExtResource("4_evtwt")]
+z_index = 0
 position = Vector2(-10922, 11987)
 
 [node name="Island5" parent="Islands" instance=ExtResource("5_7k7da")]
+z_index = 0
 position = Vector2(9628, -5860)
 
 [node name="Island6" parent="Islands" instance=ExtResource("6_uxhis")]
+z_index = 0
 position = Vector2(15146, 10655)
 
 [node name="Island7" parent="Islands" instance=ExtResource("7_yl0bs")]
+z_index = 0
 position = Vector2(-5366, -8106)
 
 [node name="Island8" parent="Islands" instance=ExtResource("8_lh0pw")]
+z_index = 0
 position = Vector2(1827, 11264)
 
 [node name="Island9" parent="Islands" instance=ExtResource("9_xon0m")]
+z_index = 0
 position = Vector2(16363, 228)
 
 [node name="items" type="Node" parent="."]
@@ -53,3 +66,48 @@ volume_db = -10.38
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
+
+[node name="Camera" parent="." instance=ExtResource("13_2jsiw")]
+
+[node name="Node2D" parent="." instance=ExtResource("14_6c01m")]
+position = Vector2(-1427, -385)
+scale = Vector2(0.160138, 0.160138)
+
+[node name="Stick" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-750, 78)
+
+[node name="Stick8" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-602, -312)
+
+[node name="Stick9" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-512, -510)
+
+[node name="Stick2" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-624, -153)
+
+[node name="Stick3" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-397, -387)
+
+[node name="Stick4" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-223, -568)
+
+[node name="Stick5" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(62, -624)
+
+[node name="Stick6" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-59, -452)
+
+[node name="Stick7" parent="." instance=ExtResource("15_4s2fb")]
+position = Vector2(-855, -70)
+
+[node name="List" parent="." instance=ExtResource("16_o68e7")]
+position = Vector2(-546, 108)
+
+[node name="List3" parent="." instance=ExtResource("16_o68e7")]
+position = Vector2(-650, 304)
+
+[node name="List4" parent="." instance=ExtResource("16_o68e7")]
+position = Vector2(-1064, 164)
+
+[node name="List2" parent="." instance=ExtResource("16_o68e7")]
+position = Vector2(-402, -128)

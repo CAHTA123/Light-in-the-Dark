@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3guv5o6hl5dp"]
+
+[ext_resource type="PackedScene" uid="uid://boyqr2g40br2" path="res://scenes/Anдрюшка/builds_book/item_body.tscn" id="1_dp443"]
+[ext_resource type="Script" path="res://Rock.gd" id="3_uxd3c"]
+[ext_resource type="Resource" uid="uid://ckdgc8s56ccxm" path="res://scenes/Anдрюшка/builds_book/Resurses/Rock.tres" id="4_7l7wa"]
+
+[node name="Rock" instance=ExtResource("1_dp443")]
+script = ExtResource("3_uxd3c")
+resurs = ExtResource("4_7l7wa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

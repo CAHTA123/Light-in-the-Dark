@@ -1,10 +1,9 @@
-[gd_scene load_steps=50 format=3 uid="uid://wcix67e82g86"]
+[gd_scene load_steps=51 format=3 uid="uid://wcix67e82g86"]
 
 [ext_resource type="PackedScene" uid="uid://cip765xbasefc" path="res://scenes/Entities/body/body.tscn" id="1_edq0g"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="2_k2voa"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/Move.gd" id="2_nw2w3"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/player.gd" id="2_s5x7p"]
-[ext_resource type="Script" path="res://scenes/Entities/Player/player_camera.gd" id="3_3bo7r"]
 [ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="3_4gg2j"]
 [ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="3_4q6bb"]
 [ext_resource type="Resource" uid="uid://cj07el5l1r8ix" path="res://scenes/GUI/Inventory_test/Inventory.tres" id="3_d2r3l"]
@@ -37,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
 [ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
 [ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
+[ext_resource type="PackedScene" uid="uid://dvp0wlya30sfc" path="res://scenes/Anдрюшка/builds_book/builds_book.tscn" id="38_wp4fq"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/Label.gd" id="38_xwesb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooqpy"]
@@ -157,6 +157,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Skin/Skin/Weapon/shape/Shape:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_jr5s7"]
 resource_name = "attack"
@@ -184,6 +196,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Skin/Skin/Weapon/shape/Shape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_37kxt"]
@@ -318,11 +342,15 @@ shader_parameter/brig = 0.5
 radius = 41.0
 height = 178.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ep3t"]
+radius = 530.224
+
 [node name="Player" instance=ExtResource("1_edq0g")]
+z_index = 1
 texture_filter = 1
 position = Vector2(45, 64)
-collision_layer = 10
-collision_mask = 2
+collision_layer = 130
+collision_mask = 130
 script = ExtResource("2_s5x7p")
 inv = ExtResource("3_d2r3l")
 weapon = ExtResource("4_trmtx")
@@ -330,11 +358,16 @@ pickaxe = ExtResource("5_xvaox")
 axe = ExtResource("6_v732v")
 shield = ExtResource("7_ccnph")
 
-[node name="Shape" parent="." index="0"]
-polygon = PackedVector2Array(-18, -7, -36, -80, -33, -90, -22, -96, -26, -105, -26, -144, 26, -144, 26, -104, 22, -96, 34, -89, 37, -77, 19, -8, 0, 0)
+[node name="Build_Book" parent="." index="0" instance=ExtResource("38_wp4fq")]
+offset_left = -47.0
+offset_top = -58.0
+offset_right = -7.0
+offset_bottom = -18.0
 
-[node name="Camera2D" type="Camera2D" parent="." index="1"]
-script = ExtResource("3_3bo7r")
+[node name="Shape" parent="." index="1"]
+polygon = PackedVector2Array(-18, -7, -28, -43, 30, -43, 19, -8, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D" index="0"]
 visible = false
@@ -358,6 +391,7 @@ script = ExtResource("2_k2voa")
 
 [node name="shape" type="Area2D" parent="Skin/Skin/Weapon" index="0"]
 position = Vector2(0, -175)
+
 collision_layer = 8
 collision_mask = 0
 
@@ -402,7 +436,7 @@ script = ExtResource("11_6nq1w")
 process_mode = 3
 script = ExtResource("14_rt58o")
 
-[node name="Anim" parent="." index="6"]
+[node name="Anim" parent="." index="7"]
 script = ExtResource("14_jpe8x")
 
 [node name="Anim" type="AnimationPlayer" parent="Anim" index="0"]
@@ -411,7 +445,7 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="Input" type="CanvasLayer" parent="." index="7"]
+[node name="Input" type="CanvasLayer" parent="." index="8"]
 visible = false
 script = ExtResource("19_3msca")
 
@@ -484,7 +518,7 @@ scale = Vector2(6, 6)
 texture_normal = ExtResource("24_52w7a")
 action = "Esc"
 
-[node name="Pause" type="CanvasLayer" parent="." index="8"]
+[node name="Pause" type="CanvasLayer" parent="." index="9"]
 
 [node name="Pause" parent="Pause" index="0" instance=ExtResource("15_xpn3h")]
 visible = false
@@ -667,13 +701,24 @@ text = "MONEY:"
 script = ExtResource("38_xwesb")
 metadata/_edit_use_anchors_ = true
 
-[node name="Test_damage" type="Area2D" parent="." index="9"]
+[node name="Test_damage" type="Area2D" parent="." index="10"]
 collision_layer = 4
 collision_mask = 0
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test_damage" index="0"]
+visible = false
 position = Vector2(-2, -89)
 shape = SubResource("CapsuleShape2D_hdxe2")
+
+[node name="zone of interactions" type="StaticBody2D" parent="." index="11"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone of interactions" index="0"]
+position = Vector2(-2, -89)
+shape = SubResource("CircleShape2D_4ep3t")
 
 [connection signal="body_entered" from="Skin/Skin/Weapon/shape" to="Skin/Skin/Weapon" method="_on_shape_body_entered"]
 [connection signal="animation_finished" from="Anim/Anim" to="Anim" method="_on_animation_animation_finished"]

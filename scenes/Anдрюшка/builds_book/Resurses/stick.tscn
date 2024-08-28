@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjtwndthlwww1"]
+
+[ext_resource type="PackedScene" uid="uid://boyqr2g40br2" path="res://scenes/Anдрюшка/builds_book/item_body.tscn" id="1_rnfi3"]
+[ext_resource type="Script" path="res://Stick.gd" id="2_qgpf4"]
+[ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_d66id"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydnmx"]
+radius = 18.222
+
+[node name="Stick" instance=ExtResource("1_rnfi3")]
+position = Vector2(49, 49)
+scale = Vector2(4.0625, 4.0625)
+script = ExtResource("2_qgpf4")
+resurs = ExtResource("3_d66id")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_ydnmx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl2ren27ilt4q"]
+
+[ext_resource type="Texture2D" uid="uid://b2xras8yceum2" path="res://scenes/Anдрюшка/builds_book/load.png" id="1_y38hr"]
+
+[node name="Press_E" type="Panel"]
+z_index = 2
+offset_left = 159.0
+offset_top = 258.0
+offset_right = 229.0
+offset_bottom = 324.0
+scale = Vector2(0.467166, 0.467166)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 4.0
+offset_right = 51.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 40
+text = "E"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 69.0
+offset_bottom = 67.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("1_y38hr")

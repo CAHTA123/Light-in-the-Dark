@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="4_wsmua"]
 
-
 [node name="Body" type="CharacterBody2D"]
 
 [node name="Shape" type="CollisionPolygon2D" parent="."]

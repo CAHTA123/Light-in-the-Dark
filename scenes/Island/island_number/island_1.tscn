@@ -7,3 +7,12 @@
 
 [node name="Sprite2D" parent="StaticBody2D" index="0"]
 texture = ExtResource("2_dbcsm")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+visible = true
+
+[node name="island_exited" parent="." index="4"]
+position = Vector2(0, 336)
+
+[node name="CollisionPolygon2D" parent="island_exited" index="0"]
+visible = true
