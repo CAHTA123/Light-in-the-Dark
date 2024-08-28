@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://caqqburlkdmab"]
+
+[ext_resource type="Script" path="res://scripts/quest.gd" id="1_673s0"]
+
+[resource]
+script = ExtResource("1_673s0")
+title = "Поговорить с NPC повторно"
+description = "Разработать свой речевой сфинктер в полевых условиях."

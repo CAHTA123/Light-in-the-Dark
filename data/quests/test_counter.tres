@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuestCounter" load_steps=2 format=3 uid="uid://dwjweggs5oxgi"]
+
+[ext_resource type="Script" path="res://scripts/quest_counter.gd" id="1_1eip0"]
+
+[resource]
+script = ExtResource("1_1eip0")
+value = 0
+max_value = 10
+title = "Жим пробела"
+description = "Ты же знаешь где он?"
