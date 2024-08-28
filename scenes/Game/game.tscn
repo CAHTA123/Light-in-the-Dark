@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
 [ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_zoom/camera_2d.tscn" id="13_2jsiw"]
-[ext_resource type="PackedScene" uid="uid://dpsqiyaetspis" path="res://node_2d.tscn" id="14_6c01m"]
+[ext_resource type="PackedScene" uid="uid://dpsqiyaetspis" path="res://eiffel_tower.tscn" id="14_6c01m"]
 [ext_resource type="PackedScene" uid="uid://cjtwndthlwww1" path="res://scenes/Anдрюшка/builds_book/Resurses/stick.tscn" id="15_4s2fb"]
 [ext_resource type="PackedScene" uid="uid://1hmvyoos0k2u" path="res://scenes/Anдрюшка/builds_book/Resurses/list.tscn" id="16_o68e7"]
 

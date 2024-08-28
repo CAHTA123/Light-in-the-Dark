@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/Camp_fire.gd" id="2_jlh7n"]
 [ext_resource type="Texture2D" uid="uid://b858o04mvtf1p" path="res://scenes/Anдрюшка/builds_book/Camp fire_sheet.png" id="3_t2q32"]
 [ext_resource type="PackedScene" uid="uid://dl2ren27ilt4q" path="res://scenes/Anдрюшка/builds_book/press_e.tscn" id="4_g71xa"]
-[ext_resource type="Texture2D" uid="uid://dqmyvbywsn8jw" path="res://scenes/Anдрюшка/builds_book/Camp fire_prew.png" id="4_hom2e"]
+[ext_resource type="Texture2D" uid="uid://co5y42beju7jc" path="res://scenes/Anдрюшка/builds_book/Camp fire_prew.png" id="4_hom2e"]
 [ext_resource type="Texture2D" uid="uid://lso3mna17h8u" path="res://scenes/Anдрюшка/builds_book/Camp fire_state-sheet.png" id="5_d1w2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uddjo"]
@@ -204,6 +204,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_37rpl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fire_queue_free:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.45098, 0.45098, 0.45098, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fire_queue_free:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_wqtb0"]
 resource_name = "queue_free_anim"
 length = 10.0
@@ -217,7 +256,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0.45, 0.45, 0.45, 1), Color(0.45, 0.45, 0.45, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -256,45 +295,6 @@ tracks/3/keys = {
 "args": [],
 "method": &"queue_free"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_37rpl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fire_queue_free:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.45098, 0.45098, 0.45098, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("fire_queue_free:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ax062"]
