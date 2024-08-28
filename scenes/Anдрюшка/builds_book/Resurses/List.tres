@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Slot" load_steps=5 format=3 uid="uid://c2r5edkg40w0x"]
 
 [ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_rmtnx"]
-[ext_resource type="Texture2D" uid="uid://cib5w6muxfhow" path="res://sprites/предметы/List.png" id="2_ebgqc"]
+[ext_resource type="Texture2D" uid="uid://criven7c2uf1q" path="res://sprites/предметы/List.png" id="2_ebgqc"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_ph61k"]
 
 [sub_resource type="Resource" id="Resource_stl4e"]

@@ -9,7 +9,7 @@ extends Body
 var adamage
 var pdamage
 var now_slot = null
-var action_objectw
+var action_object = null
 var last_move
 var current_state : States
 enum States {IDLE, MOVE, DASH, ATTACK, BLOCK , TAKEDAMAGE}

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Building_data" load_steps=9 format=3 uid="uid://b57klyt0d03a4"]
 
 [ext_resource type="PackedScene" uid="uid://c0b25wdmv1528" path="res://scenes/Anдрюшка/builds_book/Resurses/shalash.tscn" id="1_rm72q"]
-[ext_resource type="Texture2D" uid="uid://coxt1e0thlr0w" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="1_unipr"]
+[ext_resource type="Texture2D" uid="uid://be28ujfk0xr0u" path="res://scenes/Anдрюшка/builds_book/Shalash.png" id="1_unipr"]
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/building_data.gd" id="3_0r6wy"]
 [ext_resource type="Script" path="res://build_data_tres.gd" id="3_4s84n"]
 [ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_cxank"]

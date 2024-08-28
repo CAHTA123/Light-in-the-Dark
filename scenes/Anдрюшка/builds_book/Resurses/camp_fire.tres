@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Building_data" load_steps=8 format=3 uid="uid://djr668otkss5w"]
 
 [ext_resource type="PackedScene" uid="uid://bqey6btn0tiyh" path="res://scenes/Anдрюшка/builds_book/Resurses/Camp_fire.tscn" id="1_jjgxx"]
-[ext_resource type="Texture2D" uid="uid://dae4rskr21mai" path="res://scenes/Anдрюшка/builds_book/Camp fire.png" id="2_1naq8"]
-[ext_resource type="Texture2D" uid="uid://co5y42beju7jc" path="res://scenes/Anдрюшка/builds_book/Camp fire_prew.png" id="2_57df0"]
+[ext_resource type="Texture2D" uid="uid://bj6anu0nn7g5w" path="res://scenes/Anдрюшка/builds_book/Camp fire.png" id="2_1naq8"]
+[ext_resource type="Texture2D" uid="uid://derx7f8wltjtm" path="res://scenes/Anдрюшка/builds_book/Camp fire_prew.png" id="2_57df0"]
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/building_data.gd" id="3_iqca6"]
 [ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_p1lpf"]
 [ext_resource type="Script" path="res://build_data_tres.gd" id="4_scjqm"]

@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://scenes/Entities/Player/weapon/weapon.gd" id="2_k2voa"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/Move.gd" id="2_nw2w3"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/player.gd" id="2_s5x7p"]
-[ext_resource type="Texture2D" uid="uid://bxcytu2p1emoc" path="res://sprites/Player/player.png" id="3_4gg2j"]
-[ext_resource type="Texture2D" uid="uid://bm7c5rnkpukrc" path="res://sprites/weapon/sword/S1.png" id="3_4q6bb"]
+[ext_resource type="Texture2D" uid="uid://csp14tflfwjuu" path="res://sprites/Player/player.png" id="3_4gg2j"]
+[ext_resource type="Texture2D" uid="uid://dvccqqfkvub2p" path="res://sprites/weapon/sword/S1.png" id="3_4q6bb"]
 [ext_resource type="Resource" uid="uid://cj07el5l1r8ix" path="res://scenes/GUI/Inventory_test/Inventory.tres" id="3_d2r3l"]
-[ext_resource type="Texture2D" uid="uid://crin3cuagksw0" path="res://sprites/weapon/shield/SH1.png" id="4_p0jpk"]
+[ext_resource type="Texture2D" uid="uid://cipyp4xr4hd6e" path="res://sprites/weapon/shield/SH1.png" id="4_p0jpk"]
 [ext_resource type="Resource" uid="uid://bkpe8dklitm8x" path="res://scenes/GUI/Inventory_test/Slots_mega/Weapon.tres" id="4_trmtx"]
 [ext_resource type="Resource" uid="uid://b5q3bibx6ldgx" path="res://scenes/GUI/Inventory_test/Slots_mega/Pickaxe.tres" id="5_xvaox"]
 [ext_resource type="Script" path="res://scenes/Entities/Skills/dash.gd" id="6_6ri0j"]
@@ -23,19 +23,19 @@
 [ext_resource type="PackedScene" uid="uid://covvb82eug10n" path="res://scenes/GUI/pause/pause.tscn" id="15_xpn3h"]
 [ext_resource type="PackedScene" uid="uid://6q6opwqntvin" path="res://scenes/GUI/Inventory_test/inventory.tscn" id="17_8pbyw"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/Input.gd" id="19_3msca"]
-[ext_resource type="Texture2D" uid="uid://r471x3j37exk" path="res://sprites/кнопка/Remove-bg.ai_1723567872882.png" id="19_70pd0"]
-[ext_resource type="Texture2D" uid="uid://cxauw66xh5kfp" path="res://sprites/кнопка/Defense_Icon.png" id="20_frwxw"]
-[ext_resource type="Texture2D" uid="uid://bfya1rx1hiuqm" path="res://sprites/кнопка/accept_icon.png" id="20_y04de"]
-[ext_resource type="Texture2D" uid="uid://3x1en0oyy2af" path="res://sprites/кнопка/Attack_speed_Icon.png" id="21_qbeet"]
-[ext_resource type="Texture2D" uid="uid://d2akxweruduxl" path="res://sprites/кнопка/Move_speed_Icon.png" id="22_acq0i"]
-[ext_resource type="Texture2D" uid="uid://dbj6c7vtko67d" path="res://sprites/кнопка/Magic_Icon.png" id="23_f3lur"]
-[ext_resource type="Texture2D" uid="uid://dnx0468nr6wt3" path="res://sprites/кнопка/cancel_icon.png" id="24_52w7a"]
-[ext_resource type="Texture2D" uid="uid://2138t5uypp25" path="res://sprites/Items/sword_icon1.png" id="24_o7xo0"]
-[ext_resource type="Texture2D" uid="uid://b6io7jm5o4g43" path="res://sprites/Inventory/Slot_inv.png" id="27_0p6ph"]
+[ext_resource type="Texture2D" uid="uid://cwfbkcq4co7iw" path="res://sprites/кнопка/Remove-bg.ai_1723567872882.png" id="19_70pd0"]
+[ext_resource type="Texture2D" uid="uid://2hy4s7g16evq" path="res://sprites/кнопка/Defense_Icon.png" id="20_frwxw"]
+[ext_resource type="Texture2D" uid="uid://bt5dxitr83eke" path="res://sprites/кнопка/accept_icon.png" id="20_y04de"]
+[ext_resource type="Texture2D" uid="uid://by2gthc6esod7" path="res://sprites/кнопка/Attack_speed_Icon.png" id="21_qbeet"]
+[ext_resource type="Texture2D" uid="uid://cbom08hbl1veb" path="res://sprites/кнопка/Move_speed_Icon.png" id="22_acq0i"]
+[ext_resource type="Texture2D" uid="uid://5kc4lwd4s8kc" path="res://sprites/кнопка/Magic_Icon.png" id="23_f3lur"]
+[ext_resource type="Texture2D" uid="uid://bj7xh3um0y4os" path="res://sprites/кнопка/cancel_icon.png" id="24_52w7a"]
+[ext_resource type="Texture2D" uid="uid://dci1s0virys0l" path="res://sprites/Items/sword_icon1.png" id="24_o7xo0"]
+[ext_resource type="Texture2D" uid="uid://ba1ixdgpuvfrw" path="res://sprites/Inventory/Slot_inv.png" id="27_0p6ph"]
 [ext_resource type="Shader" path="res://scenes/Entities/Player/game.gdshader" id="28_5g2ab"]
-[ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
-[ext_resource type="Texture2D" uid="uid://canicsceswb0h" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
-[ext_resource type="Texture2D" uid="uid://cgxgrso8q2psg" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
+[ext_resource type="Texture2D" uid="uid://ciwpkabx7xwkx" path="res://sprites/Items/axe_icon3.png" id="28_a4u3s"]
+[ext_resource type="Texture2D" uid="uid://bp384ojrwbfsg" path="res://sprites/Inventory/Slot_inv_all.png" id="29_vpbfn"]
+[ext_resource type="Texture2D" uid="uid://dei8rbuf3jkt1" path="res://sprites/Items/axe_icon.png" id="30_tjbea"]
 [ext_resource type="PackedScene" uid="uid://dvp0wlya30sfc" path="res://scenes/Anдрюшка/builds_book/builds_book.tscn" id="38_wp4fq"]
 [ext_resource type="Script" path="res://scenes/Entities/Player/Label.gd" id="38_xwesb"]
 
@@ -391,7 +391,6 @@ script = ExtResource("2_k2voa")
 
 [node name="shape" type="Area2D" parent="Skin/Skin/Weapon" index="0"]
 position = Vector2(0, -175)
-
 collision_layer = 8
 collision_mask = 0
 

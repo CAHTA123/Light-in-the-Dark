@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ck1jdw71slkbf"]
+[gd_scene load_steps=14 format=3 uid="uid://ck1jdw71slkbf"]
 
 [ext_resource type="PackedScene" uid="uid://cpu3ccodnwqxv" path="res://scenes/Island/island_number/island_1.tscn" id="1_283dh"]
 [ext_resource type="PackedScene" uid="uid://wcix67e82g86" path="res://scenes/Entities/Player/player.tscn" id="2_kc6yd"]
@@ -7,15 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cju84mk3g4djy" path="res://scenes/Island/island_number/island_4.tscn" id="4_evtwt"]
 [ext_resource type="PackedScene" uid="uid://dledpwyjvklb1" path="res://scenes/Island/island_number/island_5.tscn" id="5_7k7da"]
 [ext_resource type="PackedScene" uid="uid://yj440nphfiif" path="res://scenes/Island/island_number/island_6.tscn" id="6_uxhis"]
-[ext_resource type="AudioStream" uid="uid://b0rcfvt41c045" path="res://sounds/game/game.mp3" id="7_i1pqy"]
+[ext_resource type="AudioStream" uid="uid://du8p2oc24g3pg" path="res://sounds/game/game.mp3" id="7_i1pqy"]
 [ext_resource type="PackedScene" uid="uid://dknx6b3mwwi7u" path="res://scenes/Island/island_number/island_7.tscn" id="7_yl0bs"]
 [ext_resource type="PackedScene" uid="uid://c6svppnkcdl5b" path="res://scenes/Island/island_number/island_8.tscn" id="8_lh0pw"]
 [ext_resource type="PackedScene" uid="uid://0nef66eb40xt" path="res://scenes/Island/island_number/island_9.tscn" id="9_xon0m"]
 [ext_resource type="PackedScene" uid="uid://cxwt2ifg30y48" path="res://scenes/ResourcesSpawner/resources_spawner.tscn" id="11_dvwmj"]
 [ext_resource type="PackedScene" uid="uid://c1gmkwm2w1dwp" path="res://scenes/Anдрюшка/camera_zoom/camera_2d.tscn" id="13_2jsiw"]
-[ext_resource type="PackedScene" uid="uid://dpsqiyaetspis" path="res://eiffel_tower.tscn" id="14_6c01m"]
-[ext_resource type="PackedScene" uid="uid://cjtwndthlwww1" path="res://scenes/Anдрюшка/builds_book/Resurses/stick.tscn" id="15_4s2fb"]
-[ext_resource type="PackedScene" uid="uid://1hmvyoos0k2u" path="res://scenes/Anдрюшка/builds_book/Resurses/list.tscn" id="16_o68e7"]
 
 [node name="Game" type="Node"]
 
@@ -68,46 +65,3 @@ autoplay = true
 [node name="Player" parent="." instance=ExtResource("2_kc6yd")]
 
 [node name="Camera" parent="." instance=ExtResource("13_2jsiw")]
-
-[node name="Node2D" parent="." instance=ExtResource("14_6c01m")]
-position = Vector2(-1427, -385)
-scale = Vector2(0.160138, 0.160138)
-
-[node name="Stick" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-750, 78)
-
-[node name="Stick8" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-602, -312)
-
-[node name="Stick9" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-512, -510)
-
-[node name="Stick2" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-624, -153)
-
-[node name="Stick3" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-397, -387)
-
-[node name="Stick4" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-223, -568)
-
-[node name="Stick5" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(62, -624)
-
-[node name="Stick6" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-59, -452)
-
-[node name="Stick7" parent="." instance=ExtResource("15_4s2fb")]
-position = Vector2(-855, -70)
-
-[node name="List" parent="." instance=ExtResource("16_o68e7")]
-position = Vector2(-546, 108)
-
-[node name="List3" parent="." instance=ExtResource("16_o68e7")]
-position = Vector2(-650, 304)
-
-[node name="List4" parent="." instance=ExtResource("16_o68e7")]
-position = Vector2(-1064, 164)
-
-[node name="List2" parent="." instance=ExtResource("16_o68e7")]
-position = Vector2(-402, -128)
