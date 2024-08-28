@@ -23,8 +23,8 @@ var area
 var instance
 var body 
 var book_visible
-var have_res
-var necessary_items = {}
+var have_res = {}
+var necessary_items_box = {}
 
 func _ready():
 	book_visible = build_book.get_node("CanvasLayer")
@@ -55,18 +55,18 @@ func setup_building(data: Resource):
 			slot_instance.texture = item_res.item.texture
 			# Устанавливаем количество материала
 			slot_instance.amount = str(data.materials[item_path].amount)
-			if item_res in necessary_items:
-				necessary_items[item_path] += item_res.item.patch_to_item
-			else:
-				necessary_items[item_path] = item_res.item.patch_to_item#для того чтобы иметь индейс слота который надо менять цвет
-			apdate_necessary_slots({})
 
 func _on_mouse_signal_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		bg.modulate.a = 0.5
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		_open_book()
 		if have_enough_res:
 			build_book.close()
 			build_preview(building_data)
+		else:
+			$AnimationPlayer.stop()
+			$AnimationPlayer.play("Don't have label")
 
 func build_preview (build_data: Resource):
 	var preview_texture = TextureRect.new()
@@ -95,7 +95,11 @@ func build_preview (build_data: Resource):
 	selection_build_place = true
 
 func _open_book():
-	have_enough_res = check_resources(building_data.materials, body.inv.slots_tres)
+	var have = check_resources(building_data.materials, body.inv.slots_tres)
+	if typeof(have) != TYPE_ARRAY:
+		have_enough_res = have
+	else:
+		have_enough_res = false
 	apdate_necessary_slots(have_res)
 
 func _on_control_mouse_entered():
@@ -107,9 +111,10 @@ func _on_control_mouse_exited():
 func _on_body_exited(body):
 		is_island_exited = true
 
-func check_resources(necessary_items: Array, inventory_slots: Array) -> bool:
+func check_resources(necessary_items: Array, inventory_slots: Array):
 	# Создаем словарь для хранения доступных предметов и их количества
 	var available_items = {}
+	var missing_items = []
 
 	# Проходим по слотам инвентаря и заполняем словарь доступных предметов
 	for slot in inventory_slots.size():
@@ -124,16 +129,17 @@ func check_resources(necessary_items: Array, inventory_slots: Array) -> bool:
 			available_items[item_path] += amount
 		else:
 			available_items[item_path] = amount
-			have_res = available_items
-	#translate: available_itemsдоступные_элементы
+		have_res = available_items
+	#translate: available_items доступные_элементы
 	# Проверяем, хватает ли каждого предмета из necessary_items в available_items
 	for neccess_slot in necessary_items.size():
 		var neccess_item = necessary_items[neccess_slot].material.item.patch_to_item
 		var neccess_amount = necessary_items[neccess_slot].amount
 
 		if neccess_item not in available_items or available_items[neccess_item] < neccess_amount:
-			return false # Не хватает одного из предметов
-
+			missing_items.append(neccess_slot)
+	if missing_items.size() > 0:
+		return missing_items
 	return true # Все предметы есть в нужном количестве
 func remove_items(necessary_items: Array, inventory_slots: Array):
 	# Проходим по необходимым предметам и удаляем их из инвентаря
@@ -166,15 +172,18 @@ func remove_items(necessary_items: Array, inventory_slots: Array):
 					slot.amount = 0
 					slot.item = null
 					body.inv.emit_signal("update")
-
 func apdate_necessary_slots(have_items: Dictionary):
 	var items = necessary_item.get_children()
+	var have_enough = check_resources(building_data.materials, body.inv.slots_tres)
 	for item in items.size():
-		if have_enough_res:
+		if typeof(have_enough) != TYPE_ARRAY:
 			items[item].modulate = Color(1,1,1)
+			self.modulate = Color(1, 1, 1)
 		else:
-			#проверка с necessary_items
-			pass
+			self.modulate = Color(0.98, 0.98, 0.98)
+			items[item].modulate = Color(1,1,1)
+			for i in have_enough:
+				items[i].modulate = Color(1, 0.45, 0.45)
 			
 	
 func _input(event):

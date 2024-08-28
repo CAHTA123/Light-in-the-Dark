@@ -38,11 +38,10 @@ position = Vector2(193, 354)
 shape = SubResource("RectangleShape2D_68tlh")
 
 [node name="Press_E" parent="." index="4" instance=ExtResource("4_hndjb")]
-offset_left = 178.0
-offset_top = 181.0
-offset_right = 248.0
-offset_bottom = 247.0
-scale = Vector2(0.56308, 0.56308)
+offset_left = 179.0
+offset_top = 222.0
+offset_right = 249.0
+offset_bottom = 288.0
 
 [connection signal="body_entered" from="interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="interaction" to="." method="_on_interaction_body_exited"]

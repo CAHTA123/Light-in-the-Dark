@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sr4u7"]
 size = Vector2(5564, 8911.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Eiffel Tower" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 144

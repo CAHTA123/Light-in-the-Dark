@@ -1,8 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvp0wlya30sfc"]
+[gd_scene load_steps=15 format=3 uid="uid://dvp0wlya30sfc"]
 
 [ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/builds_book.gd" id="1_hy166"]
 [ext_resource type="PackedScene" uid="uid://c6b4cvdurramq" path="res://scenes/Anдрюшка/builds_book/Build_child.tscn" id="2_bt0vq"]
 [ext_resource type="Resource" uid="uid://djr668otkss5w" path="res://scenes/Anдрюшка/builds_book/Resurses/camp_fire.tres" id="3_wca3v"]
+[ext_resource type="PackedScene" uid="uid://cqwwyn0xkltxy" path="res://scenes/Anдрюшка/builds_book/build_body.tscn" id="3_xb13r"]
+[ext_resource type="Texture2D" uid="uid://lcfq1mydmdcl" path="res://scenes/Anдрюшка/builds_book/imgbin_eiffel-tower-wall-decal-sticker-png.png" id="4_sn1p5"]
+[ext_resource type="Resource" uid="uid://ckdgc8s56ccxm" path="res://scenes/Anдрюшка/builds_book/Resurses/Rock.tres" id="5_v2fg5"]
+[ext_resource type="Script" path="res://build_data_tres.gd" id="6_ycj6j"]
+[ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="7_fu2xx"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/building_data.gd" id="8_5tyrs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdl0h"]
+size = Vector2(364, 331)
+
+[sub_resource type="PackedScene" id="PackedScene_rqavj"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Eiffel Tower", "scale", "Area2D", "position", "CollisionShape2D", "shape", "CollisionPolygon2D", "polygon", "Sprite2D", "texture"),
+"node_count": 5,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0, 0, 0, 2147483647, 262146, -1, 1, 3, 2, 0, 1, 0, 2147483647, 262148, -1, 2, 3, 3, 5, 4, 0, 0, 0, 2147483647, 524294, -1, 2, 3, 5, 7, 6, 0, 0, 0, 2147483647, 786440, -1, 3, 3, 7, 1, 8, 9, 9, 0),
+"variants": [ExtResource("3_xb13r"), Vector2(2, 2), Vector2(182.5, 304), Vector2(-5, 140.5), SubResource("RectangleShape2D_mdl0h"), Vector2(178.5, 305), PackedVector2Array(-180, 302, -109, 304, -76, 303, -72, 257, -32, 218, 14, 213, 60, 242, 74, 284, 72, 300, 107, 304, 177, 304, 171, 287, 88, 163, -96, 165, -172, 288), Vector2(178, 304.5), Vector2(0.206326, 0.206326), ExtResource("4_sn1p5")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_w5v5y"]
+script = ExtResource("6_ycj6j")
+material = ExtResource("5_v2fg5")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_jxumi"]
+script = ExtResource("6_ycj6j")
+material = ExtResource("7_fu2xx")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_tue4v"]
+script = ExtResource("8_5tyrs")
+building_name = "Eiffel Tower"
+icon = ExtResource("4_sn1p5")
+texture = ExtResource("4_sn1p5")
+texture_size = Vector2(616, 616)
+build_scene = SubResource("PackedScene_rqavj")
+materials = Array[ExtResource("6_ycj6j")]([SubResource("Resource_w5v5y"), SubResource("Resource_jxumi")])
 
 [node name="Build_Book" type="Control"]
 process_mode = 3
@@ -38,9 +80,11 @@ layout_mode = 2
 
 [node name="Build_child4" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2
+building_data = SubResource("Resource_tue4v")
 
 [node name="Build_child5" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2
+building_data = ExtResource("3_wca3v")
 
 [node name="Build_child6" parent="CanvasLayer/ScrollContainer/GridContainer" instance=ExtResource("2_bt0vq")]
 layout_mode = 2

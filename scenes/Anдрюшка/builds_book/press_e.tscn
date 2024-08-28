@@ -8,6 +8,7 @@ offset_left = 159.0
 offset_top = 258.0
 offset_right = 229.0
 offset_bottom = 324.0
+scale = Vector2(0.467166, 0.467166)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
