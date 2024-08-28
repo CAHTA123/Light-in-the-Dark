@@ -128,8 +128,9 @@ func check_resources(necessary_items: Array, inventory_slots: Array):
 		if item_path in available_items:
 			available_items[item_path] += amount
 		else:
+			#тут добавляеться путь к предмету и его колличество
 			available_items[item_path] = amount
-		have_res = available_items
+		have_res = available_items 
 	#translate: available_items доступные_элементы
 	# Проверяем, хватает ли каждого предмета из necessary_items в available_items
 	for neccess_slot in necessary_items.size():
@@ -138,7 +139,9 @@ func check_resources(necessary_items: Array, inventory_slots: Array):
 
 		if neccess_item not in available_items or available_items[neccess_item] < neccess_amount:
 			missing_items.append(neccess_slot)
+			#это добавляеться для того чтобы знать кокого именно предмета не хватает
 	if missing_items.size() > 0:
+		#и тут возващаеться массив с предметами
 		return missing_items
 	return true # Все предметы есть в нужном количестве
 func remove_items(necessary_items: Array, inventory_slots: Array):
