@@ -6,6 +6,7 @@
 .godot/
 .DS_Store
 *.import
+*.tmp
 /addons/gdscript_input_field
 /addons/run-configs
 /addons/script-ide
