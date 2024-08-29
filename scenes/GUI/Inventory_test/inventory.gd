@@ -36,11 +36,15 @@ func _process(delta):
 		if is_open:
 			close()
 		else:
-			open()
+			open(true)
 
-func open():
+func open(pos):
+	if typeof(pos) != TYPE_VECTOR2:
+		$"../Blur".visible = true
+		position = Vector2(711, 122)
+	else:
+		position = pos
 	get_tree().paused = true
-	$"../Blur".visible = true
 	visible = true
 	is_open = true
 

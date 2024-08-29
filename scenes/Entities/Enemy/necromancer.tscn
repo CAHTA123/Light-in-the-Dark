@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7imhurbepeyr"]
 
 [ext_resource type="Script" path="res://scenes/Entities/Enemy/necromancer.gd" id="1_hxcj8"]
-[ext_resource type="Texture2D" uid="uid://ncdymqsjtfln" path="res://sprites/Enemy/Necromancer.png" id="2_4jo1p"]
+[ext_resource type="Texture2D" uid="uid://djw44xo0pxt6h" path="res://sprites/Enemy/Necromancer.png" id="2_4jo1p"]
 [ext_resource type="PackedScene" uid="uid://c8ny0iaddulwa" path="res://scenes/GUI/hp_bar/hp_bar.tscn" id="3_tigec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2r1hm"]

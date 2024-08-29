@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Shield" load_steps=7 format=3 uid="uid://m0cj0k3yjlo7"]
 
 [ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_hrt5c"]
-[ext_resource type="Texture2D" uid="uid://dffrh8gf58ux8" path="res://sprites/Items/shield_icon3.png" id="3_7eb5f"]
+[ext_resource type="Texture2D" uid="uid://doipvnps4uhvh" path="res://sprites/Items/shield_icon3.png" id="3_7eb5f"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Shield_tres.gd" id="3_875jx"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_ricli"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpu3ccodnwqxv"]
 
 [ext_resource type="PackedScene" uid="uid://dvcxwbtljq7nc" path="res://scenes/Island/island.tscn" id="1_wwc07"]
-[ext_resource type="Texture2D" uid="uid://vw4ybbtwimyf" path="res://sprites/Island/1.png" id="2_dbcsm"]
+[ext_resource type="Texture2D" uid="uid://b0c6ik7pppyq6" path="res://sprites/Island/1.png" id="2_dbcsm"]
 
 [node name="Island1" instance=ExtResource("1_wwc07")]
 

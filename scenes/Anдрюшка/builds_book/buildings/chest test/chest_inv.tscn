@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dku7o5hrllvb1"]
+
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/chest test/chest_inv.gd" id="1_j8b1k"]
+[ext_resource type="Texture2D" uid="uid://b8ipeiqowm0xn" path="res://sprites/Inventory/Slot_inv_all.png" id="4_x2ug7"]
+[ext_resource type="Texture2D" uid="uid://1tkdco8b4407" path="res://scenes/Anдрюшка/Assets/crest.png" id="5_c3uya"]
+
+[node name="chest_inv" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 351.0
+offset_top = 64.0
+offset_right = 391.0
+offset_bottom = 104.0
+script = ExtResource("1_j8b1k")
+
+[node name="I" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 350.0
+texture = ExtResource("4_x2ug7")
+
+[node name="G" type="GridContainer" parent="I"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 6
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = -65.0
+offset_right = 538.0
+offset_bottom = -17.0
+scale = Vector2(1.8725, 1.8725)
+icon = ExtResource("5_c3uya")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = -35.0
+offset_right = 355.0
+offset_bottom = 34.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Сундук"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

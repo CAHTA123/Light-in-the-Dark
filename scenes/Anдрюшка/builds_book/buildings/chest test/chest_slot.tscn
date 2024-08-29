@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfo6kh11evkyq"]
+[gd_scene load_steps=3 format=3 uid="uid://bbykqcla16tb8"]
 
-[ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot.gd" id="1_xc0it"]
-[ext_resource type="Texture2D" uid="uid://cnmodyq0qircp" path="res://sprites/Inventory/Slot_inv.png" id="2_cn6tw"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/chest test/chest_slot.gd" id="1_nj3hj"]
+[ext_resource type="Texture2D" uid="uid://cnmodyq0qircp" path="res://sprites/Inventory/Slot_inv.png" id="2_fwslt"]
 
-[node name="Slot" type="TextureRect"]
+[node name="chest_slot" type="TextureRect"]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 64.0
 offset_bottom = 64.0
 expand_mode = 1
-script = ExtResource("1_xc0it")
+script = ExtResource("1_nj3hj")
 
 [node name="Slot" type="Panel" parent="."]
 show_behind_parent = true
@@ -23,7 +23,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("2_cn6tw")
+texture = ExtResource("2_fwslt")
 expand_mode = 1
 
 [node name="Item" type="Panel" parent="."]

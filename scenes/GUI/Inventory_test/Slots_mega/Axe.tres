@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ITEM/item.gd" id="1_tw186"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/Slots_mega/Axe_tres.gd" id="3_5lu0y"]
-[ext_resource type="Texture2D" uid="uid://by52uce28v82e" path="res://sprites/Items/axe_icon3.png" id="3_ny8lf"]
+[ext_resource type="Texture2D" uid="uid://ijc6fo0es2w5" path="res://sprites/Items/axe_icon3.png" id="3_ny8lf"]
 [ext_resource type="Script" path="res://scenes/GUI/Inventory_test/slot_tres.gd" id="3_rgi1q"]
 
 [sub_resource type="Resource" id="Resource_pmiho"]

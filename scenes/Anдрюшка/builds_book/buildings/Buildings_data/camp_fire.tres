@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Building_data" load_steps=8 format=3 uid="uid://djr668otkss5w"]
+
+[ext_resource type="PackedScene" uid="uid://bqey6btn0tiyh" path="res://scenes/Anдрюшка/builds_book/buildings/Camp_fire.tscn" id="1_jjgxx"]
+[ext_resource type="Texture2D" uid="uid://dae4rskr21mai" path="res://scenes/Anдрюшка/Assets/Camp fire.png" id="2_1naq8"]
+[ext_resource type="Texture2D" uid="uid://co5y42beju7jc" path="res://scenes/Anдрюшка/Assets/Camp fire_prew.png" id="2_57df0"]
+[ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_2kdma"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/Buildings_data/building_data.gd" id="3_iqca6"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/Buildings_data/build_data_tres.gd" id="4_iif5q"]
+
+[sub_resource type="Resource" id="Resource_xhy5u"]
+script = ExtResource("4_iif5q")
+material = ExtResource("3_2kdma")
+amount = 3
+
+[resource]
+script = ExtResource("3_iqca6")
+building_name = "Костёр"
+icon = ExtResource("2_1naq8")
+texture = ExtResource("2_57df0")
+texture_size = Vector2(256, 256)
+build_scene = ExtResource("1_jjgxx")
+materials = Array[ExtResource("4_iif5q")]([SubResource("Resource_xhy5u")])

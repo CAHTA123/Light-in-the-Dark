@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjtwndthlwww1"]
 
 [ext_resource type="PackedScene" uid="uid://boyqr2g40br2" path="res://scenes/Anдрюшка/builds_book/item_body.tscn" id="1_rnfi3"]
-[ext_resource type="Script" path="res://Stick.gd" id="2_qgpf4"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Resurses/Resurs_scene/Stick.gd" id="2_qgpf4"]
 [ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_d66id"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ydnmx"]

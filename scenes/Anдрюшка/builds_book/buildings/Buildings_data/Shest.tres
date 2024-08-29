@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Building_data" load_steps=7 format=3 uid="uid://du3poy0k05htl"]
+
+[ext_resource type="PackedScene" uid="uid://dcg11vksku8hc" path="res://scenes/Anдрюшка/builds_book/buildings/chest.tscn" id="1_d7v6n"]
+[ext_resource type="Texture2D" uid="uid://dwlcgql5dggl3" path="res://scenes/Anдрюшка/Assets/Chests-sheet.png" id="2_0xexa"]
+[ext_resource type="Resource" uid="uid://bg4vlexewnvdd" path="res://scenes/Anдрюшка/builds_book/Resurses/Stick.tres" id="3_dxygu"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/Buildings_data/build_data_tres.gd" id="4_4fmtl"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/Buildings_data/building_data.gd" id="5_wlyhn"]
+
+[sub_resource type="Resource" id="Resource_vhl6b"]
+script = ExtResource("4_4fmtl")
+material = ExtResource("3_dxygu")
+amount = 1
+
+[resource]
+script = ExtResource("5_wlyhn")
+building_name = "Chest"
+icon = ExtResource("2_0xexa")
+texture = ExtResource("2_0xexa")
+texture_size = Vector2(256, 256)
+build_scene = ExtResource("1_d7v6n")
+materials = Array[ExtResource("4_4fmtl")]([SubResource("Resource_vhl6b")])

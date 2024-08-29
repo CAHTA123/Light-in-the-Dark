@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6b4cvdurramq"]
 
-[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Scripts/Build_child.gd" id="1_dq3vx"]
-[ext_resource type="Resource" uid="uid://b57klyt0d03a4" path="res://scenes/Anдрюшка/builds_book/Resurses/shalash.tres" id="2_4vchl"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/Build_book/Build_child.gd" id="1_r2djc"]
+[ext_resource type="Resource" uid="uid://b57klyt0d03a4" path="res://scenes/Anдрюшка/builds_book/buildings/Buildings_data/shalash.tres" id="2_3twsd"]
 [ext_resource type="PackedScene" uid="uid://dnbyg07fupfr7" path="res://scenes/Anдрюшка/builds_book/necessary_item_slot.tscn" id="3_u5djm"]
 
 [sub_resource type="Animation" id="Animation_bwfy6"]
@@ -128,8 +128,8 @@ offset_right = -50.0
 offset_bottom = 3.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dq3vx")
-building_data = ExtResource("2_4vchl")
+script = ExtResource("1_r2djc")
+building_data = ExtResource("2_3twsd")
 material_slot_scene = ExtResource("3_u5djm")
 metadata/_edit_vertical_guides_ = [375.0, 526.0]
 
@@ -170,7 +170,6 @@ offset_bottom = 29.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
-text = "ddrrhrd"
 
 [node name="Don\'t have resourse" type="Label" parent="."]
 visible = false

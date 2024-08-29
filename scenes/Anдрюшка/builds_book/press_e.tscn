@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl2ren27ilt4q"]
 
-[ext_resource type="Texture2D" uid="uid://b2xras8yceum2" path="res://scenes/Anдрюшка/builds_book/load.png" id="1_y38hr"]
+[ext_resource type="Texture2D" uid="uid://b2xras8yceum2" path="res://scenes/Anдрюшка/Assets/load.png" id="1_y38hr"]
+
 
 [node name="Press_E" type="Panel"]
 z_index = 2

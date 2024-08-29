@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://1hmvyoos0k2u"]
+
+[ext_resource type="PackedScene" uid="uid://boyqr2g40br2" path="res://scenes/Anдрюшка/builds_book/item_body.tscn" id="1_7m84s"]
+[ext_resource type="Resource" uid="uid://c2r5edkg40w0x" path="res://scenes/Anдрюшка/builds_book/Resurses/List.tres" id="3_o3774"]
+
+[sub_resource type="GDScript" id="GDScript_qjjbw"]
+script/source = "extends Sprite2D
+@onready var player = $\"../Player\"
+
+@export var resurs: Resource
+func _ready():
+	texture = resurs.item.texture
+
+
+
+func _on_area_2d_body_entered(body):
+	body.inv.ins(resurs.item)
+	queue_free()
+"
+
+[node name="List" instance=ExtResource("1_7m84s")]
+script = SubResource("GDScript_qjjbw")
+resurs = ExtResource("3_o3774")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

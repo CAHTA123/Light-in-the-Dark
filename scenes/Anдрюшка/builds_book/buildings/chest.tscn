@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcg11vksku8hc"]
+
+[ext_resource type="PackedScene" uid="uid://cqwwyn0xkltxy" path="res://scenes/Anдрюшка/builds_book/build_body.tscn" id="1_tcy0y"]
+[ext_resource type="Script" path="res://scenes/Anдрюшка/builds_book/buildings/Chest.gd" id="2_urlhi"]
+[ext_resource type="Texture2D" uid="uid://dwlcgql5dggl3" path="res://scenes/Anдрюшка/Assets/Chests-sheet.png" id="3_ieuex"]
+[ext_resource type="PackedScene" uid="uid://dl2ren27ilt4q" path="res://scenes/Anдрюшка/builds_book/press_e.tscn" id="4_8knb6"]
+[ext_resource type="PackedScene" uid="uid://dku7o5hrllvb1" path="res://scenes/Anдрюшка/builds_book/buildings/chest test/chest_inv.tscn" id="5_kuxe0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iujd3"]
+size = Vector2(28, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g61gl"]
+radius = 178.101
+
+[node name="Chest" instance=ExtResource("1_tcy0y")]
+script = ExtResource("2_urlhi")
+
+[node name="Area2D" parent="." index="0"]
+scale = Vector2(8, 8)
+collision_mask = 144
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(16.125, 16.875)
+shape = SubResource("RectangleShape2D_iujd3")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(128, 128)
+scale = Vector2(8, 8)
+build_mode = 1
+polygon = PackedVector2Array(-14, 11, -14, -9, 14, -9, 14, 11)
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(128, 128)
+scale = Vector2(8, 8)
+texture = ExtResource("3_ieuex")
+
+[node name="Interection" type="Area2D" parent="." index="3"]
+position = Vector2(128, 128)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interection" index="0"]
+shape = SubResource("CircleShape2D_g61gl")
+
+[node name="Press_E" parent="." index="4" instance=ExtResource("4_8knb6")]
+offset_left = 99.0
+offset_top = -35.0
+offset_right = 169.0
+offset_bottom = 31.0
+scale = Vector2(1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+
+[node name="chest_inv" parent="CanvasLayer" index="0" instance=ExtResource("5_kuxe0")]
+offset_left = 611.0
+offset_top = 70.0
+offset_right = 651.0
+offset_bottom = 110.0
+
+[connection signal="body_entered" from="Interection" to="." method="_on_interection_body_entered"]
+[connection signal="body_exited" from="Interection" to="." method="_on_interection_body_exited"]
